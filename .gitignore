@@ -1,8 +1,12 @@
 # Materiales privados/no publicables
 tmp/chat.md
 
+# Cachés locales de herramientas
+.atl/
+
 # Salidas y binarios
 *.pdf
+!tmp/*.pdf
 *.docx
 *.aux
 *.log
