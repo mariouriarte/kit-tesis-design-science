@@ -1,6 +1,5 @@
-# Trabajo personal del tesista (no versionar)
-tesis_ds/
-entrega_*/
+# Materiales privados/no publicables
+tmp/chat.md
 
 # Salidas y binarios
 *.pdf
