@@ -8,7 +8,8 @@
 - **Institución de destino:** se define durante la traducción al modelo institucional
 - **Fecha de inicio:** 2026-09-27
 - **Título provisional:** Método de refactorización arquitectónica incremental para subcircuitos legacy MVC institucionales: instanciación en la ejecución POA de SIGPP
-- **Entrega del perfil:** 2026-09-28, según expectativa comunicada por el tutor en el grupo.
+- **Entrega del perfil:** 2026-09-28, cumplida mediante repositorio público compartido en el grupo.
+- **Próximo hito:** primer borrador de propuesta para el lunes 5 de octubre de 2026, según instrucción del tutor en el grupo.
 - **Predefensa tentativa:** última semana de octubre de 2026 o, como máximo, primera semana de noviembre de 2026.
 - **Defensa tentativa:** finales de noviembre de 2026, fecha extraoficial comunicada por el tutor.
 
@@ -20,7 +21,7 @@
 | E1. Áreas y temas | cerrado | `01_areas_y_temas.md` | 2026-09-27 |
 | E2. Delimitación | cerrado preliminar para perfil | `02_delimitacion.md` | 2026-09-27 |
 | E3. Perfil de investigación DS | cerrado preliminar para perfil | `03_perfil_ds.md` | 2026-09-27 |
-| E4. Marco teórico | pendiente | `04_marco_teorico.md` | |
+| E4. Marco teórico | iniciado | `04_marco_teorico.md` | |
 | E5. Estado del arte | pendiente | `05_estado_del_arte.md` | |
 | E6. Diagnóstico con indicadores | pendiente | `06_diagnostico.md` | |
 | E7a. Alternativas de solución | pendiente | `07a_alternativas.md` | |
@@ -63,6 +64,9 @@
 | 2026-09-27 | Formular oración candidata de contribución original. | La contribución se expresa como principios de diseño validados para refactorizar incrementalmente subcircuitos funcionales críticos en sistemas legacy MVC institucionales. |
 | 2026-09-27 | Cerrar E3 preliminarmente. | El tesista aceptó la oración de contribución original, cumpliendo el gate de E3 para el perfil inicial. |
 | 2026-09-27 | Crear perfil preliminar para revisión del lunes 28. | Se generó `tesis_ds/perfil_presentacion_lunes.md` con los elementos esenciales del perfil inicial. |
+| 2026-09-28 | Registrar el nuevo hito del lunes 5 de octubre. | El tutor indicó en el grupo: “Próximo hito, la propuesta. Límite para el borrador Lunes 5 de octubre”; por tanto, el trabajo debe avanzar desde el perfil hacia el desarrollo de la propuesta. |
+| 2026-09-28 | Iniciar E4 con tres ejes teóricos. | El marco teórico se orienta a código heredado y cambio seguro, arquitectura como fronteras/dependencias/atributos de calidad, y testabilidad como condición para refactorización incremental. |
+| 2026-09-28 | Rechazar como promesa una migración completa a arquitectura limpia o hexagonal. | El tesista aceptó que una migración completa agregaría complejidad y podría empeorar el sistema; la propuesta se concentra en frontera arquitectónica incremental con desacoplamiento y pruebas. |
 
 ## Preguntas abiertas
 
@@ -70,6 +74,8 @@
 - Definir más adelante si el desarrollador revisor participará en evaluación formativa, sumativa o ambas.
 - Verificar en E4 y E5 la brecha bibliográfica sobre aprendizaje de marcos MVC, arquitectura, testabilidad y refactorización incremental de sistemas legacy.
 - Convertir los criterios de éxito preliminares en indicadores operacionales antes de construir.
+- Preparar el primer borrador de propuesta para el lunes 5 de octubre de 2026, con desarrollo suficiente de marco teórico, estado del arte, diagnóstico preliminar, alternativas, requisitos, diseño inicial y plan de evaluación.
+- Completar E4 con literatura reciente verificada sobre refactorización legacy, deuda técnica arquitectónica, testabilidad y evolución de sistemas MVC/monolíticos.
 
 ## Avances previos disponibles
 
@@ -79,10 +85,11 @@
 
 ## Restricciones de tiempo
 
-- El perfil inicial debe estar listo para el lunes 28 de septiembre de 2026.
+- El perfil inicial debía estar listo para el lunes 28 de septiembre de 2026 y ya fue compartido en el grupo.
+- El primer borrador de propuesta debe estar listo para el lunes 5 de octubre de 2026.
 - La predefensa debería ocurrir idealmente la última semana de octubre de 2026 o, como máximo, la primera semana de noviembre de 2026.
 - La defensa está prevista de forma extraoficial para finales de noviembre de 2026.
 
 ## Próximo paso
 
-- Preparar una versión presentable del perfil inicial y luego iniciar E4/E5 con verificación bibliográfica.
+- Iniciar E4/E5 con verificación bibliográfica y preparar el borrador de propuesta exigido para el lunes 5 de octubre de 2026.

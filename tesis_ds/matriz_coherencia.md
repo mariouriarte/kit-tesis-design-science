@@ -16,7 +16,7 @@
 | Decisiones de diseño principales | Pendiente para E7c. |
 | Criterio de suficiencia del artefacto | Pendiente para E7d. |
 | Método de evaluación | Preliminar: medición técnica, entorno controlado con datos ficticios, revisión técnica independiente y validación institucional acotada. |
-| Criterios de éxito e indicadores | Pendiente para E6. |
+| Criterios de éxito e indicadores | Preliminar: tamaño y concentración de código, instanciaciones directas, llamadas a persistencia desde controladores, ocurrencias de SQL nativo, vacíos de pruebas, complejidad ciclomática, cobertura, mantenibilidad y trazabilidad del cambio. |
 | Contribución reclamada (nivel de maestría) | Preliminar: principios de diseño para refactorización arquitectónica incremental en módulos legacy institucionales. |
 
 ## Trazabilidad propuesta ↔ solución
@@ -35,5 +35,5 @@
 
 ## Eslabones huérfanos (sin evidencia o sin correspondencia)
 
-- Problema de investigación formulado preliminarmente; falta verificación bibliográfica en E4 y E5.
-- Indicadores y criterios de éxito aún no fijados.
+- Problema de investigación formulado preliminarmente; E4 iniciado, falta ampliar verificación bibliográfica reciente y E5.
+- Indicadores iniciales definidos como línea base estática; falta operacionalizarlos en E6 con herramientas, fórmulas y valores antes/después.
