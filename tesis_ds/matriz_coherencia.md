@@ -19,6 +19,12 @@
 | Criterios de éxito e indicadores | Preliminar: tamaño y concentración de código, instanciaciones directas, llamadas a persistencia desde controladores, ocurrencias de SQL nativo, vacíos de pruebas, complejidad ciclomática, cobertura, mantenibilidad y trazabilidad del cambio. |
 | Contribución reclamada (nivel de maestría) | Preliminar: principios de diseño para refactorización arquitectónica incremental en módulos legacy institucionales. |
 
+## Entregables de seguimiento
+
+| Entregable | Estado | Relación con la matriz |
+|:--|:--|:--|
+| `propuesta_borrador_2026-10-05.md` | Preparado para revisión interna | Consolida la cadena problema → objeto → campo → objetivo → pregunta → artefacto → evaluación preliminar → criterios → contribución, pero todavía requiere cierre de E4/E5 y operacionalización formal de indicadores en E6. |
+
 ## Trazabilidad propuesta ↔ solución
 
 | Problema de diseño | Requisito | Alternativa descartada | Decisión de diseño | Componente | Indicador | Verificación interna | Evidencia de evaluación | Cumplimiento | Limitación |

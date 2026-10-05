@@ -67,6 +67,7 @@
 | 2026-09-28 | Registrar el nuevo hito del lunes 5 de octubre. | El tutor indicó en el grupo: “Próximo hito, la propuesta. Límite para el borrador Lunes 5 de octubre”; por tanto, el trabajo debe avanzar desde el perfil hacia el desarrollo de la propuesta. |
 | 2026-09-28 | Iniciar E4 con tres ejes teóricos. | El marco teórico se orienta a código heredado y cambio seguro, arquitectura como fronteras/dependencias/atributos de calidad, y testabilidad como condición para refactorización incremental. |
 | 2026-09-28 | Rechazar como promesa una migración completa a arquitectura limpia o hexagonal. | El tesista aceptó que una migración completa agregaría complejidad y podría empeorar el sistema; la propuesta se concentra en frontera arquitectónica incremental con desacoplamiento y pruebas. |
+| 2026-10-04 | Preparar borrador de propuesta para revisión del 5 de octubre. | Se consolidó el perfil preliminar, la línea base técnica inicial, la lectura parcial de Feathers sobre falta de pruebas y la estrategia de evaluación mínima de maestría en `propuesta_borrador_2026-10-05.md`. |
 
 ## Preguntas abiertas
 
@@ -74,8 +75,9 @@
 - Definir más adelante si el desarrollador revisor participará en evaluación formativa, sumativa o ambas.
 - Verificar en E4 y E5 la brecha bibliográfica sobre aprendizaje de marcos MVC, arquitectura, testabilidad y refactorización incremental de sistemas legacy.
 - Convertir los criterios de éxito preliminares en indicadores operacionales antes de construir.
-- Preparar el primer borrador de propuesta para el lunes 5 de octubre de 2026, con desarrollo suficiente de marco teórico, estado del arte, diagnóstico preliminar, alternativas, requisitos, diseño inicial y plan de evaluación.
+- Depurar el primer borrador de propuesta para el lunes 5 de octubre de 2026; el archivo base ya fue preparado, pero falta revisión final antes de compartir.
 - Completar E4 con literatura reciente verificada sobre refactorización legacy, deuda técnica arquitectónica, testabilidad y evolución de sistemas MVC/monolíticos.
+- Revisar y depurar `tesis_ds/propuesta_borrador_2026-10-05.md` antes de compartirlo como entregable de propuesta.
 
 ## Avances previos disponibles
 
@@ -92,4 +94,4 @@
 
 ## Próximo paso
 
-- Iniciar E4/E5 con verificación bibliográfica y preparar el borrador de propuesta exigido para el lunes 5 de octubre de 2026.
+- Revisar el borrador de propuesta del 5 de octubre, cerrar las partes mínimas para entrega y continuar E4/E5 con verificación bibliográfica reciente.
