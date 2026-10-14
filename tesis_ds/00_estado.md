@@ -68,6 +68,18 @@
 | 2026-09-28 | Iniciar E4 con tres ejes teóricos. | El marco teórico se orienta a código heredado y cambio seguro, arquitectura como fronteras/dependencias/atributos de calidad, y testabilidad como condición para refactorización incremental. |
 | 2026-09-28 | Rechazar como promesa una migración completa a arquitectura limpia o hexagonal. | El tesista aceptó que una migración completa agregaría complejidad y podría empeorar el sistema; la propuesta se concentra en frontera arquitectónica incremental con desacoplamiento y pruebas. |
 | 2026-10-04 | Preparar borrador de propuesta para revisión del 5 de octubre. | Se consolidó el perfil preliminar, la línea base técnica inicial, la lectura parcial de Feathers sobre falta de pruebas y la estrategia de evaluación mínima de maestría en `propuesta_borrador_2026-10-05.md`. |
+| 2026-10-13 | Registrar aplicación inicial y parcial de la mejora arquitectónica en SIGPP/SIPOA4. | Se creó `src/Service` y se extrajo parcialmente lógica desde controladores en procedimientos de creación de tareas de elaboración y modificación POA; esto se tratará como intervención inicial, verificación técnica preliminar y evaluación formativa, no como solución final. |
+| 2026-10-13 | Redirigir la contribución hacia la formalización de la mejora. | La aplicación inicial mostró avances en separación de responsabilidades y posibilidad de pruebas unitarias, pero también inconsistencias por mezcla de objetos de valor y objetos de transferencia de datos; por tanto, la tesis debe formalizar, corregir y sistematizar el método. |
+| 2026-10-13 | Registrar archivos y commits concretos de la intervención inicial. | La evidencia preliminar incluye `CreateCertificacionController.php`, `CreateCertificacionService.php`, `CreateCertificacionInput.php`, `CreateCertificacionAutorizacionService.php`, `CreateCertificacionAutorizacionTest.php` y commits `815ce6c0`, `6e333e27`, `9d4af430`; falta revisar diffs y métricas para usarlos como evidencia final. |
+| 2026-10-13 | Cuantificar la evidencia Git de la intervención inicial. | Los commits registrados muestran cambios defendibles: `9d4af430` con 12 archivos, +302/-155; `6e333e27` con 16 archivos, +472/-87; `815ce6c0` con 13 archivos, +428/-39. La conclusión se mantiene como evaluación formativa inicial por falta de prueba directa para `CreateCertificacionService.php`. |
+| 2026-10-13 | Registrar ejecución satisfactoria de pruebas unitarias. | Se ejecutó `rtk phpunit` con resultado `PHPUnit: OK (151 tests, 235 assertions)`. Esta evidencia respalda testabilidad parcial, pero no valida directamente `CreateCertificacionService.php`, que sigue sin prueba unitaria directa identificada. |
+| 2026-10-13 | Definir regla de rediseño para la siguiente versión del método. | No se partirá de nuevas historias de usuario, sino de refactorizar el flujo existente de certificación. Se usarán pruebas de caracterización para lógica heredada y pruebas directas para servicios aislados. La arquitectura objetivo será limpia, mínima e incremental, sin migración completa a DDD ni arquitectura hexagonal. |
+| 2026-10-13 | Registrar arquitectura ejemplo para certificación. | La primera arquitectura ejemplo reducirá `CreateCertificacionController.php` a coordinación HTTP, moverá preparación de vista a un servicio, entregará DTOs finales a Twig y aislará consultas Doctrine mediante repositorios o servicios de consulta. |
+| 2026-10-13 | Elegir restricción de subpartida como primer comportamiento a caracterizar. | Es una regla de negocio central, actualmente acoplada al controlador y conectada a repositorios Doctrine; decide autorización, tipo de contrato y archivo adjunto, por lo que evidencia mejor el problema arquitectónico que una mejora de presentación. |
+| 2026-10-13 | Definir escenarios mínimos de caracterización de restricción de subpartida. | La prueba debe cubrir restricción por actividad, restricción sin actividad y ausencia de restricción. La regla se declara como configuración del Departamento Financiero sobre subpartida, gestión, administración y actividad opcional, no como subpartida fija. |
+| 2026-10-13 | Definir salida observable de la primera prueba de caracterización. | La primera prueba verificará la resolución de la restricción: devuelve restricción específica, restricción general o `null`. Los efectos posteriores —autorización, tipo de contrato y archivo adjunto— quedan para pruebas posteriores. |
+| 2026-10-13 | Nombrar el componente de extracción de restricción de subpartida. | El componente será `RestriccionSubPartidaResolver`; encapsulará la regla de selección de restricción y no decidirá todavía autorización, tipo de contrato ni archivo adjunto. |
+| 2026-10-13 | Definir estrategia de prueba para `RestriccionSubPartidaResolver`. | La primera prueba será directa contra el resolver, formulada como caracterización de la regla observada en el controlador original. No se reclamará como prueba funcional del controlador, para evitar arrastrar infraestructura Symfony, Doctrine, formulario y Twig. |
 
 ## Preguntas abiertas
 
@@ -78,6 +90,9 @@
 - Depurar el primer borrador de propuesta para el lunes 5 de octubre de 2026; el archivo base ya fue preparado, pero falta revisión final antes de compartir.
 - Completar E4 con literatura reciente verificada sobre refactorización legacy, deuda técnica arquitectónica, testabilidad y evolución de sistemas MVC/monolíticos.
 - Revisar y depurar `tesis_ds/propuesta_borrador_2026-10-05.md` antes de compartirlo como entregable de propuesta.
+- Cuantificar la evidencia técnica de la intervención inicial: archivos modificados, cantidad de lógica extraída, pruebas unitarias existentes, resultados de ejecución y comparación antes/después.
+- Si el tiempo lo permite, medir antes/después de `CreateCertificacionController.php` y `CreateCertificacionService.php`: líneas, complejidad aproximada, dependencias directas y reglas verificables.
+- Diseñar o implementar la prueba unitaria de `RestriccionSubPartidaResolver` con tres casos: restricción específica, restricción general y sin restricción.
 
 ## Avances previos disponibles
 
@@ -94,4 +109,4 @@
 
 ## Próximo paso
 
-- Revisar el borrador de propuesta del 5 de octubre, cerrar las partes mínimas para entrega y continuar E4/E5 con verificación bibliográfica reciente.
+- Completar el borrador integral para traducción ALSIE: cerrar evidencia mínima de construcción/evaluación, cuantificar la intervención inicial y documentar la versión rediseñada del método.
