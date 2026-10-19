@@ -62,4 +62,10 @@ Las siguientes fuentes fueron verificadas en fuentes editoriales o institucional
 
 ## Estado de E4
 
+### Actualización del 18 de octubre de 2026
+
+La revisión actual identifica una necesidad de precisión: «arquitectura limpia mínima» no constituye un contrato verificable. Se propone discutir una frontera de aplicación incremental que conserve MVC, Doctrine y entidades existentes, y separe explícitamente entrada HTTP, preparación de datos, coordinación de creación, reglas focalizadas y persistencia. Stafford (2003) fundamenta la capa de servicios como frontera de operaciones y coordinación; Symfony (s. f.) respalda mantener la lógica de negocio fuera del controlador, sin prohibir universalmente que este consulte repositorios. La restricción más fuerte sobre consultas en el controlador sería una elección local del diseño, que deberá justificarse y evaluarse, no atribuirse al marco.
+
+Las páginas primarias de esas dos fuentes y las páginas editoriales de Feathers (2004) y Fowler (2018) se verificaron en esta sesión. La lectura focalizada propuesta y el diagnóstico están en `arquitectura_candidata_certificacion_2026-10-18.md`; su contenido no declara cerradas las etapas posteriores. El número de fuentes recientes verificadas añadidas para satisfacer el requisito de actualización de E4 en esta sesión es **cero**: las fuentes incorporadas son fundacionales o documentación de la versión tecnológica del contexto. E4 permanece abierta y la brecha bibliográfica sigue siendo preliminar.
+
 E4 queda iniciada con un marco teórico estructuralmente coherente, pero no cerrada. Para cerrar la etapa se requiere completar la búsqueda de literatura reciente sobre refactorización de sistemas legacy, deuda técnica arquitectónica, testabilidad y evolución de sistemas MVC o monolíticos, preferentemente con revisiones sistemáticas o estudios empíricos publicados en los últimos cinco años.

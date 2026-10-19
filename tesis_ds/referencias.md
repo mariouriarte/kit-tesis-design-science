@@ -8,6 +8,8 @@
 - Gregor, S., & Hevner, A. R. (2013). Positioning and presenting design science research for maximum impact. *MIS Quarterly, 37*(2), 337–355. https://doi.org/10.25300/MISQ/2013/37.2.01 **[verificada en libro base]**
 - Hevner, A. R., March, S. T., Park, J., & Ram, S. (2004). Design science in information systems research. *MIS Quarterly, 28*(1), 75–105. https://doi.org/10.2307/25148625 **[verificada en libro base]**
 - Peffers, K., Tuunanen, T., Rothenberger, M. A., & Chatterjee, S. (2007). A design science research methodology for information systems research. *Journal of Management Information Systems, 24*(3), 45–77. https://doi.org/10.2753/MIS0742-1222240302 **[verificada en libro base]**
+- Stafford, R. (2003, 5 de marzo). *Service layer*. Martin Fowler. https://martinfowler.com/eaaCatalog/serviceLayer.html **[verificada: página primaria, 18 de octubre de 2026]**
+- Symfony. (s. f.). *The Symfony framework best practices* (documentación 4.x). https://symfony.com/doc/4.x/best_practices.html **[verificada: documentación oficial de la versión, 18 de octubre de 2026]**
 - Venable, J., Pries-Heje, J., & Baskerville, R. (2016). FEDS: A framework for evaluation in design science research. *European Journal of Information Systems, 25*(1), 77–89. https://doi.org/10.1057/ejis.2014.36 **[verificada en libro base]**
 - Wieringa, R. J. (2014). *Design science methodology for information systems and software engineering*. Springer. https://doi.org/10.1007/978-3-662-43839-8 **[verificada en libro base]**
 

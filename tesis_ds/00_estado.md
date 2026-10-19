@@ -9,7 +9,7 @@
 - **Fecha de inicio:** 2026-09-27
 - **Título provisional:** Método de refactorización arquitectónica incremental para subcircuitos legacy MVC institucionales: instanciación en la ejecución POA de SIGPP
 - **Entrega del perfil:** 2026-09-28, cumplida mediante repositorio público compartido en el grupo.
-- **Próximo hito:** primer borrador de propuesta para el lunes 5 de octubre de 2026, según instrucción del tutor en el grupo.
+- **Próximo hito:** revisión individual anunciada por el tutor el 17 de octubre de 2026; requiere completar el documento final y contar con un avance importante en la propuesta. La fecha individual no fue comunicada en el mensaje aportado.
 - **Predefensa tentativa:** última semana de octubre de 2026 o, como máximo, primera semana de noviembre de 2026.
 - **Defensa tentativa:** finales de noviembre de 2026, fecha extraoficial comunicada por el tutor.
 
@@ -83,6 +83,14 @@
 
 ## Preguntas abiertas
 
+- Verificar la secuencia temporal de caracterización previa y TDD declarada por el tesista: el estado actual del código y sus resultados ya se contrastaron, pero faltan registros intermedios. El 18 de octubre se reprodujeron 188 pruebas y 540 aserciones en PHP 7.4.29, y 37 pruebas y 305 aserciones en el directorio nuevo de certificación. No constituyen validación completa del método. El tesista declaró que no hubo avances adicionales desde el 13 de octubre hasta esta sesión ni avance del documento antes de esta revisión.
+- Discutir y defender el contrato candidato de arquitectura registrado en `arquitectura_candidata_certificacion_2026-10-18.md`: MVC con frontera de aplicación incremental, no una migración completa a arquitectura limpia/hexagonal o DDD. Falta elegir y justificar el siguiente escenario de cambio y sus criterios antes de modificar más código.
+- Precisar un defecto reproducible de restricción o validación: el tesista identifica restricciones de subpartida y defectos en PHP y JavaScript acoplado a Twig como necesidades reales de cambio. Las conexiones con otros sistemas son requisitos previstos aún sin delimitar; no se autoriza por ello construir una API ni ampliar el alcance.
+- Revisar para eventual adopción el borrador del proyecto SIGPP `docs/development/architecture-contract.md`, leído en esta sesión: preparación opcional, separación de responsabilidades PHP/JavaScript, excepciones y pautas de intervención. No está aprobado ni valida el método; falta reconciliarlo con la nota candidata de tesis y convertir sus referencias a APA 7 si se incorpora como anexo.
+- El tesista confirmó `America/La_Paz` como zona horaria institucional de operación y que `fecha` representa solo el día; declaró la hora un error de implementación. HU-FEC-01/HU-FEC-02 y el criterio de igualdad de admisibilidad para distintas horas del mismo día están en `reglas_fecha_certificacion.md`. Falta decidir la transición del formulario/almacenamiento tras revisar consumidores, confirmar respaldo institucional y revisar otras barreras del servidor. No se autorizó migración ni se afirmó un defecto HTTP reproducido.
+
+- Completar los requisitos para la revisión individual anunciada el 17 de octubre: documento final y avance importante de propuesta; después se anunció alineación con ALSIE y preparación de informe borrador y predefensa. Fuente: mensaje transcrito y captura aportados por el tesista. El tesista aclaró que la prioridad no es redactar una respuesta al docente, sino completar la investigación.
+
 - Confirmar, si ALSIE lo comunica formalmente, las fechas oficiales de predefensa y defensa.
 - Definir más adelante si el desarrollador revisor participará en evaluación formativa, sumativa o ambas.
 - Verificar en E4 y E5 la brecha bibliográfica sobre aprendizaje de marcos MVC, arquitectura, testabilidad y refactorización incremental de sistemas legacy.
@@ -92,7 +100,7 @@
 - Revisar y depurar `tesis_ds/propuesta_borrador_2026-10-05.md` antes de compartirlo como entregable de propuesta.
 - Cuantificar la evidencia técnica de la intervención inicial: archivos modificados, cantidad de lógica extraída, pruebas unitarias existentes, resultados de ejecución y comparación antes/después.
 - Si el tiempo lo permite, medir antes/después de `CreateCertificacionController.php` y `CreateCertificacionService.php`: líneas, complejidad aproximada, dependencias directas y reglas verificables.
-- Diseñar o implementar la prueba unitaria de `RestriccionSubPartidaResolver` con tres casos: restricción específica, restricción general y sin restricción.
+- Complementar las pruebas existentes del resolvedor y del servicio con evidencia de integración y revisión independiente, según criterios que se definan antes de la siguiente intervención. Los tres escenarios mínimos del resolvedor ya están implementados y pasan.
 
 ## Avances previos disponibles
 
@@ -109,4 +117,9 @@
 
 ## Próximo paso
 
-- Completar el borrador integral para traducción ALSIE: cerrar evidencia mínima de construcción/evaluación, cuantificar la intervención inicial y documentar la versión rediseñada del método.
+### Punto de reanudación acordado
+
+El tesista solicitó versionar y enviar el avance del repositorio de tesis, y continuar mañana. Retomar desde E4 y los archivos `arquitectura_candidata_certificacion_2026-10-18.md` y `reglas_fecha_certificacion.md`, sin volver a preguntar zona horaria ni significado de `fecha`: `America/La_Paz` y día calendario están confirmados. Priorizar la fundamentación de la política de fechas y los criterios prospectivos, conservando como pendientes la reproducción controlada, el contraste de soluciones y la transición de formulario/almacenamiento. No modificar código ni datos históricos por el solo hecho de retomar; el contrato del proyecto permanece como borrador discutible y los cambios de SIGPP pertenecen a un repositorio separado.
+
+- Completar E4 y la justificación del camino arquitectónico candidato; después cerrar E5 y E6 antes de ejecutar otra intervención planificada. Conservar los resultados anteriores como exploratorios y los commits de marzo de 2025 como antecedentes, sin presentarlos como construcción prospectiva de la tesis. No iniciar traducción ALSIE mientras E0–E10 no estén cerradas.
+- La inspección estática ampliada del recorrido está registrada en `reglas_fecha_certificacion.md`: saldo validado localmente, fecha solo anual, acceso general por rol y controles específicos de permiso/habilitación no acreditados al guardar. Próximo candidato acotado: política de fecha calendario con operación controlable y rechazo sin efectos; aún faltan fundamentación, contraste, reproducción controlada y requisitos previos a implementación. No ampliar el incremento a todos los permisos ni migrar datos por estos hallazgos.
