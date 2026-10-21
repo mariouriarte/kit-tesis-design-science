@@ -83,6 +83,14 @@
 
 ## Preguntas abiertas
 
+- Se verificó el punto de extensión de parámetros y su selección de gestión: `getGestion()` usa URL con valor alternativo de gestión actual; `getGestionActual()` usa la marcada actual en base de datos, no necesariamente el año del reloj. El tesista delimitó reutilizar administración existente: operador administrador selecciona gestión anterior y crea tipo extraordinario con los períodos existentes, sin rediseñarlos. El formulario tiene lista cerrada de tipos: requiere nueva opción, fábrica/carga y comprobación coherente en presentación/guardado; sin implementación realizada.
+
+- El 20 de octubre el tesista confirmó habilitación extraordinaria configurable para una gestión anterior concreta, en cualquier momento del año actual, conservando fechas documentales 29/31 de diciembre del año inmediatamente anterior. La extraordinaria vigente basta como habilitación temporal aunque la global esté cerrada; no dispensa permisos ni saldo. Se revisó HU-FEC-02 explícitamente: enero–marzo queda como antecedente, no restricción del diseño nuevo. El administrador establecerá inicio/fin mediante el mecanismo existente; falta formalizar la extensión técnica. No se decidió hacer configurables días documentales ni permitir cualquier gestión histórica. Se separará este cambio funcional de la extracción estructural.
+
+- E4 avanzó el 20 de octubre con una búsqueda focalizada sobre criterio de modularización y testabilidad (`busqueda_e4_2026-10-20.md`): Parnas (1972) y Abbasi et al. (2026) contrastados en metadatos/resumen; acceso ACM bloqueado y sin lectura íntegra. Bagheri-Galle et al. (2025) queda como consulta de contenido pendiente. Falta que el tesista defienda el criterio de separación de la política de fechas y completar literatura; no se cierra E4 ni se modifica código.
+
+- Aclaración temporal resuelta por el tesista: los períodos y montos de planificación son referenciales para ejecución y monitoreo, no una nueva prohibición automática de certificar fuera de un trimestre programado. `Operacion` agrupa tareas; el día de registro de referencia del intento no es una fecha de esa entidad. Permanecen las reglas de gestión y de fecha ya declaradas. Falta precisar cómo las modificaciones POA representan técnicamente pérdida de recursos o desaparición de tareas y su efecto sobre elegibilidad; no se presume borrado físico ni regla nueva.
+
 - Verificar la secuencia temporal de caracterización previa y TDD declarada por el tesista: el estado actual del código y sus resultados ya se contrastaron, pero faltan registros intermedios. El 18 de octubre se reprodujeron 188 pruebas y 540 aserciones en PHP 7.4.29, y 37 pruebas y 305 aserciones en el directorio nuevo de certificación. No constituyen validación completa del método. El tesista declaró que no hubo avances adicionales desde el 13 de octubre hasta esta sesión ni avance del documento antes de esta revisión.
 - Discutir y defender el contrato candidato de arquitectura registrado en `arquitectura_candidata_certificacion_2026-10-18.md`: MVC con frontera de aplicación incremental, no una migración completa a arquitectura limpia/hexagonal o DDD. Falta elegir y justificar el siguiente escenario de cambio y sus criterios antes de modificar más código.
 - Precisar un defecto reproducible de restricción o validación: el tesista identifica restricciones de subpartida y defectos en PHP y JavaScript acoplado a Twig como necesidades reales de cambio. Las conexiones con otros sistemas son requisitos previstos aún sin delimitar; no se autoriza por ello construir una API ni ampliar el alcance.
@@ -116,6 +124,10 @@
 - La defensa está prevista de forma extraoficial para finales de noviembre de 2026.
 
 ## Próximo paso
+
+### Comprobación de contexto del 20 de octubre de 2026
+
+En SIGPP, `8dc63307` confirma la extracción del resolvedor con pruebas y `1294047e` confirma el contrato borrador; `HEAD` observado es `1294047e`. El estado inspeccionado solo muestra cambios en `.gitignore` y `tmp/propuesta-tesis.md`; ya no se describen resolvedor, pruebas ni contrato como archivos sin seguimiento. No se comprobó envío remoto ni se reprodujeron nuevamente pruebas. La aclaración administrativa posterior resuelve el alcance: reutilizar gestión y períodos existentes con un tipo extraordinario, sin prolongar la discusión de granularidad ni ampliar el mecanismo general.
 
 ### Punto de reanudación acordado
 
