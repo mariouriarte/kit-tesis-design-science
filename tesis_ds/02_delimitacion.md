@@ -1,5 +1,7 @@
 # E2. Delimitación
 
+> **Precisión aprobada el 28 de octubre de 2026:** MVC caracteriza las aplicaciones heredadas; «institucional» describe su contexto, no una variante arquitectónica. El título aprobado y las formulaciones actuales se armonizan en `03_perfil_ds.md`. El caso continúa siendo ejecución POA de SIGPP; no se añade FastAPI ni se amplía automáticamente la transferibilidad.
+
 ## Problema de diseño
 
 ### Formulación preliminar
@@ -22,17 +24,17 @@ Esta formulación aún corresponde al **problema de diseño**: expresa qué debe
 
 ## Problema de investigación preliminar
 
-El problema de investigación —que en el formato institucional se registrará como **problema científico**— se ubica en la brecha entre el aprendizaje práctico de marcos MVC y la evolución arquitectónica de sistemas legacy construidos bajo esos marcos. La experiencia del tesista sugiere que muchos materiales de aprendizaje de marcos y lenguajes enseñan a resolver la funcionalidad inmediata, pero no necesariamente enseñan a preservar fronteras arquitectónicas, separar reglas de negocio, diseñar para pruebas automatizadas y planificar la evolución del código desde el inicio. Esta afirmación deberá verificarse en E4 y E5 con literatura real, no asumirse como hecho.
+El problema de investigación —que en el formato institucional se registrará como **problema científico**— busca conocimiento sobre adaptación y evaluación de un método incremental en la clase de aplicaciones y restricciones declaradas. La experiencia de aprendizaje del tesista motiva el caso, pero no demuestra que los marcos o sus materiales oficiales causen concentración de lógica, duplicación o baja cohesión. La documentación histórica de Symfony 3.x contiene tanto ejemplos de persistencia en controladores como recomendaciones explícitas de separar lógica de negocio; el contraste está registrado en `revision_titulo_2026-10-26.md`. El libro concreto utilizado, su edición y la cronología de lectura siguen sin contrastarse, por lo que no se atribuye una causa formativa demostrada al problema arquitectónico.
 
 Formulación preliminar de la brecha:
 
-> La literatura técnica y los materiales de aprendizaje sobre marcos MVC enseñan principalmente el uso funcional del marco, mientras que la literatura de arquitectura de software propone principios de separación de responsabilidades, testabilidad y evolución. Sin embargo, no existe todavía evidencia suficiente, para este estudio, sobre cómo traducir esos principios en un método incremental, aplicable y evaluable para refactorizar subcircuitos institucionales legacy desarrollados bajo MVC, sin detener el sistema ni reescribirlo por completo. Este estudio busca generar esa evidencia mediante el diseño y evaluación de un método aplicado al subcircuito de ejecución POA en SIGPP.
+> Existen principios y procedimientos de refactorización incremental, separación de responsabilidades y testabilidad; este estudio debe contrastar qué adaptación y evidencia adicional requiere aplicarlos a subcircuitos de aplicaciones MVC heredadas bajo restricciones institucionales, sin detener el sistema ni reescribirlo por completo. La insuficiencia de los antecedentes sigue siendo candidata por verificar, no un vacío bibliográfico demostrado. El estudio busca generar evidencia mediante diseño, aplicación y evaluación del método en ejecución POA de SIGPP.
 
 Esta formulación deberá ser refinada con búsqueda bibliográfica. Las fuentes mencionadas por el tesista —*The Definitive Guide to Symfony*, *The Symfony Book*, *Python Crash Course* y *FastAPI: Modern Python Web Development*— quedan como indicios iniciales de experiencia de aprendizaje, no como evidencia académica verificada todavía.
 
 ## Objeto de estudio
 
-En Design Science, el objeto de estudio no es SIGPP ni el proceso POA en sí mismo. La resignificación metodológica es obligatoria: el objeto de estudio es el **artefacto propuesto**, con su tipología declarada. En este caso, el objeto de estudio es **un método de refactorización arquitectónica incremental para subcircuitos legacy MVC institucionales, instanciado en SIGPP**.
+En Design Science, el objeto de estudio no es SIGPP ni el proceso POA en sí mismo. La resignificación metodológica es obligatoria: el objeto de estudio es el **artefacto propuesto**, con su tipología declarada. En este caso, el objeto de estudio es **un método de refactorización arquitectónica incremental para subcircuitos de aplicaciones MVC heredadas, aplicado en SIGPP**.
 
 La tipología del artefacto es una **composición**:
 
@@ -43,13 +45,13 @@ SIGPP y el subcircuito de ejecución POA constituyen el contexto de aplicación 
 
 ## Campo de acción
 
-El campo de acción comprende los **subcircuitos funcionales críticos de sistemas legacy MVC institucionales, con lógica de negocio dispersa, alto acoplamiento al marco de trabajo y a la persistencia, y necesidad de evolución sin reescritura completa**.
+El campo de acción comprende los **subcircuitos funcionales críticos de aplicaciones MVC heredadas en contextos institucionales, con lógica de negocio dispersa, alto acoplamiento al marco de desarrollo y a la persistencia, y necesidad de evolución sin reescritura completa**. Estas condiciones no definen una variante de MVC ni se atribuyen a todas las aplicaciones construidas con el patrón.
 
 En esta tesis, el campo se concreta en el subcircuito de ejecución POA de SIGPP: tareas vinculadas a operaciones/ACP, presupuesto y certificación. La clase de contextos a la que se aspira transferir analíticamente la contribución no son todos los sistemas legacy, sino aquellos con características estructuralmente semejantes: sistemas institucionales monolíticos, construidos bajo MVC, con reglas de negocio distribuidas en capas técnicas y con restricciones normativas u operativas que impiden detener o reescribir el sistema completo.
 
 ## Propuesta
 
-Se propone diseñar y evaluar un **método de refactorización arquitectónica incremental** para subcircuitos funcionales críticos en sistemas legacy MVC institucionales, instanciado en el subcircuito de ejecución POA de SIGPP, con el fin de explicitar fronteras funcionales, separar reglas de negocio de controladores y persistencia, e incorporar pruebas automatizadas que permitan evolucionar el flujo sin reescritura completa.
+Se propone diseñar y evaluar un **método de refactorización arquitectónica incremental** para subcircuitos funcionales críticos de aplicaciones MVC heredadas, aplicado en el subcircuito de ejecución POA de SIGPP, con el fin de explicitar fronteras funcionales, separar reglas de negocio de controladores y persistencia, e incorporar pruebas automatizadas que permitan evolucionar el flujo sin reescritura completa.
 
 La propuesta se entiende como una composición: el método constituye el artefacto transferible y la instanciación en SIGPP constituye el vehículo de construcción, demostración y evaluación. El alcance de la instanciación se limita al subcircuito de ejecución POA —tareas, operaciones/ACP, presupuesto y certificación— y mantiene elaboración POA, validación ministerial y evaluación POA como contexto y alcance posterior recomendado.
 

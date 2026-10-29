@@ -4,13 +4,13 @@
 
 > **Vigencia del diagnóstico:** las métricas iniciales y los vacíos de pruebas citados en los ejes siguientes corresponden a la línea base histórica. La revisión del 18 de octubre identificó `CreateCertificacionServiceTest` y verificó 188 pruebas/540 aserciones; no sigue vigente la ausencia de prueba directa de ese servicio. Las precisiones actuales se registran al final, sin tratar la verificación técnica como evaluación completa del método.
 
-Este marco teórico sustenta el objeto de estudio de la tesis: un método de refactorización arquitectónica incremental para subcircuitos legacy MVC institucionales, instanciado en el subcircuito de ejecución POA de SIGPP. El marco no se orienta a describir de forma general la arquitectura de software, Symfony o Doctrine, sino a justificar las decisiones de diseño que debe incorporar el método: selección de un subcircuito crítico, creación de una frontera arquitectónica explícita, desacoplamiento progresivo de reglas de negocio, incorporación de pruebas focalizadas y medición antes/después.
+Este marco teórico sustenta el objeto de estudio de la tesis: un método de refactorización arquitectónica incremental para subcircuitos de aplicaciones MVC heredadas, aplicado en el subcircuito de ejecución POA de SIGPP. La precisión terminológica fue aprobada el 28 de octubre de 2026: lo institucional corresponde al contexto y sus restricciones, no a una variante de MVC. El marco justifica decisiones de selección del subcircuito, fronteras, separación de reglas, pruebas y medición; no es una descripción general de Symfony o Doctrine.
 
 La prueba de eliminación es estricta: si una fuente no modifica el diseño del método, no pertenece al marco teórico principal. Bajo ese criterio, el marco se organiza en tres ejes: código heredado y cambio seguro; arquitectura como gestión de fronteras, dependencias y atributos de calidad; y testabilidad como condición para refactorización incremental.
 
 ## Pregunta de búsqueda teórica
 
-¿Qué fundamentos de ingeniería de software permiten diseñar un método incremental para refactorizar subcircuitos funcionales críticos en sistemas legacy MVC institucionales, mejorando modificabilidad y testabilidad sin reescritura completa ni interrupción operativa?
+¿Qué fundamentos de ingeniería de software permiten diseñar un método incremental para refactorizar subcircuitos funcionales críticos de aplicaciones MVC heredadas bajo las restricciones institucionales declaradas, mejorando modificabilidad y testabilidad sin reescritura completa ni interrupción operativa?
 
 ## Criterios preliminares de inclusión y exclusión
 
@@ -44,6 +44,8 @@ La línea base inicial ya ofrece indicadores útiles: tamaño de componentes cr�
 
 ## Decisiones de diseño sustentadas por la base teórica
 
+> **Mapa consolidado para revisión de cierre, 28 de octubre de 2026:** `mapa_fundamentacion_e4_2026-10-28.md` desarrolla nueve decisiones D01–D09, con fuente/localizador, aplicación, estado de aprobación y evidencia prevista. La tabla inicial siguiente se conserva como síntesis de origen; no implica que cada métrica o recomendación haya sido adoptada. El mapa es el punto vigente para comprobar trazabilidad y pendientes de E4.
+
 | Decisión de diseño prevista | Fuente teórica principal | Aplicación al método |
 |---|---|---|
 | Intervenir un subcircuito crítico y no todo SIGPP. | Feathers (2004); Wieringa (2014) | Seleccionar un alcance donde sea posible observar problema, aplicar el método y evaluar antes/después sin reescritura completa. |
@@ -51,7 +53,7 @@ La línea base inicial ya ofrece indicadores útiles: tamaño de componentes cr�
 | Proteger comportamiento existente antes de modificarlo. | Feathers (2004); Fowler (2018) | Incorporar pruebas de caracterización o pruebas focalizadas sobre reglas críticas del circuito. |
 | Refactorizar mediante pasos pequeños y verificables. | Fowler (2018) | Evitar cambios masivos; cada paso debe tener entrada, salida, criterio de verificación y razón de diseño. |
 | Medir antes/después con indicadores definidos previamente. | Hevner et al. (2004); Peffers et al. (2007); Venable et al. (2016) | Usar métricas de acoplamiento, complejidad, cobertura, mantenibilidad y trazabilidad como criterios de evaluación del artefacto. |
-| Formular la contribución como principios de diseño, no como mejora local de SIGPP. | Gregor y Hevner (2013); Wieringa (2014) | Extraer conocimiento transferible para subcircuitos legacy MVC institucionales semejantes. |
+| Formular la contribución como principios de diseño, no como mejora local de SIGPP. | Gregor y Hevner (2013); Wieringa (2014) | Extraer conocimiento transferible para subcircuitos de aplicaciones MVC heredadas bajo condiciones semejantes al campo de acción. |
 
 ## Fuentes verificadas inicialmente
 
@@ -64,9 +66,13 @@ Las siguientes fuentes fueron verificadas en fuentes editoriales o institucional
 
 ## Estado de E4
 
+> **Cierre del 28 de octubre de 2026:** nueve decisiones fundamentadas, prueba de eliminación y tres trabajos recientes con lectura focalizada, junto con la explicación propia del tesista sobre localización de la regla, modificación/extensión y capacidad de prueba, satisfacen las condiciones de E4. Explicación y valoración en `mapa_fundamentacion_e4_2026-10-28.md`, sec. 6. Se cierra la fundamentación, no se validan el método ni resultados de mejora y no se aprueban contratos de implementación pendientes. Las expresiones «E4 abierta» de las actualizaciones fechadas siguientes describen momentos anteriores al cierre.
+
+> **Estado vigente tras búsqueda del 26 de octubre de 2026:** E4 dispone ahora de **tres trabajos recientes únicos con texto completo accesible y lectura focalizada**, además del resumen de Abbasi et al. (2026). Dos se consultaron como manuscritos de autor y uno como artículo publicado; no se declara lectura lineal íntegra. Los conteos de cero textos recientes de las actualizaciones históricas siguientes no describen ya el acceso actual. Protocolo, versiones, localizadores y límites en `busqueda_e4_2026-10-26.md`; la etapa no se cierra por cantidad de referencias.
+
 ### Actualización del 18 de octubre de 2026
 
-La revisión actual identifica una necesidad de precisión: «arquitectura limpia mínima» no constituye un contrato verificable. Se propone discutir una frontera de aplicación incremental que conserve MVC, Doctrine y entidades existentes, y separe explícitamente entrada HTTP, preparación de datos, coordinación de creación, reglas focalizadas y persistencia. Stafford (2003) fundamenta la capa de servicios como frontera de operaciones y coordinación; Symfony (s. f.) respalda mantener la lógica de negocio fuera del controlador, sin prohibir universalmente que este consulte repositorios. La restricción más fuerte sobre consultas en el controlador sería una elección local del diseño, que deberá justificarse y evaluarse, no atribuirse al marco.
+La revisión actual identifica una necesidad de precisión: «arquitectura limpia mínima» no constituye un contrato verificable. Se propone discutir una frontera de aplicación incremental que conserve MVC, Doctrine y entidades existentes, y separe explícitamente entrada HTTP, preparación de datos, coordinación de creación, reglas focalizadas y persistencia. Stafford (2003) fundamenta la capa de servicios como frontera de operaciones y coordinación; Symfony (s. f.-d) respalda mantener la lógica de negocio fuera del controlador, sin prohibir universalmente que este consulte repositorios. La restricción más fuerte sobre consultas en el controlador sería una elección local del diseño, que deberá justificarse y evaluarse, no atribuirse al marco.
 
 Las páginas primarias de esas dos fuentes y las páginas editoriales de Feathers (2004) y Fowler (2018) se verificaron en esta sesión. La lectura focalizada propuesta y el diagnóstico están en `arquitectura_candidata_certificacion_2026-10-18.md`; su contenido no declara cerradas las etapas posteriores. El número de fuentes recientes verificadas añadidas para satisfacer el requisito de actualización de E4 en esta sesión es **cero**: las fuentes incorporadas son fundacionales o documentación de la versión tecnológica del contexto. E4 permanece abierta y la brecha bibliográfica sigue siendo preliminar.
 
@@ -106,3 +112,41 @@ En esta sesión se contrastaron pasajes primarios de **dos obras fundacionales**
 El adjunto posterior del tesista permite superar la verificación limitada al catálogo editorial para esta obra. Bass et al. (2021, secs. 3.3, 8.2 y 12.1–12.2) fundamentan escenarios evaluables, redistribución por responsabilidades y control/observación en pruebas; se registran los pasajes y su aplicación candidata en `lectura_bass_clements_kazman.md`. La introducción del capítulo 8 distingue costo de preparar el mecanismo y costo de utilizarlo, distinción pertinente para la configuración extraordinaria ya solicitada. No se prometerá eficiencia del método observando solo el uso final y omitiendo el esfuerzo de preparación.
 
 ADD ya comprende refinamiento incremental de sistemas existentes, documentación y análisis por iteración (Bass et al., 2021, secs. 20.1–20.2). Este antecedente refuerza la obligación de justificar qué conocimiento distinto se busca generar, no la presunción de que cualquier método local sea original. La revisión ligera del capítulo 21 es una alternativa de apoyo aún no adoptada, no sustituto de la evaluación DS del método. E4 sigue abierta; el acceso a esta obra queda resuelto, sin atribuir lectura al tesista ni resultados de evaluación inexistentes.
+
+### Contraste técnico del 26 de octubre de 2026: separación deseada frente a código
+
+El tesista aclaró que independencia de controles es el objetivo, no una propiedad actual demostrada. La inspección del recorrido en `1294047e` confirma separación parcial de restricciones, pero distribuye la decisión temporal entre botón Twig, JavaScript y comprobación anual del servicio; la consulta de habilitados del controlador es posterior a la invocación de creación. Se propone estudiar una frontera temporal con habilitación y admisibilidad diferenciadas, sin reescribir saldo, permisos o todo el controlador. El análisis, localizadores y alternativas están en `contraste_responsabilidades_certificacion_2026-10-26.md`; no se acredita una vulnerabilidad HTTP ni una corrección implementada.
+
+Bass et al. (2021, secs. 8.2 y 12.1–12.2) orientan la separación por escenarios y la necesidad de controlar tiempo y observar efectos; Feathers (2004, pp. 186–190 y 194–195) exige distinguir comportamiento caracterizado y conexión con el consumidor. Fowler (2018, pp. 45–47) impide presentar introducción de habilitaciones o rechazos faltantes como mera extracción conservadora. Estos fundamentos reutilizan pasajes primarios ya contrastados, sin añadir literatura reciente. E4 permanece abierta; no hubo contenedores en ejecución y no se reprodujeron las pruebas históricas ni se modificó la aplicación.
+
+### Evidencia reciente incorporada el 26 de octubre de 2026
+
+AlOmar et al. (2021, secs. 4.1–4.2 y 6), leídos en su manuscrito de autor, documentan extracción y movimiento de funcionalidad en refactorizaciones orientadas a reutilización y límites de las métricas para reflejar la intención de mejora. Zakeri-Nasrabadi y Parsa (2022, secs. 3.1, 3.3.1, 4.5 y 5), leídos en la versión 2 de su manuscrito, combinan esfuerzo y efectividad bajo presupuesto de prueba explícito; su evidencia empírica es Java y generación automatizada, no PHPUnit en SIGPP. Estas fuentes exigen distinguir intención, transformación y efecto medido, sin trasladar porcentajes, predictores o instrumentos como si ya estuviesen validados en PHP. Las versiones editoriales posteriores se contrastaron en metadatos, no se presentan como textos finales leídos.
+
+Noei et al. (2025, sec. 3.2.3, tablas 2–3 y sec. 4), consultados en el PDF publicado, informan diferencias entre resultados de cohesión/acoplamiento y problemas arquitectónicos de patrones de refactorización por versión. Su estudio observacional de proyectos Java no demuestra causalidad en el flujo institucional de certificación ni justifica diferir la evaluación DS. Para este diseño candidato, la consecuencia es considerar componentes y consumidores, no inferir mejora global de una disminución local de dependencias. Se preserva el análisis de integración y riesgo de desplazamiento de complejidad.
+
+| Afirmación que se restringe | Decisión de diseño/evaluación que cambia | Fuente reciente |
+|:--|:--|:--|
+| Clase extraída o intención declarada equivalen a mejora. | Exigir un escenario verificable de cambio y relación con consumidores; extracción/movimiento ya son antecedentes, no novedad. | AlOmar et al. (2021). |
+| Más pruebas o menor complejidad prueban testabilidad. | Observar efectividad, preparación y esfuerzo bajo condiciones explícitas; no adoptar el predictor Java ni la postergación de pruebas como receta. | Zakeri-Nasrabadi y Parsa (2022). |
+| Menor acoplamiento del servicio equivale a mejor arquitectura. | Revisar las dependencias desplazadas y los efectos sobre el subcircuito, con integración y revisión independiente previstas. | Noei et al. (2025). |
+
+El número específico de trabajos recientes con lectura primaria focalizada añadidos en esta búsqueda es **tres**, sin contar por duplicado manuscrito y publicación posterior. Continúan pendientes la consolidación del mapa completo de decisiones importantes y la explicación del tesista sobre su aplicación; no se le atribuye lectura por haber accedido el asesor. El problema de investigación —que institucionalmente se registrará como problema científico— no puede sostener inexistencia genérica de métodos incrementales: el contraste de la adaptación y la originalidad sigue abierto. No se fija una nueva brecha a partir de los resultados ni se implementa código en esta intervención.
+
+### Precisión histórica tras aprobación del título
+
+El tesista declara aprendizaje con un libro de Symfony 3 y desarrollo con Symfony 4. La documentación oficial 3.x presenta persistencia en controladores y, al mismo tiempo, separación de lógica de negocio y controladores delgados (Symfony, s. f.-b, s. f.-c); esta tensión motiva examinar la aplicación de límites al crecer el flujo, no afirmar que el marco exige mezclar responsabilidades. También documenta una configuración mínima mediante MicroKernelTrait (Symfony, s. f.-a), por lo que no se atribuye esa posibilidad solo a versiones recientes. El libro y su cronología concreta no están contrastados; el mapeo de entidades no acredita por sí mismo una dependencia inevitable de toda regla respecto al ORM.
+
+Esta precisión no obliga a sustituir Symfony/Doctrine ni a adoptar una arquitectura independiente de toda infraestructura. El criterio del método sigue siendo aislar decisiones y dependencias pertinentes al cambio y a sus pruebas, conservando restricciones y costos explícitos de transición. El nuevo título aprobado mantiene aplicaciones MVC heredadas y ejecución POA de SIGPP; los defectos de cohesión, duplicación y rigidez requieren evidencia en el caso, no se derivan de la antigüedad del marco. El desarrollo histórico detallado y las fuentes están en `revision_titulo_2026-10-26.md`.
+
+### Consolidación del mapa del método: 28 de octubre de 2026
+
+Las decisiones D01–D09 conectan selección del incremento, criterio de separación, caracterización, control/observación, reutilización de configuración, distinción estructural/funcional, examen de consumidores, evaluación contextual y versiones/rediseño. Feathers (2004), Fowler (2018) y Bass et al. (2021) aportan fundamentos específicos; AlOmar et al. (2021), Zakeri-Nasrabadi y Parsa (2022) y Noei et al. (2025) restringen las inferencias de mejora a partir de métricas y recuentos. Venable et al. (2016), con el nivel de verificación metodológica del libro base, permite distinguir propósitos formativo y sumativo sin atribuirle el mínimo particular de esta asesoría. El mapa declara qué parte de cada conexión es adaptación del estudio, no un resultado de esas fuentes sobre SIGPP.
+
+Este producto permite revisar E4 sin confundirla con el diseño formal de E7 o la operacionalización de E6. Una separación propuesta no queda aprobada por tener referencia, y una prueba aislada no demuestra que la creación respete su decisión. La explicación pendiente del tesista se centrará en la evidencia que distinguiría modificabilidad de simple traslado de código, sin volver a discutir título, versión del marco o funcionamiento extraordinario. No se registran principios validados, pruebas ejecutadas ni cierre de etapa en esta consolidación.
+
+### Cierre tras explicación propia del tesista
+
+El 28 de octubre de 2026 el tesista vinculó separación con encontrar la lógica pertinente, localizar dónde modificarla o extenderla y facilitar su prueba mediante TDD; también expresó prioridad del servidor sobre la presentación. La respuesta permite distinguir un propósito de modificabilidad/testabilidad de una preferencia por carpetas, sin atribuir todavía un efecto medido. En términos de diseño, se mantiene la conexión entre escenario de cambio, responsabilidad y evidencia prevista en D01–D09. Los instrumentos y umbrales correspondientes se definirán en E6, antes del siguiente cambio planificado.
+
+Fowler (2023) precisa TDD como prueba previa, implementación que la satisface y refactorización; la facilidad de prueba no demuestra que se haya seguido esa secuencia. La regla autoritativa del servidor y la coherencia de la presentación son objetivos expresados, no comprobaciones ya ejecutadas ni obligación de crear otra API. Con el mapa, la prueba de eliminación y los tres trabajos recientes, se declara **E4 cerrada como etapa de fundamentación**. E5 deberá comparar soluciones existentes sin presuponer insuficiencia, mientras que diseño detallado, construcción y validación siguen pendientes.

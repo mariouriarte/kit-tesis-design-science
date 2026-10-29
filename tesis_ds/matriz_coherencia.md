@@ -2,22 +2,30 @@
 
 ## Cadena de coherencia
 
+> **Precisión aprobada el 28 de octubre de 2026:** «institucional» caracteriza el contexto, no una variante de MVC. El título aprobado mantiene aplicaciones MVC heredadas y ejecución POA de SIGPP; no se incorpora FastAPI como segundo caso ni se amplía automáticamente el campo. Las formulaciones actuales siguientes sustituyen la ambigüedad terminológica, sin alterar retrospectivamente las entregas anteriores. Justificación en `revision_titulo_2026-10-26.md`.
+
 | Eslabón | Contenido |
 |:--|:--|
+| Título aprobado | Diseño y evaluación de un método de refactorización arquitectónica incremental para subcircuitos de aplicaciones MVC heredadas: aplicación en la ejecución POA de SIGPP. |
 | Problema de diseño | El subcircuito de ejecución POA de SIGPP —tareas, operaciones/ACP, presupuesto y certificación— carece de una frontera arquitectónica explícita; su lógica está dispersa entre controladores, servicios, repositorios, entidades Doctrine y consultas SQL, con pruebas insuficientes para validar cambios con confianza. |
-| Problema de investigación (institucional: "problema científico") | Brecha preliminar: existe literatura técnica sobre uso de marcos MVC y literatura de arquitectura sobre separación de responsabilidades y testabilidad, pero falta evidencia suficiente sobre cómo traducir esos principios en un método incremental y evaluable para refactorizar subcircuitos institucionales legacy sin detener ni reescribir el sistema completo. |
-| Objeto de estudio (artefacto + tipología) | Método de refactorización arquitectónica incremental para subcircuitos legacy MVC institucionales, instanciado en SIGPP; tipología compuesta: método + instanciación. |
-| Campo de acción (clase de contextos) | Subcircuitos funcionales críticos de sistemas legacy MVC institucionales, con lógica de negocio dispersa, alto acoplamiento al marco de trabajo y a la persistencia, y necesidad de evolución sin reescritura completa. |
-| Objetivo general | Diseñar y evaluar un método de refactorización arquitectónica incremental para subcircuitos legacy MVC institucionales, instanciado en el subcircuito de ejecución POA de SIGPP, para mejorar la modificabilidad, la testabilidad y la trazabilidad de cambios sin reescritura completa del sistema. |
-| Pregunta de investigación | ¿Qué principios de diseño debe incorporar un método de refactorización arquitectónica incremental, instanciado en el subcircuito de ejecución POA de SIGPP, para mejorar la modificabilidad y testabilidad de subcircuitos funcionales críticos en sistemas legacy MVC institucionales, sin requerir reescritura completa ni interrupción operativa? |
+| Problema de investigación (institucional: "problema científico") | Brecha candidata: existen principios y procedimientos incrementales; falta contrastar qué adaptación y evidencia adicional requieren los subcircuitos de aplicaciones MVC heredadas bajo las restricciones institucionales declaradas. No se sostiene ausencia genérica de métodos ni causalidad de los materiales de aprendizaje. |
+| Objeto de estudio (artefacto + tipología) | Método de refactorización arquitectónica incremental para subcircuitos de aplicaciones MVC heredadas, aplicado en SIGPP; tipología compuesta: método + instanciación. |
+| Campo de acción (clase de contextos) | Subcircuitos funcionales críticos de aplicaciones MVC heredadas en contextos institucionales, con lógica de negocio dispersa, alto acoplamiento al marco de desarrollo y a la persistencia, y necesidad de evolución sin reescritura completa. |
+| Objetivo general | Diseñar y evaluar un método de refactorización arquitectónica incremental para subcircuitos de aplicaciones MVC heredadas, aplicado en el subcircuito de ejecución POA de SIGPP, para mejorar la modificabilidad, la testabilidad y la trazabilidad de cambios sin reescritura completa del sistema. |
+| Pregunta de investigación | ¿Qué principios de diseño debe incorporar un método de refactorización arquitectónica incremental, aplicado en el subcircuito de ejecución POA de SIGPP, para mejorar la modificabilidad y testabilidad de subcircuitos funcionales críticos de aplicaciones MVC heredadas, sin requerir reescritura completa ni interrupción operativa? |
 | Alternativas de solución consideradas | Pendiente para E7a. |
 | Artefacto propuesto (tipología) | Método de refactorización arquitectónica incremental + instanciación aplicada al subcircuito de ejecución POA en SIGPP. |
+| Fundamentación de decisiones | Mapa D01–D09 en `mapa_fundamentacion_e4_2026-10-28.md`: selección por cambio/riesgo, separación, caracterización, control/observación, configuración, distinción estructural/funcional, consumidores, evaluación contextual y rediseño. Cada decisión tiene fuente/localizador, aplicación y estado; no equivale a implementación aprobada ni validación. |
+| Estado del arte de la propuesta | E5 cerrada como revisión focalizada el 28 de octubre: protocolo C01–C08, siete antecedentes y justificación de adaptación selectiva en sec. 9 de `05_estado_del_arte.md`. Se reconoce cobertura heredada y necesidad de operacionalización, sin reclamar novedad de técnicas conocidas, búsqueda exhaustiva, superioridad o principios ya validados. |
+| Base operativa de la adaptación, aceptada | El 28 de octubre de 2026 el tesista acepta el ciclo de Girjoaba y Capiluppi como base operativa explícita, complementado con Feathers y ADD; sec. 7.3 de `05_estado_del_arte.md`. Unidad funcional, protección y separación de intención estructural/funcional requieren concreción; no se afirma que los antecedentes sean incapaces de abordarlas ni que la adaptación sea novedosa por nombrarlas. No es diseño de E7 aprobado. |
+| Adaptaciones candidatas, no validadas | A01 decisión funcional/consumidores; A02 observado–requerido–intención; A03 comprobación de conexiones/efectos; A04 costo de transformar frente a cambio posterior, sec. 8 de E5. La explicación del tesista justifica seleccionar y operacionalizar la intervención según comportamiento/dependencias/riesgo, sec. 9; sus efectos y conocimiento derivado quedan por evaluar. Ejemplo A02 estático, no prueba HTTP. No son contratos detallados aprobados ni originalidad atribuida al producto documental. |
+| Selección proporcional acordada | El método no impone extracción para una errata de texto confirmada como tal. Ante cambio de negocio, investigar comportamiento/dependencias/riesgo antes de elegir una intervención; no convertir «nuevo servicio» en salida obligatoria ni reunir controles ajenos. Explicación del tesista y límites en sec. 9 de E5. |
 | Requisitos del artefacto | Preliminar: refactorización incremental por circuito funcional existente; pruebas de caracterización antes de mover lógica heredada; prueba directa para servicios principales intervenidos; compatibilidad con PHP 7.4 y Symfony 4.4. El contrato arquitectónico y los criterios prospectivos siguen pendientes de aceptación y operacionalización. |
 | Decisiones de diseño principales | Mantener certificación como ejemplo acotado. Recomendación pendiente: MVC con frontera de aplicación incremental, separación de preparación de datos y creación, reglas focalizadas y persistencia existente; no afirmar una arquitectura limpia independiente de Symfony/Doctrine. Véase `arquitectura_candidata_certificacion_2026-10-18.md`. |
 | Criterio de suficiencia del artefacto | Pendiente para E7d. |
 | Método de evaluación | Preliminar: intervención inicial tratada como evaluación formativa; medición técnica, entorno controlado con datos ficticios, revisión técnica independiente y validación institucional acotada para la versión corregida. |
-| Criterios de éxito e indicadores | Preliminar: tamaño y concentración de código, instanciaciones directas, llamadas a persistencia desde controladores, ocurrencias de SQL nativo, vacíos de pruebas, complejidad ciclomática, cobertura, mantenibilidad y trazabilidad del cambio. |
-| Contribución reclamada (nivel de maestría) | Preliminar: principios de diseño para refactorización arquitectónica incremental en módulos legacy institucionales. |
+| Criterios de éxito e indicadores | E6 iniciada: I01 correspondencia de decisiones, I02 rechazo antes de efectos, I03 esfuerzo de preparar/comprobar y I04 extensión de cambio posterior, propuestos en `06_diagnostico.md`. Líneas base, instrumentos y criterios definitivos pendientes; métricas estructurales históricas son contexto, no prueba autosuficiente ni umbrales acordados. |
+| Contribución reclamada (nivel de maestría) | Prevista, no demostrada: principios de diseño respaldados por evaluación para refactorización incremental de subcircuitos de aplicaciones MVC heredadas bajo condiciones semejantes al campo definido. No se reclama autoría de técnicas heredadas, teoría general ni transferencia estadística desde un caso. |
 
 ## Entregables de seguimiento
 
@@ -56,6 +64,44 @@
 | Escenarios y costos → decisiones candidatas | Bass et al. (2021), PDF aportado: secs. 3.3, 8.2, 12.1–12.2 y 20.1–20.2; ficha `lectura_bass_clements_kazman.md`. | Acceso resuelto. Separar costo inicial de extensión del costo posterior de configurar ventanas; control/observación no equivalen a mejora medida. ADD es antecedente, no contribución nueva ni proceso DS adoptado. Criterios cuantitativos y evaluación pendientes. |
 | Condiciones comunes → diagnóstico | Recorrido estático: rol general en `security.yaml`; saldo positivo/disponible validado por servicio; consulta de habilitados posterior al bloque de guardado; control específico por unidad no observado en controlador/servicio. | No es auditoría completa ni reproducción HTTP. Permiso específico, ampliación y concurrencia requieren verificación independiente; no ampliar automáticamente la corrección de fechas. |
 | Cronología → método | Extracciones originales `815ce6c0` y `9d4af430` fechadas en marzo de 2025. | Antecedentes técnicos, no intervenciones de 2026; no se declara un ciclo formativo completo por su sola existencia. |
+
+## Evidencia documental del dominio incorporada el 25 de octubre de 2026
+
+| Contexto / regla | Fuente y localizador | Relación con la cadena | Límite |
+|:--|:--|:--|:--|
+| Tareas con o sin presupuesto; alcance nacional CPS. | Caja Petrolera de Salud (2026), secs. 3 y 5.4, pp. PDF 3 y 6–7; Caja Petrolera de Salud (s. f.), pp. 12–13. | Precisa el problema de diseño y las relaciones que deberán preservarse en la instanciación. | No toda tarea exige presupuesto. La jerarquía grupo → partida → subpartida es descripción del tesista pendiente de mapeo técnico; no se fijan cardinalidades. |
+| Certificación vinculada a operación, tarea, partida y unidad ejecutora. | Caja Petrolera de Salud (s. f.), pp. 27–28; diagrama local de certificación. | Candidatos para trazar reglas → componentes → pruebas. | MPP en borrador y diagrama sin aprobación acreditada; falta contraste con documentación CPS vigente y servidor. |
+| Operaciones, recursos, seguimiento y ajustes en fuente comparativa. | Ministerio de Planificación del Desarrollo (s. f.), arts. 9, 14–15 y 20–22. | Comparación de variaciones contextuales. | Este RE-SPO es del MPD, no de CPS; el reglamento propio ya se incorporó en la segunda entrega. No resuelve estados de tarea ni elegibilidad. |
+| Operaciones, tareas, requerimientos y modificaciones en fuente propia aprobada. | Caja Petrolera de Salud (2019), R.H.D. 003/19 y arts. 14, 16–18; pp. PDF 3–8 y 14–20. | Respalda contexto institucional y relaciones a preservar; reemplaza la falta documental inicial del RE-SPO CPS. | Aprobación comprobada en ejemplar local; modificaciones posteriores y vigencia actual por verificar. Indicadores administrativos no evalúan la refactorización; sin procedimiento específico de certificación identificado. |
+| Articulación presupuestaria, disponibilidad efectiva y modificación. | Caja Petrolera de Salud (2007), arts. 10 y 16–21; pp. PDF 8–13; resolución pp. 14–16. | Distingue programación, ejecución y recursos para el contraste de reglas del dominio. | R.D. 023/06 fechada 25 de enero de 2007; aprobación histórica documentada, actualización actual pendiente. No inferir de ello una nueva regla de saldo, caja o fecha para SIGPP. |
+| Separación de planificación y presupuesto, con instrumentos de articulación. | Federación de Asociaciones Municipales de Bolivia y Fondo de las Naciones Unidas para la Infancia (s. f.), pp. impresas 12–21 y 31–43. | Vocabulario del dominio y contraste de trazabilidad documental. | Guía municipal del PAI, no norma CPS ni fundamento suficiente del diseño arquitectónico; no cierra E4/E5. |
+
+Detalle y decisión sobre los once archivos en `revision_documental_poa_2026-10-25.md`. No se modifican el objeto, el campo, la pregunta ni la contribución reclamada; los documentos no constituyen resultados de evaluación de la refactorización.
+
+## Contraste de responsabilidades del 26 de octubre de 2026
+
+| Problema observado | Separación candidata y sustento | Evidencia actual | Evidencia pendiente |
+|:--|:--|:--|:--|
+| Habilitación visual y reglas documentales no equivalentes a validación anual de creación; consulta de habilitados posterior a `create()`. | Decisión temporal explícita aplicada por coordinación, con lectura separada; habilitación y fecha diferenciadas. Bass et al. (2021, secs. 8.2 y 12.1–12.2); Feathers (2004, pp. 194–195). | Inspección estática de `1294047e`; contraste con pruebas públicas existentes y fuentes primarias previamente leídas. | Ejecutar caracterización, contrato prospectivo, integración y rechazo antes de efectos; sin fallo HTTP reproducido. |
+| Separación deseada confundida previamente con propiedad actual del código. | Tratarla como objetivo y contrastar dependencias, sin una clase obligatoria por control. Separar extracción y cambio funcional según Fowler (2018, pp. 45–47). | Aclaración del tesista y tabla de responsabilidades en `contraste_responsabilidades_certificacion_2026-10-26.md`. | Diseño concreto aún no aprobado; no refactorizar todos los controles ni declarar resultados de evaluación. No había contenedores activos para repetir PHPUnit. |
+
+## Restricciones de evidencia incorporadas el 26 de octubre de 2026
+
+| Afirmación / eslabón | Evidencia reciente y consecuencia | Límite |
+|:--|:--|:--|
+| Transformación → mejora observada. | AlOmar et al. (2021), secs. 4.1–4.2 y 6: intención de reutilización y métricas no equivalentes. Conservar escenario de cambio, versión y conexión con consumidores. | Manuscrito de autor; reutilización no equivale a testabilidad; Java no demuestra efectos en SIGPP. |
+| Pruebas → testabilidad. | Zakeri-Nasrabadi y Parsa (2022), secs. 3.1, 3.3.1, 4.5 y 5: esfuerzo/efectividad bajo presupuesto explícito. Medir condiciones y casos, no solo recuentos. | Manuscrito de autor; no adoptar predictor, métricas ni porcentajes como instrumentos validados en PHP. |
+| Mejora local → arquitectura del subcircuito. | Noei et al. (2025), sec. 3.2.3 y tablas 2–3: resultados locales y arquitectónicos pueden divergir. Revisar dependencias desplazadas e integración. | Estudio observacional Java; no prueba causalidad, superioridad o calendario óptimo para CPS. |
+
+Tres trabajos recientes con acceso completo y lectura focalizada; detalle en `busqueda_e4_2026-10-26.md`. No equivale a cierre de E4 ni a contraste exhaustivo de originalidad de E5; no se añaden resultados de evaluación del artefacto.
+
+## Cierre de E4: 28 de octubre de 2026
+
+| Condición | Evidencia actual | Pendiente / límite |
+|:--|:--|:--|
+| Problema → decisión → fundamento. | Nueve decisiones con conexión y localizadores en el mapa E4. | Mantener distinción entre compromiso acordado y recomendación; revisar fundamentos si cambian decisiones en E7. |
+| Fundamento → evidencia prevista. | Caracterización/conexión, escenario de cambio, esfuerzo/efectividad, consumidores y versiones identificados. | No son mediciones realizadas ni criterios numéricos aprobados; E6 conserva su función. |
+| Prueba de eliminación → comprensión del tesista. | Se explicita qué cambia al retirar fuentes y se registra explicación propia: localizar regla, modificar/extender y facilitar pruebas; servidor antes de presentación. | E4 cerrada el 28 de octubre, sin validar el método. Expectativas por operacionalizar y observar; TDD no demostrado por facilidad de prueba. |
 
 ## Riesgos de construcción
 

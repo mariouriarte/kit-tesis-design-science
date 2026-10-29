@@ -86,6 +86,14 @@ El límite superior actual se construye como `31 de diciembre 23:59`, incompatib
 
 ## Diseño candidato y decisiones abiertas
 
+**Contraste actualizado del 26 de octubre de 2026:** `contraste_responsabilidades_certificacion_2026-10-26.md` relaciona las reglas ya acordadas con código de `1294047e`, pruebas existentes y fundamento arquitectónico. Confirma que la separación es objetivo, no propiedad asumida; la recomendación es una frontera temporal acotada, sin rediseñar saldo/permisos ni volver a preguntar el funcionamiento de la extraordinaria. No se modificó código ni se reprodujeron pruebas o peticiones HTTP; E4 permanece abierta.
+
+### Criterio de separación expresado por el tesista el 25 de octubre de 2026
+
+Ante el escenario de cambio de fechas admisibles, el tesista identifica como responsabilidad a intervenir «solo la habilitación de emitir una certificación». En su aclaración posterior precisa que la separación de controles y sus lógicas propias describe **cómo deberían estar implementados**, no una afirmación de que el código actual ya cumpla esa estructura. La interpretación inicial del asesor como afirmación sobre aislamiento existente fue incorrecta. Si el contraste encuentra responsabilidades mezcladas, su separación es una intervención candidata del método; no se autoriza por ello refactorizar indiscriminadamente todos los controles.
+
+Se mantiene la distinción ya documentada entre habilitación temporal y admisibilidad de la fecha del documento; satisfacer cualquiera de ellas no sustituye permisos, saldo u otros controles. El siguiente trabajo del asesor es contrastar el diseño deseado con la implementación, identificar dependencias y puntos de aplicación, y conectar esa evidencia con el fundamento de separación por responsabilidades. No corresponde volver a pedir al tesista que acredite un aislamiento actual que no afirmó. También debe distinguirse extracción estructural de corrección funcional: agregar una comprobación que antes no se ejecutaba al guardar no es únicamente refactorización con preservación de comportamiento.
+
 ### Alternativa planteada: reutilizar parámetros del sistema
 
 El tesista propuso aprovechar el mecanismo existente de parámetros que abre y cierra posibilidades de uso del sistema. Se inspeccionaron `ParametroSistemaService`, `ParametroSistema`, `AmpliacionParametroSistema` y `CertificacionParametroFactory`: existen gestión, estado, fechas de inicio/fin y ampliaciones; el servicio consulta períodos normales y ampliaciones, y la fábrica de certificación carga el parámetro `CERTIFICACIÓN`. Esto acredita un mecanismo existente que debe considerarse antes de introducir otra configuración. No acredita que el recorrido de creación lo haga cumplir ni demuestra que configure los días admisibles del documento.
