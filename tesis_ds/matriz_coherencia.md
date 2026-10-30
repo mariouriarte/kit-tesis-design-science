@@ -12,6 +12,7 @@
 | Objeto de estudio (artefacto + tipología) | Método de refactorización arquitectónica incremental para subcircuitos de aplicaciones MVC heredadas, aplicado en SIGPP; tipología compuesta: método + instanciación. |
 | Campo de acción (clase de contextos) | Subcircuitos funcionales críticos de aplicaciones MVC heredadas en contextos institucionales, con lógica de negocio dispersa, alto acoplamiento al marco de desarrollo y a la persistencia, y necesidad de evolución sin reescritura completa. |
 | Objetivo general | Diseñar y evaluar un método de refactorización arquitectónica incremental para subcircuitos de aplicaciones MVC heredadas, aplicado en el subcircuito de ejecución POA de SIGPP, para mejorar la modificabilidad, la testabilidad y la trazabilidad de cambios sin reescritura completa del sistema. |
+| Objetivo específico de conocimiento, aceptado el 29 de octubre | Formular y evaluar principios de diseño a partir de los resultados de aplicación y evaluación del método, explicitando los contextos, mecanismos y límites que la evidencia permita sostener. Su análisis y suficiencia están pendientes; no es contribución ya validada. |
 | Pregunta de investigación | ¿Qué principios de diseño debe incorporar un método de refactorización arquitectónica incremental, aplicado en el subcircuito de ejecución POA de SIGPP, para mejorar la modificabilidad y testabilidad de subcircuitos funcionales críticos de aplicaciones MVC heredadas, sin requerir reescritura completa ni interrupción operativa? |
 | Alternativas de solución consideradas | Pendiente para E7a. |
 | Artefacto propuesto (tipología) | Método de refactorización arquitectónica incremental + instanciación aplicada al subcircuito de ejecución POA en SIGPP. |
@@ -28,6 +29,24 @@
 | Contribución reclamada (nivel de maestría) | Prevista, no demostrada: principios de diseño respaldados por evaluación para refactorización incremental de subcircuitos de aplicaciones MVC heredadas bajo condiciones semejantes al campo definido. No se reclama autoría de técnicas heredadas, teoría general ni transferencia estadística desde un caso. |
 
 ## Entregables de seguimiento
+
+**Perfil borrador actualizado para el 31 de octubre:** `03_perfil_ds.md` armoniza cierre de E4/E5, E6 abierta, contribución prevista y evidencia 13/65 por estado con límites retrospectivos. Se registra que los objetivos específicos todavía deben explicitar generación/evaluación de principios y que proceso, selección, cronograma, análisis y formalización del método requieren decisiones pendientes. No se introduce una contribución lograda ni se cierra esa incoherencia por corrección editorial; completar el objetivo de conocimiento exige acuerdo del tesista.
+
+**Acuerdo posterior:** el tesista aceptó el objetivo específico de conocimiento, ya incorporado como objetivo 6 en el perfil y en esta cadena. Queda resuelta su omisión declarativa, no el procedimiento de análisis, la evaluación de principios o la suficiencia de evidencia. Los demás compromisos anteriores siguen pendientes.
+
+**Escenario de evolución aún candidato, 29 de octubre:** consulta de tareas por unidad para contratación, con detalle de certificaciones y resumen de siete magnitudes presupuestarias, según confirmación del tesista registrada en E6. Pendientes gestión, autorización, semántica temporal y contraste del punto de acceso existente; no es requisito de construcción aprobado ni prueba directa de modificabilidad del resolvedor. No ampliar automáticamente el alcance por esta necesidad.
+
+**Comparación acotada del 29 de octubre:** `comparacion_extraccion_restriccion_2026-10-29.md` usa padre `5313c0e1` y extracción `8dc63307` por acuerdo del tesista. Centralización observada y ejecución focalizada posterior 37/305 OK; sin ejecución previa ni medición de esfuerzo/cambio posterior. Evidencia retrospectiva parcial, no validación de principios ni cierre de indicadores E6.
+
+**Actualización posterior de esa comparación:** sección 6 registra montaje y hashes pertinentes comprobados, PHP 7.4.29 y ejecución de expectativas comunes de selección en ambos estados: 13 pruebas/65 aserciones OK por estado. Consumidores anteriores cargados en memoria dentro del entorno actual, no reconstrucción histórica completa. Se acredita conservación para los escenarios examinados, no equivalencia integral, TDD previo o mejora de I03–I04; E6 abierta y confirmación de fechas pendiente.
+
+**E6, actualización del 29 de octubre de 2026:** `ficha_validacion_funcional_certificacion.md` preparada para Marlen Terrazas, planificadora con atribución funcional según declaración del tesista. Sus respuestas y ratificación de síntesis están pendientes; permitirán precisar los resultados esperados de I01 y efectos de I02, pero no constituyen medición ni validación del método. No se modifican criterios o líneas base como si ya estuvieran aprobados.
+
+**Referencia técnica candidata comprobada localmente:** SIGPP en `7ef29a4f` sobre `master`; único commit por delante de la referencia local `origin/master` (`8256bb8c`) añade documentación, no aplicación versionada. Sin diferencias de archivos seguidos, con `odd/` sin seguimiento e influencia pendiente de aclarar. Sustituye el supuesto de que `1294047e` sigue siendo el estado actual; no acredita producción, comportamiento ejecutado o criterios aprobados. Registro completo en E6, sección 4.
+
+**Verificación ejecutada el 29 de octubre:** `make test` (invocado mediante `rtk`) en Docker local reportó 159 pruebas, 260 aserciones y 1 omitida con PHPUnit 9.6.15, sin fallos/errores informados. `odd/` identificado por el tesista como apoyo de IA. Evidencia de batería actual, no medición completa de indicadores ni confirmación funcional; pendientes inventario, omisión y correspondencia del código del contenedor antes de comparar con resultados históricos.
+
+**Distinción posterior de ramas, 29 de octubre:** la ejecución anterior corresponde a `master`. Tras cambio realizado por el tesista a `feature/propuesta-tesis` (`5e0fec3d`), nueva ejecución: 188 pruebas/540 aserciones, OK sin omisiones informadas. Intervención no desplegada según tesista; ramas divergen desde `d7302be5` y `master` contiene correcciones CSV y pruebas propias. No atribuir diferencias agregadas exclusivamente al método ni aprobar comparación directa como línea base controlada. Selección de referencia retrospectiva y próximo incremento prospectivo pendientes; E6 abierta.
 
 | Entregable | Estado | Relación con la matriz |
 |:--|:--|:--|
