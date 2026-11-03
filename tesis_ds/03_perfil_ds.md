@@ -77,6 +77,8 @@ El estudio seguirá el enfoque de Design Science, con construcción y evaluació
 
 Las propiedades se operacionalizan en E6 mediante I01, correspondencia de decisiones con resultados esperados; I02, rechazo antes de efectos prohibidos; I03, esfuerzo activo de preparar y comprobar escenarios; e I04, extensión de un cambio posterior representativo. Son instrumentos propuestos, con líneas base y criterios definitivos todavía incompletos, no umbrales aprobados para evaluar retrospectivamente el código. Menos líneas, más pruebas o un nuevo servicio no constituyen por sí solos mejora de modificabilidad o testabilidad. La trazabilidad y la revisión independiente complementarán la evidencia de utilidad y aplicabilidad, sin sustituir mediciones y ciclos de evaluación.
 
+**Acuerdos posteriores a la predefensa:** I01 tiene aceptado el 100 % de correspondencia en el conjunto previamente acordado; I02, el 100 % de rechazos acordados sin crear certificación, seguimiento, autorización o almacenar adjuntos. Se conservan resultados individuales y fallos. No se aplican retrospectivamente como metas previas de las extracciones, ni acreditan conjuntos cerrados, línea base completa o método validado. Los casos, instrumentos y demás criterios siguen por completar en E6; I03 continúa sin línea base humana.
+
 ## Evidencia preliminar disponible para presentar
 
 | Evidencia | Qué permite sostener | Qué no permite sostener |

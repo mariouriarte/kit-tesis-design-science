@@ -1,5 +1,18 @@
 # Requisitos verificados para la predefensa del 31 de octubre de 2026
 
+## Actualización prioritaria: mensaje del 31 de octubre, 07:45
+
+El tesista aporta en esta conversación una transcripción de un mensaje docente del 31 de octubre de 2026, 07:45. El tutor solicita crear una carpeta con el nombre del tesista en la carpeta compartida de Google Drive y subir, antes de iniciar la presentación: **(1) trabajo original DSR en PDF; (2) documento final ALSIE en Word; (3) diapositivas de predefensa** (L. R. Pérez Rios, comunicación personal, 31 de octubre de 2026). Esta información precisa formatos, destino y momento de entrega, que no estaban explícitos en los mensajes anteriores. No se inspeccionó Google Drive ni se comprobó autoría externa de la transcripción; se registra como comunicación aportada por el tesista.
+
+| Entrega vigente | Situación al recibir el mensaje | Acción pendiente |
+|:--|:--|:--|
+| Trabajo original DSR, PDF | Consolidación existente en `TRABAJO_ORIGINAL_DSR_AVANCE_2026-10-31.md`, preparada tras autorización del tesista; PDF no generado por esta asesoría. | Convertir externamente y revisar; no sustituir por el IFI ALSIE. Procedimiento en `conversion_entrega_predefensa_2026-10-31.md`. |
+| Documento final ALSIE, Word | Existe `IFI_ALSIE_AVANCE.md`, actualizado documentalmente, pero provisional e incompleto; no se ha verificado Word de esta versión. | Conversión externa a Word y revisión; no afirmar que cumple la condición de final solo por cambiar extensión. Persiste la diferencia sustantiva frente al requisito docente. |
+| Diapositivas | El tesista declara «la 3 ya lo tengo preparada». | No rehacerlas como prioridad; comprobar archivo y apertura antes de subir. No se inspeccionó el archivo final declarado. |
+| Carpeta y carga | El docente proporciona enlace de destino. | Crear carpeta `Mario Arturo Uriarte Marin`, subir los tres archivos y comprobar apertura y acceso antes de presentar. No hay carga acreditada por este asesor. |
+
+La recomendación anterior de priorizar un PDF del IFI era operativa y basada en mensajes previos. **No satisface el punto 1 ahora explícito: PDF DSR y Word ALSIE son productos distintos.** La asesoría conserva fuentes y entregables Markdown; las conversiones son pasos externos. No se cierran etapas ni se invoca una traducción final para simular cumplimiento. Las secciones siguientes conservan la trazabilidad de la revisión anterior y deben leerse subordinadas a esta actualización.
+
 ## Fuente y rectificación
 
 Se revisó la exportación de mensajes de WhatsApp aportada por el tesista, fechada el 30 de octubre de 2026 a las 20:25. Los mensajes del tutor del 26 de octubre identifican el acto del sábado como **predefensa virtual**, no solamente presentación de perfil. Esta evidencia rectifica la descripción anterior del hito y obliga a distinguir material útil para exponer de cumplimiento de todos los requisitos. Las comunicaciones se citan como personales conforme a APA 7; no se publica el chat, sus datos de contacto o enlaces de reunión.
