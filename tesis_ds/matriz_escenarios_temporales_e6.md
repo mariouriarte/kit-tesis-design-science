@@ -28,6 +28,10 @@ O01/O04/O05/O06 se apoyan en las reglas y casos funcionales existentes; O02 inco
 
 ## 3. Evidencia disponible: no confundir antecedente con ejecución del conjunto
 
+**Interacciones auxiliares del servicio, 3 de noviembre:** `comprobacion_interacciones_fechas_gestion_e6.md`: tres fechas de gestión 2026 pasan la validación anual y llegan a una llamada de guardado de certificación y seguimiento cada una, con colaboradores sustituidos; 3 pruebas/36 aserciones satisfactorias. No hay día operativo controlado, persistencia real o ejecución de la ruta. S31/S14/S16 no se cuentan como O03–O05 completos ni como porcentaje global I01/I02; cero autorización/archivo corresponde solo a la rama sin restricción. Git `7c0bca08` permanece limpio y no se obtiene esfuerzo humano I03.
+
+**Comprobación adicional del formulario, 3 de noviembre:** `comprobacion_formulario_temporal_e6.md` ejecuta Form y Validator reales, con anotaciones y sin iniciar la aplicación: cuatro fechas válidas conservadas y formularios válidos; fecha mal formada rechazada y fecha vacía provoca excepción de mapeo, conservada como discrepancia del control técnico. No controla día del intento ni ejecuta servicio, HTTP o persistencia. F01–F04 no se suman como O01–O05 completos ni producen un porcentaje nuevo de I01/I02. La imagen local utilizada difiere de la histórica de O06 y se identifica en el registro; SIGPP permanece en `7c0bca08` limpio.
+
 | Caso o antecedente | Evidencia existente | Qué sigue faltando |
 |:--|:--|:--|
 | O01–O05, pantalla | En `comprobacion_ordinaria_pantalla_e6.md`, cuatro resultados concordantes y discrepancia O03, con contexto temporal controlado en fragmento aislado. | Comprobación del consumidor pertinente en servidor y conexión; no se validaron autorización o persistencia. |
