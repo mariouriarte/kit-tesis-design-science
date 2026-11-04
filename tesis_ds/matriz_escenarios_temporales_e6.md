@@ -63,6 +63,8 @@ Antes de ejecutar el conjunto completo faltan seleccionar el consumidor y la for
 
 ## 6. I04 permanece separado: seis casos ya aceptados
 
+**Precisión aceptada el 4 de noviembre de 2026:** protocolo en `protocolo_i04_ampliacion_ventana.md`, con decisión directa y lectura efectiva de configuración separadas. Criterio de ampliación: cero archivos de producción modificados o añadidos, configuración y pruebas contabilizadas aparte. Falta seleccionar consumidor y control temporal del recorrido de lectura; no hay ejecución, construcción autorizada o validación del método. La tabla siguiente conserva sus expectativas originales.
+
 Ventana ficticia original del **01 al 08/02/2027**, ampliada al **10/02/2027**; misma gestión destinataria y demás condiciones. Inicio a las 00:00 incluido y corte exclusivo a las 00:00 del día posterior al cierre, en `America/La_Paz`. Los ejemplos con segundos no limitan la definición del intervalo ni excluyen fracciones del día. Su aceptación no constituye una apertura institucional real ni una ejecución.
 
 | ID | Instante ficticio | Cierre original 08/02 | Cierre ampliado 10/02 |
