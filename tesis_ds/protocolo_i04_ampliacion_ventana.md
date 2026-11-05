@@ -2,6 +2,10 @@
 
 ## Estado y compromiso previo
 
+**Actualización del 4 de noviembre de 2026 — mecanismo temporal aceptado:** el tesista responde «aceptado» a suministrar el instante como dato interno a la decisión temporal, nunca desde el formulario, y comprobar por separado la lectura real de configuración. En funcionamiento normal el instante lo obtiene el servidor PHP, en `America/La_Paz`; en el ensayo se suministran los instantes X01–X06. La lectura prevista recuperará inicio, cierre, gestión y estado sin excluir anticipadamente la ventana mediante el reloj actual de la base de datos. La decisión temporal será la responsable de contrastar esa configuración con el instante suministrado. Se evita así que dos relojes distintos determinen inadvertidamente el mismo ensayo.
+
+Esta aceptación resuelve la elección conceptual del control temporal futuro, no convierte el recorrido actual en uno controlable ni autoriza modificarlo. No impone una clase, interfaz o método de repositorio particular. Siguen pendientes el entorno aislado, los comandos, los datos persistidos de prueba y la conexión ejecutable con el consumidor; se concretarán conforme al diseño y la construcción posteriores. No se registran resultados I04, una línea base artificial o autorización para ejecutar la capacidad aún inexistente. Las menciones inferiores al mecanismo pendiente describen el estado previo a esta aceptación.
+
 El 4 de noviembre de 2026 el tesista acepta separar la comprobación directa de la decisión temporal de la comprobación de lectura efectiva de configuración por el consumidor. Acepta el criterio de cero archivos de código de producción modificados para ampliar el cierre, con configuración, pruebas y costo inicial separados. Esta aceptación no autoriza construcción o cambios en SIGPP ni acredita ejecución. Es un protocolo de observación previsto; la selección de los puntos ejecutables y del mecanismo de control temporal sigue pendiente.
 
 ## Escenario y alcance

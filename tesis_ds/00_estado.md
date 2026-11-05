@@ -26,21 +26,25 @@
 | E3. Perfil de investigación DS | cerrado preliminar para perfil | `03_perfil_ds.md` | 2026-09-27 |
 | E4. Marco teórico | cerrado: fundamentación; no validación del método | `04_marco_teorico.md` | 2026-10-28 |
 | E5. Estado del arte | cerrado: revisión focalizada y adaptación delimitada | `05_estado_del_arte.md` | 2026-10-28 |
-| E6. Diagnóstico con indicadores | iniciado: línea base y criterios pendientes de medición/acuerdo | `06_diagnostico.md` | |
-| E7a. Alternativas de solución | pendiente | `07a_alternativas.md` | |
-| E7b. Requisitos del artefacto | pendiente | `07b_requisitos.md` | |
-| E7c. Diseño del artefacto | pendiente | `07c_diseno_artefacto.md` | |
-| E7d. Plan de construcción y versiones | pendiente | `07d_plan_construccion.md` | |
-| E7e. Construcción y verificación interna | pendiente | `07e_construccion_verificacion.md` | |
-| E7f. Ficha del artefacto | pendiente | `07f_ficha_artefacto.md` | |
-| E8. Evaluación | pendiente | `08_evaluacion.md` | |
-| E9. Enlace propuesta ↔ solución | pendiente | `09_enlace_solucion.md` | |
-| E10. Contribución y conclusiones | pendiente | `10_contribucion_conclusiones.md` | |
+| E6. Diagnóstico con indicadores | cerrado en alcance diagnóstico; medición I01–I04 trasladada a E8 | `06_diagnostico.md` | 2026-11-04 |
+| E7a. Alternativas de solución | cerrado | `07a_alternativas.md` | 2026-11-04 |
+| E7b. Requisitos del artefacto | cerrado | `07b_requisitos.md` | 2026-11-04 |
+| E7c. Diseño del artefacto | cerrado | `07c_diseno_artefacto.md` | 2026-11-04 |
+| E7d. Plan de construcción y versiones | cerrado | `07d_plan_construccion.md` | 2026-11-04 |
+| E7e. Construcción y verificación interna | cerrado | `07e_construccion_verificacion.md` | 2026-11-04 |
+| E7f. Ficha del artefacto | cerrado | `07f_ficha_artefacto.md` | 2026-11-04 |
+| E8. Evaluación | cerrado | `08_evaluacion.md` | 2026-11-04 |
+| E9. Enlace propuesta ↔ solución | cerrado | `09_enlace_solucion.md` | 2026-11-04 |
+| E10. Contribución y conclusiones | cerrado | `10_contribucion_conclusiones.md` | 2026-11-04 |
 
 ## Decisiones tomadas
 
 | Fecha | Decisión | Justificación |
 |:--|:--|:--|
+| 2026-11-04 | Aceptar para I04 un instante interno suministrado a la decisión temporal y lectura real de configuración separada, sin filtro temporal previo con el reloj actual de base de datos. | El tesista responde «aceptado». PHP obtiene el instante en operación normal; el instrumento controla X01–X06, nunca el formulario. Evita mezclar relojes PHP/base de datos. No autoriza cambios en SIGPP ni acredita instrumento ejecutable, ejecución o cierre de E6. |
+| 2026-11-04 | Congelar el diagnóstico, cerrar E6 en su alcance y volcar el esfuerzo restante a formalizar el método (E7) y los principios (E10). | El tesista acepta el camino recomendado. La medición de I01–I04 contra el artefacto construido se traslada a E8; la línea base de E6 se declara parcial. No se ejecutan más comprobaciones de fechas. |
+| 2026-11-04 | Tratar I04 como limitación declarada, sin reproducirlo por construcción ni por ejercicio de esfuerzo. | El tesista acepta. I04 mide modificabilidad estructural y su precondición (capacidad extraordinaria existente) no se cumple; construirla para medirla sería capacidad nueva (D06) y rozaría la demostración. La modificabilidad se argumenta analíticamente con la evidencia de extracción de restricción. Se formaliza en E8. |
+| 2026-11-04 | Ante el riesgo de que el tribunal evalúe contra el formato ALSIE (hipotético-deductivo), sostener el Design Science y tender el puente mediante traducción, no pelear con el formato. | El tesista lo registra para la defensa. Correspondencia: problema científico ↔ problema de investigación; hipótesis ↔ hipótesis de diseño; objetivos ↔ construcción + contribución; objeto de estudio ↔ método (artefacto); resultados ↔ evaluación técnica y analítica. Frase puente: «el artefacto es el método, no el software; mi hipótesis es de diseño y mi contribución son principios». La traducción la hará el agente institucional, no el asesor DS. |
 | 2026-10-31 | Consolidar documentalmente el trabajo original DSR sin completar investigación nueva. | El tesista responde «si hazlo» tras el requisito docente de DSR PDF y ALSIE Word. Se prepara un único Markdown con compromisos, fuentes, evidencia y pendientes, separado del IFI; no se cierran etapas ni se generan conversiones binarias dentro de la asesoría. |
 | 2026-10-30 | Priorizar la predefensa con el avance existente, sin abrir trabajo nuevo de investigación. | El tesista responde «si deacuerdo» a preparar la exposición con lo ya documentado. Se permiten correcciones documentales respaldadas y preparación oral; no se intentará cerrar E6–E10 para mañana ni se simulará completitud. Persiste la diferencia frente al requisito docente de documento completo. |
 | 2026-10-30 | Priorizar la presentación del borrador de propuesta del 31 de octubre y fijar el servidor PHP como autoridad temporal operativa. | El tesista solicita llegar a un documento presentable para mañana y precisa fecha/hora por PHP. No aprueba la entrada explícita propuesta ni decide todavía el mecanismo de prueba; se prepara síntesis de acuerdos y evidencia sin cerrar etapas pendientes. |
@@ -106,6 +110,8 @@
 | 2026-10-28 | Cerrar E5 y registrar selección proporcional como criterio del método. | La comparación de antecedentes y la explicación del tesista distinguen una errata de presentación de una regla de negocio distribuida: investigar seguridad, comportamiento y dependencias antes de una intervención focalizada. Se justifica operacionalizar la adaptación, no originalidad o superioridad ya comprobadas. No se aprueba una clase obligatoria, refactorización total o garantía de corrección por encapsulación. |
 
 ## Preguntas abiertas
+
+- **I04, elección conceptual temporal resuelta el 4 de noviembre:** instante interno suministrado a decisión, autoridad PHP y lectura efectiva de configuración separada, sin filtro temporal previo con reloj actual de base de datos. No volver a pedir esta aceptación. Protocolo y diagnóstico actualizados; faltan entorno, comandos, datos ficticios persistidos y conexión ejecutable de la capacidad futura. No fabricar línea base de capacidad inexistente ni construir antes de cerrar los compromisos previos. E6 permanece abierta; fuente del calendario hábil y condiciones de comparación I03 conservan pendientes.
 
 - **Consumidor I04 aceptado:** el tesista responde «aceptamos» a observar habilitación antes de permitir creación y lectura efectiva de cierre actualizado, no solo pantalla. Frontera: recorrido `CreateCertificacionController::new()` → `CreateCertificacionService::create()`; no impone ubicación de la regla ni autoriza implementación. No repetir elección de consumidor o separación de niveles. Consulta posterior actual no se presenta como barrera previa. Protocolo, diagnóstico y matriz actualizados; sin ejecución y E6 abierta. Fuente del calendario aplicable permanece pendiente; el mecanismo temporal del instrumento futuro se concretará antes de ejecutarlo.
 

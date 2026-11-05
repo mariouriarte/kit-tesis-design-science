@@ -1,95 +1,58 @@
 # E7e. Construcción y verificación interna
 
-> **Nota de vigencia (18 de octubre de 2026):** las secciones iniciales conservan el registro preliminar del 13 de octubre. La actualización al final distingue antecedentes de 2025, evidencia actual verificada y afirmaciones todavía pendientes; no se considera cerrada E7e ni validado el método.
+**Estado:** en curso. Este documento consolida el registro de construcción, la verificación técnica y el razonamiento de diseño de la instanciación. Sustituye al borrador del 18 de octubre, corrigiendo tres imprecisiones: la cronología de los commits (marzo de 2025, no de la tesis), el nombre «SIPOA4» (corregido a SIGPP) y la expresión «arquitectura limpia mínima» (corregida a frontera de aplicación incremental).
 
-## Registro preliminar de construcción
+## 1. Cronología y alcance honesto
 
-La intervención inicial en SIGPP/SIPOA4 se realizó como una mejora arquitectónica parcial orientada a separar lógica de negocio que se encontraba concentrada en controladores. La acción técnica principal fue la creación de la carpeta `src/Service`, utilizada para extraer parte de la lógica asociada con procedimientos del subcircuito POA, especialmente la creación de tareas durante la elaboración del POA y la creación de tareas durante la modificación del POA.
+La separación parcial hacia `src/Service` es un **antecedente técnico de marzo de 2025**, anterior al encuadre de la tesis (septiembre de 2026). No se presenta como una construcción ejecutada durante el estudio. Lo que la tesis aporta sobre ese antecedente es su **identificación y evaluación formativa**: al encuadrar el problema, se localizó la separación, se reprodujeron sus pruebas y se detectaron sus inconsistencias, lo que motivó el rediseño del método.
 
-Esta versión debe tratarse como un prototipo formativo, no como arquitectura final. En términos de Design Science, su valor no está en demostrar todavía una solución madura, sino en revelar qué decisiones iniciales funcionan, qué inconsistencias aparecen y qué debe formalizarse en el método de refactorización arquitectónica incremental. La separación parcial permitió observar una mejora inicial en separación de responsabilidades y abrió la posibilidad de implementar pruebas unitarias sobre lógica que antes estaba fuertemente acoplada al controlador.
+El artefacto de la tesis es el método, no el código. La verificación que sigue cubre dos planos: la instanciación parcial heredada, verificada técnicamente, y la coherencia del método formalizado en E7c. No se rehace la construcción; se documenta lo que existe y se declara su grado de verificación.
 
-## Evidencia técnica disponible
+## 2. Registro de construcción
 
-| Evidencia | Descripción | Estado | Uso metodológico |
+| Componente | Naturaleza | Responsabilidad | Estado |
 |:--|:--|:--|:--|
-| Carpeta `src/Service` | Espacio creado para ubicar lógica extraída desde controladores. | Disponible en el código de SIGPP/SIPOA4. | Evidencia de intervención inicial. |
-| Extracción parcial de lógica | Separación de lógica en procedimientos vinculados con creación de tareas en elaboración y modificación POA. | Parcial. | Evidencia de aplicabilidad inicial del enfoque. |
-| Posibilidad de pruebas unitarias | Algunas piezas de lógica extraída pueden probarse fuera del controlador. | Preliminar. | Verificación técnica inicial de testabilidad. |
-| Inconsistencias de diseño | Se mezclaron conceptos de objetos de valor y objetos de transferencia de datos. | Identificadas. | Hallazgo formativo para rediseño. |
+| `CreateCertificacionService` | Servicio de aplicación | Coordinar validación, creación, persistencia, seguimiento y autorización | Existente, verificado con dobles |
+| `CreateCertificacionInput` | Objeto de transferencia de datos | Transportar entrada del formulario al servicio | Existente; mezcla de referencia a formulario detectada |
+| `CreateCertificacionAutorizacionService` | Servicio específico | Crear autorización cuando corresponde | Existente, con prueba directa |
+| `RestriccionSubPartidaResolver` | Regla focalizada | Resolver la restricción aplicable | Existente; búsqueda específica y alternativa general |
+| Archivos de prueba | Verificación | Caracterización y prueba directa | Cinco archivos, sin seguimiento al 18 de octubre |
 
-## Archivos identificados en la intervención inicial
+**Herramientas y entorno:** Symfony 4.4, Doctrine, PHP 7.4.29, PHPUnit 9.6.15, ejecución en contenedor Docker. La referencia de la rama de tesis es `feature/propuesta-tesis`, revisión `7c0bca08`.
 
-La evidencia inicial fue contrastada por el tesista con historial y estructura actual de Git. Los archivos identificados permiten sostener que existió una intervención real en el código, aunque todavía parcial y no uniforme.
+**Commits del antecedente (marzo de 2025):** `815ce6c0` («Dev»), `6e333e27` («Adición de pruebas unitarias»), `9d4af430` («Separación a servicios creacion de certificacion»). Se citan como antecedente técnico, no como evidencia de construcción de la tesis.
 
-| Archivo | Tipo de cambio | Evidencia que aporta | Limitación |
-|:--|:--|:--|:--|
-| `src/Controller/poa/Certificacion/CreateCertificacionController.php` | Modificación del controlador. | Se redujo parte de la lógica de creación de certificaciones y se delegó hacia servicios. | Falta cuantificar reducción de tamaño, complejidad y dependencias directas. |
-| `src/Service/Certificacion/CreateCertificacionService.php` | Creación o modificación de servicio. | Concentra reglas de creación de certificación: validación de fecha, tope de certificación, restricciones de subpartida, generación de código, seguimiento y autorización. | No se identificó todavía una prueba unitaria directa para este servicio principal. |
-| `src/Service/Certificacion/Dto/CreateCertificacionInput.php` | Creación de objeto de transferencia de datos. | Transporta datos del formulario hacia el servicio de creación de certificación. | Debe revisarse su separación conceptual respecto de objetos de valor. |
-| `src/Service/CertificacionAutorizacion/CreateCertificacionAutorizacionService.php` | Creación de servicio específico. | Maneja la creación de autorización de certificación cuando corresponde. | Debe verificarse si su diseño es replicable en otros procedimientos del módulo. |
-| `tests/CertificacionAutorizacion/CreateCertificacionAutorizacionTest.php` | Creación de prueba unitaria. | Valida lógica de autorización de certificación fuera del controlador. | Cubre principalmente `CreateCertificacionAutorizacionService`, no el servicio principal de certificación. |
+## 3. Verificación técnica interna
 
-Como evidencia de historial se registran los commits `815ce6c0` ("Dev"), `6e333e27` ("Adición de pruebas unitarias") y `9d4af430` ("Separación a servicios creacion de certificacion"). Estos commits deberán verificarse con el repositorio SIGPP/SIPOA4 antes de ser citados como evidencia final en la tesis.
+| Comprobación | Comando | Resultado |
+|:--|:--|:--|
+| Batería completa | `make test` | `OK (188 tests, 540 assertions)`, PHPUnit 9.6.15 |
+| Directorio de certificación | `vendor/bin/phpunit tests/Certificacion` | `OK (37 tests, 305 assertions)` |
+| Versión de PHP | `php -v` | PHP 7.4.29 |
+| Verificación de formato | `git diff --check` | Sin errores |
 
-## Cuantificación preliminar desde Git
+La prueba directa del servicio principal invoca `create()` con dobles y verifica resultados, validaciones previas y orden de efectos. Esta evidencia corrige la afirmación anterior de ausencia de prueba directa: existe `CreateCertificacionServiceTest.php`, aunque no prueba base de datos real, archivos ni respuesta HTTP. Los cinco archivos de prueba nuevos cubren selección específica/general/ausente de la restricción, propagación de excepciones, sustitución de restricción, delegación y creación bajo condiciones de contrato, archivo y autorización.
 
-La cuantificación inicial del historial Git permite sostener que la intervención no fue meramente declarativa, sino que produjo cambios localizables en archivos del subcircuito de certificación. Los datos disponibles todavía no reemplazan una evaluación sumativa, pero sí son suficientes para documentar una evaluación formativa inicial.
+## 4. Razonamiento de diseño (design rationale)
 
-| Commit | Mensaje | Cambio global | Archivos relevantes | Lectura técnica |
-|:--|:--|:--|:--|:--|
-| `9d4af430` | Separación a servicios creacion de certificacion | 12 archivos modificados, 302 inserciones y 155 eliminaciones. | `CreateCertificacionController.php` (+120/-111), `CreateCertificacionService.php` (+95/-7), `CreateCertificacionInput.php` (+20 aproximado). | Evidencia de reestructuración del flujo de creación de certificación y delegación parcial desde controlador hacia servicio. |
-| `6e333e27` | Adición de pruebas unitarias | 16 archivos modificados, 472 inserciones y 87 eliminaciones. | `CreateCertificacionAutorizacionService.php` (+33), `CertificacionAutorizacionDtoInput.php` (+38), `CreateCertificacionAutorizacionTest.php` (+63), `AutorizacionCambioEstadoSeriveTest.php` (+108). | Evidencia de incorporación de pruebas unitarias, concentradas principalmente en autorización de certificación y cambio de estado. |
-| `815ce6c0` | Dev | 13 archivos modificados, 428 inserciones y 39 eliminaciones. | `CreateCertificacionController.php` (+28/-2), `CreateCertificacionService.php` (+100/-0), `CreateCertificacionInput.php` (+105). | Evidencia de creación o expansión inicial del servicio de certificación y del objeto de entrada asociado. |
+La decisión de extraer la restricción de subpartida respondió a un motivo concreto: es una regla de negocio que decide autorización, tipo de contrato y archivo adjunto, y estaba acoplada al controlador. No se extrajo por tamaño de archivo ni por preferencia estética.
 
-La lectura técnica para la tesis es acotada. En `CreateCertificacionController.php` existe evidencia de refactorización, especialmente en el commit `9d4af430`, donde el volumen de inserciones y eliminaciones sugiere reestructuración del flujo más que simple adición de código. En `CreateCertificacionService.php` se observa concentración de reglas de creación de certificación, incluyendo fecha, tope, restricción de subpartida, generación de código, seguimiento, autorización y archivo adjunto. En `CreateCertificacionAutorizacionService.php` se concentra la regla de creación de autorización cuando la certificación se encuentra en estado de autorización.
+**Problema detectado:** la extracción inicial mezcló objetos de valor con objetos de transferencia de datos, y el servicio principal quedó sin prueba directa identificada en un primer momento. Esto reveló que la separación ad hoc no produce por sí misma una arquitectura coherente.
 
-La evidencia de pruebas es parcial. `tests/CertificacionAutorizacion/CreateCertificacionAutorizacionTest.php` permite sostener que una parte de la lógica extraída pudo probarse fuera del controlador; no obstante, no se identificó una prueba unitaria directa para `CreateCertificacionService.php`. Por tanto, la conclusión defendible es que la intervención demuestra viabilidad inicial de separación y testabilidad parcial, pero no valida todavía el método completo ni la calidad arquitectónica final.
+**Solución de rediseño:** caracterizar el comportamiento antes de mover; exigir prueba directa sobre los servicios principales; y fijar un destino de frontera incremental en lugar de una migración total. La autoridad de la regla temporal se fija en el servidor, con la interfaz como representación, para evitar definiciones divergentes.
 
-## Resultado de ejecución de pruebas
+**Cambio pendiente de distinguir:** la decisión temporal no distingue el límite mensual 8/9 en el punto comprobado, y la consulta de habilitados ocurre después de la creación. Estos hallazgos son del diagnóstico (E6), no defectos que se hayan corregido; la instanciación no los resuelve todavía.
 
-La verificación técnica preliminar incluye la ejecución de la batería de pruebas unitarias existente mediante el comando `rtk phpunit`. El resultado reportado fue satisfactorio: `PHPUnit: OK (151 tests, 235 assertions)`.
+## 5. Verificación de la decisión temporal (enlace con E6)
 
-Este resultado respalda que el sistema conserva una base de pruebas ejecutable y que la intervención no se documenta únicamente desde cambios estructurales en archivos. Sin embargo, su alcance debe formularse con precisión: las pruebas pasaron en conjunto y existe evidencia específica de prueba para autorización de certificación, pero no se identificó todavía una prueba unitaria directa para `CreateCertificacionService.php`. Por ello, el resultado se interpreta como evidencia de testabilidad parcial y verificación formativa, no como validación sumativa del método completo.
+La instanciación se verificó también sobre la decisión temporal mediante comprobaciones aisladas, registradas en E6: O01–O06 de pantalla, M08/M09 de cierre mensual, O06 de servidor, interacciones del servicio y ensayo bisiesto B01/B02. Estos ensayos caracterizan el comportamiento actual y localizan la brecha; no son una corrección ni una evaluación sumativa. Su detalle, comandos y salidas están en `comprobacion_ordinaria_pantalla_e6.md`, `comprobacion_cierre_mensual_e6.md`, `comprobacion_o06_servidor_e6.md`, `comprobacion_interacciones_fechas_gestion_e6.md` y `bitacora_i03_cierre_bisiesto_e6.md`.
 
-## Hallazgos formativos
+## 6. Suficiencia para la evaluación
 
-La intervención inicial confirmó que la extracción hacia servicios puede reducir el acoplamiento directo entre controladores y lógica de negocio, pero también mostró que una extracción ad hoc no produce por sí misma una arquitectura coherente. La mezcla entre objetos de valor y objetos de transferencia de datos evidencia que el sistema necesita reglas explícitas de diseño para distinguir representación de datos, reglas de dominio, coordinación de casos de uso y acceso a persistencia.
+El artefacto cumple la condición de E7e en el alcance del producto mínimo viable: la instanciación parcial está construida y verificada técnicamente, el método está formalizado, y los cambios están documentados con su razón. Lo que no se ha construido —la ampliación extraordinaria de I04, la corrección del límite 8/9, la lectura previa de configuración— se declara como capacidad futura, no como resultado verificado. El artefacto queda listo para la evaluación formativa y sumativa sobre la evidencia existente.
 
-El hallazgo más importante es metodológico: la mejora no debe presentarse como una migración terminada hacia una arquitectura madura, sino como evidencia de que el problema existe y de que la solución requiere formalización. Esta lectura evita el error de convertir una refactorización parcial en conclusión final; el trabajo debe usar esta intervención como evaluación formativa y como insumo para rediseñar el método, de acuerdo con la necesidad de documentar decisiones y versiones en Design Science (Wieringa, 2014).
+## 7. Gate de E7e
 
-La verificación inicial también muestra una brecha de cobertura: existe prueba unitaria para la autorización de certificación, pero no se identificó todavía una prueba unitaria directa para `CreateCertificacionService`. Esta brecha es útil para la tesis porque permite derivar un requisito de rediseño: cada servicio extraído desde un controlador debe quedar acompañado por pruebas unitarias o de caracterización que cubran sus reglas principales antes de considerarse listo para evaluación sumativa.
+El gate exige: artefacto construido y verificado, evidencia de verificación, cambios documentados con su razón, y artefacto listo para la evaluación formativa. Las secciones anteriores proponen ese cumplimiento. Corresponde al tesista validar o corregir, en particular si la cronología del antecedente (2025) y la distinción entre instanciación heredada y verificación de la tesis reflejan con fidelidad lo ocurrido.
 
-## Limitaciones de la versión inicial
-
-- La extracción a `src/Service` no sigue todavía una convención uniforme para todos los procedimientos del subcircuito seleccionado.
-- No existe aún una frontera arquitectónica explícita y repetible entre controlador, servicio de aplicación, reglas de negocio, objetos de transferencia de datos, objetos de valor y persistencia.
-- La cobertura de pruebas unitarias existe solo como posibilidad o evidencia parcial; falta registrar casos, resultados y alcance.
-- La cobertura de pruebas unitarias se concentra en autorización de certificación; no se identificó prueba directa para `CreateCertificacionService.php`.
-- La batería de pruebas existente pasó con `rtk phpunit`: 151 pruebas y 235 aserciones en estado OK.
-- La intervención todavía no demuestra escalabilidad del patrón hacia todos los objetos, controladores y procedimientos del módulo seleccionado.
-
-## Decisión de rediseño
-
-La siguiente versión del artefacto debe formalizar un método de refactorización incremental que indique: criterios para seleccionar procedimientos, reglas para extraer lógica desde controladores, distinción entre objetos de transferencia de datos y objetos de valor, ubicación de reglas de negocio, estrategia de pruebas unitarias y criterio de suficiencia antes de pasar a evaluación sumativa. Esta decisión mantiene el alcance de maestría: la contribución no será “se creó `src/Service`”, sino principios de diseño validados para convertir una separación parcial en una refactorización incremental coherente y verificable.
-
-La regla de rediseño adoptada no parte de nuevas historias de usuario, sino de refactorizar el comportamiento existente del flujo de certificación. Cuando se trate de lógica heredada difícil de aislar, se usarán pruebas de caracterización previas a la modificación; cuando la lógica ya esté en un servicio, se exigirá prueba unitaria directa sobre sus reglas principales. La arquitectura guía será una arquitectura limpia mínima e incremental, no una migración completa hacia DDD ni arquitectura hexagonal, porque esa complejidad excedería el alcance viable y aumentaría el riesgo de intervención en SIGPP/SIPOA4.
-
-El primer comportamiento elegido para caracterización es la restricción de subpartida. Esta regla se protegerá antes de moverla fuera del controlador, porque decide si la certificación requiere autorización, tipo de contrato o archivo adjunto. La prueba de caracterización debe capturar el comportamiento actual frente a tres escenarios mínimos: restricción activa específica por subpartida, gestión, administración y actividad; restricción activa general para subpartida, gestión y administración sin actividad asociada; y ausencia de restricción. La regla no se define por una subpartida fija, sino por una configuración del Departamento Financiero que puede cambiar en el tiempo.
-
-La salida observable de esta primera prueba será la restricción resuelta, no sus efectos posteriores. Por tanto, la prueba verificará que el comportamiento actual devuelve la restricción específica cuando existe, la restricción general cuando no existe específica, y `null` o equivalente cuando no existe restricción aplicable. La activación de autorización, tipo de contrato o archivo adjunto quedará para pruebas posteriores porque son efectos derivados de la restricción ya resuelta.
-
-El componente de destino para esta extracción será `RestriccionSubPartidaResolver`. Antes de mover la lógica desde `CreateCertificacionController.php`, se deberá crear una prueba de caracterización que fije el comportamiento actual. Después de la extracción, la misma prueba o su equivalente deberá pasar contra el nuevo componente, lo que permitirá documentar el rediseño como una iteración formativa y no como una reescritura informal.
-
-La estrategia elegida precisa ese criterio: la prueba no se escribirá contra el controlador completo, sino directamente contra `RestriccionSubPartidaResolver`. Se acepta esta decisión porque el objetivo es preservar la regla de selección observada en el controlador original sin depender del ciclo HTTP, del formulario ni de Twig. En la tesis, esta evidencia deberá nombrarse con precisión como prueba de caracterización de la regla extraída, no como prueba funcional del controlador.
-
-## Actualización verificada del 18 de octubre de 2026
-
-Se revisó el repositorio SIGPP en `/home/mario/dev/sf_projects/sipoa4`, con `HEAD` en `5313c0e150859d86dd9d82b1df21f719d2242076`. Las diferencias sin confirmar sustituyen la selección duplicada de restricciones en controlador y servicio por delegación a `RestriccionSubPartidaResolver`. El resolvedor conserva búsqueda específica por actividad y alternativa general, usando los repositorios existentes. Los dos consumidores reducen individualmente sus dependencias de constructor de siete a seis, pero el nuevo resolvedor incorpora dos repositorios; este resultado no demuestra reducción del acoplamiento global.
-
-Se reprodujo `make test` dentro del entorno Docker mediante `rtk`, obteniendo `OK (188 tests, 540 assertions)` con PHPUnit 9.6.15. La ejecución focalizada `docker exec --user 1000 sigpp-app vendor/bin/phpunit tests/Certificacion` produjo `OK (37 tests, 305 assertions)`, y `php -v` en el contenedor confirmó PHP 7.4.29. `git diff --check` no informó errores. No se midió cobertura ni se ejecutó una prueba funcional HTTP o una validación institucional.
-
-Los cinco archivos nuevos son `RestrictionSelectionFixture.php`, `RestrictionSelectionCharacterizationTest.php`, `RestriccionSubPartidaResolverTest.php`, `ConsumerResolverDelegationTest.php` y `CreateCertificacionServiceTest.php`. Cubren selección específica/general/ausente, propagación de excepciones, sustitución de una restricción previa por ausencia, delegación y creación con distintas condiciones de contrato, archivo y autorización. La prueba del servicio invoca `create()` con dobles y verifica resultados, validaciones previas y orden de efectos; por ello, ya no es vigente la afirmación de ausencia de prueba directa para este servicio. La reflexión sobre métodos privados protege temporalmente la selección, pero no constituye una prueba funcional del controlador ni una evaluación del contrato HTTP.
-
-La revisión del historial ubica `815ce6c0` el 6 de marzo de 2025 y `9d4af430` el 7 de marzo de 2025. La separación inicial hacia servicios es un antecedente técnico anterior al encuadre de la tesis y no puede presentarse como una intervención ejecutada en octubre de 2026. El resolvedor y los nuevos archivos de pruebas aún están sin seguimiento en Git. La caracterización previa y el ciclo TDD son declaraciones del tesista cuya secuencia temporal sigue pendiente de contrastar con registros intermedios; los ensayos actuales verifican el estado final, no el orden histórico de construcción.
-
-El diagnóstico y el contrato arquitectónico candidato se registran en `arquitectura_candidata_certificacion_2026-10-18.md`. La recomendación es discutir MVC con una frontera de aplicación incremental, en lugar de mantener la expresión ambigua «arquitectura limpia mínima». No se ha aceptado un nuevo diseño ni se ha autorizado otra intervención; falta cerrar fundamentación, contraste de alternativas y criterios prospectivos para los próximos cambios.
+**Cierre, 4 de noviembre de 2026:** el tesista valida la cronología —antecedente de marzo de 2025 evaluado formativamente desde octubre de 2026—. El gate de E7e se cumple: la instanciación parcial está construida y verificada, hay evidencia de verificación, los cambios están documentados con su razón y el artefacto queda listo para la evaluación formativa.
