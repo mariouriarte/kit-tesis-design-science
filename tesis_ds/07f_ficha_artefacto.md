@@ -32,7 +32,7 @@ Roles: practicante (desarrollador), revisor independiente y fuente funcional.
 
 ### 4.2. Componentes de la instanciación
 
-`CreateCertificacionService` (coordinación), `CreateCertificacionInput` (entrada), `CreateCertificacionAutorizacionService` (autorización), `RestriccionSubPartidaResolver` (regla focalizada), repositorios, DTOs y archivos de prueba. El controlador se reduce a coordinación HTTP; la autoridad de la regla temporal reside en el servidor.
+`CreateCertificacionService` (coordinación), `CreateCertificacionInput` (entrada), `CreateCertificacionAutorizacionService` (autorización), `RestriccionSubPartidaResolver` (regla focalizada), repositorios, DTOs y archivos de prueba. El controlador se reduce a coordinación HTTP; la autoridad de la regla temporal reside en el servidor. El detalle de la arquitectura de referencia del caso —responsabilidades, dependencias, detección de deuda y criterios de verificación— está en `anexo_arquitectura_referencia_certificacion.md`.
 
 ## 5. Decisiones y alternativas descartadas
 
