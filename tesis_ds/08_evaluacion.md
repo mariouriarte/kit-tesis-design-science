@@ -1,5 +1,27 @@
 # E8. Evaluación
 
+## Estado vigente al 6 de noviembre de 2026: revisión de P02
+
+Existe ya una aplicación posterior de M-R1 por P02; las notas inferiores que indicaban ausencia de episodio posterior conservan su sentido histórico, no el estado actual. El tesista confirma autorización durante la actividad para dejar efectos en la base local, con borrado anunciado para el final del día; no se registra ese borrado como realizado.
+
+El dictamen está en `revision_aplicacion_p02_2026-11-06.md`, sección 7, y fue aceptado expresamente por el tesista el 6 de noviembre de 2026 mediante «aceptado». Se cierra la valoración del episodio: aplicación asistida acreditada en los ocho pasos y P7 integral en el alcance acordado —configuración, repositorio/servicio reales y controlador por invocación directa, no HTTP completo—. La IA produjo parte sustantiva del diseño, código, pruebas, procedimientos y registro; no se sostiene desempeño autónomo de P02.
+
+| Evidencia | Resultado y procedencia |
+|:--|:--|
+| Batería inicial | Salida conservada: 159 pruebas, 260 aserciones, 1 omitida. |
+| Batería final | Salida conservada: 173 pruebas, 289 aserciones, 1 omitida; no repetida completa por la asesoría. |
+| Dos clases nuevas | Reproducidas por la asesoría: 7/18 y 7/11 satisfactorias, con dobles. |
+| Configuración | Validación del contenedor repetida por la asesoría tras la sesión: código de retorno 0; no se atribuye al participante. |
+| Integración | Procedimientos y salidas previas/posteriores contrastados para tres casos en servicio/repositorio reales y controlador directo. No se reejecutan los que escriben datos. |
+
+Se propone clasificar P02 como episodio controlado con propósito sumativo para valorar M-R1 después del rediseño. No es evaluación de campo ni evidencia causal de mejora frente a P01, porque cambian participante, modalidad, referencia y entorno; tampoco acredita I01–I04 completos, ahorro o evolución posterior. La revisión identifica amenazas de constructo, interna, externa y de conclusión, con controles y límites residuales en la sección 7 del documento de revisión.
+
+**E8 permanece abierta para revisión global de suficiencia:** el dictamen P02 ya está aceptado y no se repetirá su aprobación. Falta contrastar compromisos de evaluación y afirmaciones generales con el conjunto de evidencia, sin eliminar requisitos o indicadores pendientes por el resultado favorable del episodio. El cierre histórico del 4 de noviembre y las tablas inferiores no prevalecen sobre esta revisión ni autorizan traducción final.
+
+## Registro histórico de evaluación y auditoría
+
+Las secciones siguientes se preservan para trazabilidad. Su clasificación de ensayos diagnósticos como sumativos y su cierre del 4 de noviembre fueron observados por la auditoría del 5; no constituyen un nuevo dictamen vigente.
+
 > **Rediseño aprobado y formalizado:** el tesista aprueba los cuatro ajustes derivados de la revisión P01 en P3/P5/P7/P8. M-R1 y la cadena hallazgo → decisión → cambio están documentadas en `metodo_refactorizacion_incremental_mr1.md` y `registro_redisenio_metodo_mr1.md`. Hay evidencia formativa y rediseño del método identificables, pero aún no resultados de una aplicación posterior de M-R1 ni evaluación sumativa concluida. La ratificación P01 y la aprobación del rediseño no validan por sí solas los principios de E10.
 
 > **Ratificación posterior incorporada:** P01 ratifica el registro final; recepción documental cerrada sin nueva aplicación. Se mantiene P7 parcialmente verificado según el alcance técnico, aunque el participante lo reporta como completado con pendientes. Los hallazgos aún deben producir decisiones de rediseño aprobadas y evaluación posterior; la ratificación no cierra E8. Véase la actualización de `revision_aplicacion_p01_2026-11-05.md`.
