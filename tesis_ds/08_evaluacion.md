@@ -1,5 +1,11 @@
 # E8. Evaluación
 
+> **Rediseño aprobado y formalizado:** el tesista aprueba los cuatro ajustes derivados de la revisión P01 en P3/P5/P7/P8. M-R1 y la cadena hallazgo → decisión → cambio están documentadas en `metodo_refactorizacion_incremental_mr1.md` y `registro_redisenio_metodo_mr1.md`. Hay evidencia formativa y rediseño del método identificables, pero aún no resultados de una aplicación posterior de M-R1 ni evaluación sumativa concluida. La ratificación P01 y la aprobación del rediseño no validan por sí solas los principios de E10.
+
+> **Ratificación posterior incorporada:** P01 ratifica el registro final; recepción documental cerrada sin nueva aplicación. Se mantiene P7 parcialmente verificado según el alcance técnico, aunque el participante lo reporta como completado con pendientes. Los hallazgos aún deben producir decisiones de rediseño aprobadas y evaluación posterior; la ratificación no cierra E8. Véase la actualización de `revision_aplicacion_p01_2026-11-05.md`.
+
+> **Evidencia posterior a la auditoría de suficiencia:** se recibieron productos de aplicación asistida P01 en la copia sobre master y se reprodujeron 24 pruebas/81 aserciones de certificación, junto con la batería completa 183 pruebas/341 aserciones/1 omitida PostgreSQL. Son resultados de un nuevo episodio formativo con autorregistro, no campo ni sumativa por el solo hecho de ejecutarlos. Quedan pendientes ratificación del resumen final del participante, rediseño documentado del método si se aprueba y evaluación posterior; P7 tiene integración pendiente. Detalle en `revision_aplicacion_p01_2026-11-05.md`. El cierre histórico inferior no sustituye estas condiciones de suficiencia.
+
 **Estado:** en curso. La evaluación distingue dos funciones: demostrar que la instanciación resuelve el problema (utilidad) y demostrar que los principios del método son válidos más allá del caso (contribución). Se declara con honestidad que la evaluación es técnica y analítica; no hubo evaluación de campo. Esta ausencia se registra como amenaza a la validez externa, no se disimula.
 
 ## 1. Estrategia de evaluación (marco FEDS)

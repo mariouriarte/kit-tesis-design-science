@@ -1,5 +1,7 @@
 # E7e. Construcción y verificación interna
 
+> **Construcción posterior del método:** se formaliza M-R1 con cuatro ajustes aprobados tras P01, sin modificar el código ni los registros del participante. Manual en `metodo_refactorizacion_incremental_mr1.md`, comparación y fuentes preservadas en `registro_redisenio_metodo_mr1.md`. La consistencia documental puede verificarse ahora, pero su aplicabilidad y efectividad requieren evaluación posterior. La batería de software P01 no se presenta como prueba de las nuevas instrucciones.
+
 **Estado:** en curso. Este documento consolida el registro de construcción, la verificación técnica y el razonamiento de diseño de la instanciación. Sustituye al borrador del 18 de octubre, corrigiendo tres imprecisiones: la cronología de los commits (marzo de 2025, no de la tesis), el nombre «SIPOA4» (corregido a SIGPP) y la expresión «arquitectura limpia mínima» (corregida a frontera de aplicación incremental).
 
 ## 1. Cronología y alcance honesto

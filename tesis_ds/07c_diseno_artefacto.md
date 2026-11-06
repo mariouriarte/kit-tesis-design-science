@@ -1,5 +1,7 @@
 # E7c. Diseño del artefacto
 
+> **Diseño vigente M-R1, posterior a P01:** el tesista aprueba cuatro ajustes en P3, P5, P7 y P8 tras la aplicación ratificada. La versión operativa está en `metodo_refactorizacion_incremental_mr1.md` y la trazabilidad en `registro_redisenio_metodo_mr1.md`. Esta actualización no es la versión recibida por P01 ni prueba su efectividad; no modifica C01–C05, I01–I04 o el resultado parcial de P7.
+
 **Estado:** en curso. Este documento sustituye al borrador del 13 de octubre, que describía una instanciación con «arquitectura limpia mínima» y «SIPOA4» y no incorporaba el método como artefacto central. El diseño cubre las dos caras de la composición: el método adaptado (pasos, roles, entradas, salidas, criterios) y la instanciación en el subcircuito de certificación (arquitectura MVC con frontera incremental).
 
 ## 1. Ficha de diseño
@@ -22,14 +24,16 @@ El ciclo de Girjoaba y Capiluppi parte de una interfaz obsoleta cuya funcionalid
 |:--|:--|:--|:--|:--|:--|
 | P1. Delimitar el incremento | Escenario de cambio | Decisión funcional delimitada, lista de consumidores y efectos | Necesidad concreta de cambio (selección proporcional) | Frontera justificada por la decisión | A01, D01, R1–R2 |
 | P2. Caracterizar el comportamiento | Código actual y contrato público | Prueba de caracterización; registro observado–requerido–intención | Decisión localizada y consumidores identificados | Comportamiento fijado antes de moverlo | A02, D03, D06, R3–R4 |
-| P3. Hacer controlable la decisión | Decisión distribuida | Entradas explícitas (gestión, instante), punto de observación, efectos prohibidos | Dependencias identificadas | Decisión reproducible con entradas suministrables | A03, D04, R5 |
+| P3. Hacer controlable la decisión | Decisión y dependencias identificadas | Datos y dependencias pertinentes, forma de control y puntos de observación; instante solo si interviene el tiempo | Información necesaria y restricciones de control identificables | Decisión reproducible en el alcance declarado, con dependencias no controlables y límites explícitos | A03, D04, R5; RD01 |
 | P4. Migrar sin retirar el original | Componente destino | Regla o servicio nuevo en coexistencia con el original | Prueba de caracterización previa | Funcionalidad implementada, original intacto | paso 2 del ciclo, R11–R12 |
-| P5. Probar comportamiento y efectos | Implementación nueva | Prueba de comportamiento; ausencia de efectos prohibidos ante rechazo | Coexistencia temporal estable | Comportamiento preservado o corregido intencionalmente | paso 3 del ciclo, A03, R5, I01–I02 |
+| P5. Comprobar comportamiento y efectos | Implementaciones coexistentes y escenarios definidos | Resultados normales, ausencia y fallos pertinentes, con efectos permitidos/prohibidos observados | Puntos de observación y expectativas identificados | Conservación o cambio intencional respaldado en el conjunto examinado; discrepancias y límites registrados | paso 3 del ciclo, A03, R5, I01–I02; RD02 |
 | P6. Retirar el original y ajustar dependencias | Implementaciones duplicadas | Original retirado, dependencias y configuración ajustadas | P5 verde | Conexiones coherentes, dependencias transitorias declaradas | pasos 4–5 del ciclo, D07, R6, R8 |
-| P7. Integrar y verificar | Cambio aislado | Integración a la rama acumuladora; prueba de integración | Comprobaciones locales verdes | Integración verificada sin regresión observada | pasos 6–7 del ciclo, D09 |
-| P8. Registrar costo y versionar | Bitácora y diferencias | Versión documentada con pregunta de diseño, hallazgo y cambio | — | Costo inicial y evolución posterior separados | A04, D09, R7, R10 |
+| P7. Integrar y verificar | Cambio aislado y condiciones de integración | Evidencia separada de P7-L, verificación local, y P7-I, integración en entorno objetivo | Comprobaciones locales y condiciones de integración identificadas | Ambas partes acreditadas en su alcance; si una falta, parcial o no completado, no cumplimiento integral | pasos 6–7 del ciclo, D09; RD03 |
+| P8. Documentar, versionar y registrar mediciones previstas | Productos, decisiones, diferencias y protocolo aplicable | Versión, pregunta, hallazgos, cambios, ayudas y límites; mediciones previstas o estado no medido | Evidencia disponible, sin reconstruir datos inexistentes | Trazabilidad completa y estado de mediciones declarado; medidas necesarias obtenidas antes de sostener la afirmación, con costo inicial y evolución separados cuando se estudien | A04, D09, R7, R10; RD04 |
 
 P8 es una adición de la adaptación (D09, R10), no un paso del ciclo original; se declara como tal para no atribuir al antecedente una responsabilidad que es del método adaptado. Los pasos P1–P3 tampoco existen con ese contenido en el ciclo, que comienza directamente por la interfaz; son la materialización de A01–A03 sobre la necesidad de seleccionar y verificar antes de mover.
+
+En M-R1 la distinción entre documentación y medición no exime obtener las medidas que sustenten una afirmación. «No medido» no equivale a cero ni satisface un criterio empírico. La falta de integración permitida por el entorno limita P7; no autoriza reducir su criterio después de ver resultados. Los detalles operativos de estos cuatro ajustes están en la versión M-R1 y no se atribuyen al ciclo de origen.
 
 ### 2.3. Roles
 
@@ -48,11 +52,11 @@ flowchart TD
     P1[P1 Delimitar el incremento] --> P2[P2 Caracterizar el comportamiento]
     P2 --> P3[P3 Hacer controlable la decisión]
     P3 --> P4[P4 Migrar sin retirar el original]
-    P4 --> P5[P5 Probar comportamiento y efectos]
+    P4 --> P5[P5 Comprobar comportamiento y efectos]
     P5 -->|falla| P2
     P5 --> P6[P6 Retirar original y ajustar dependencias]
     P6 --> P7[P7 Integrar y verificar]
-    P7 --> P8[P8 Registrar costo y versionar]
+    P7 --> P8[P8 Documentar y registrar mediciones previstas]
     P8 -->|nuevo incremento| P1
 ```
 

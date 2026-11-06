@@ -1,5 +1,7 @@
 # E7d. Plan de construcción y versiones
 
+> **Extensión posterior a P01:** las denominaciones V1–V3 inferiores conservan el plan histórico. Se añade una secuencia explícita del método: M-P01 (material aplicado por el practicante), aplicación formativa asistida y ratificada, y M-R1 (rediseño aprobado de P3/P5/P7/P8). Pregunta, hallazgos y cambios están en `registro_redisenio_metodo_mr1.md`. La comprobación posterior de M-R1 y el episodio sumativo siguen pendientes; no se dan por realizados por formalizar esta versión.
+
 **Estado:** en curso. Este documento fija el producto mínimo viable, documenta las versiones construidas y previstas, y establece el criterio de suficiencia para pasar a la evaluación sumativa. Se distingue con honestidad lo ya construido (histórico) de lo que se consolidará (prospectivo), porque parte de la construcción ocurrió antes de la formalización del método.
 
 ## 1. Producto mínimo viable

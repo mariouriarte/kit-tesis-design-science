@@ -1,5 +1,7 @@
 # E7f. Ficha del artefacto
 
+> **Versión vigente del método: M-R1, rediseñada después de P01 y aún no evaluada posteriormente.** Manual operativo en `metodo_refactorizacion_incremental_mr1.md`; evidencia, versión anterior y cuatro cambios aprobados en `registro_redisenio_metodo_mr1.md`. La ficha no acredita integración completa ni principios validados.
+
 **Estado:** en curso. Esta ficha es el documento de diseño reproducible que servirá de anexo. Debe permitir a otro investigador entender y reproducir el artefacto sin acceso al tesista. Consolida lo formalizado en E7a–E7e; no añade decisiones nuevas.
 
 ## 1. Identificación y tipología
@@ -8,7 +10,7 @@
 - **Tipología:** composición método + instanciación (Design Science).
 - **Base operativa:** ciclo de Girjoaba y Capiluppi (2024), con adaptaciones A01–A04 y selección proporcional, complementado por Feathers (2004), Fowler (2018) y Bass et al. (2021).
 - **Instanciación:** subcircuito de creación de certificación en SIGPP (Caja Petrolera de Salud), rama `feature/propuesta-tesis`, revisión `7c0bca08`.
-- **Versión de la ficha:** consolidada al 4 de noviembre de 2026.
+- **Versión de la ficha:** actualización M-R1 posterior a la aplicación P01; la ficha consolidada del 4 de noviembre se conserva en el registro de versiones.
 
 ## 2. Problema que resuelve
 
@@ -26,7 +28,9 @@ Instanciación (R11–R14): frontera MVC incremental, autoridad de regla en serv
 
 ### 4.1. Pasos del método
 
-P1 delimitar el incremento; P2 caracterizar el comportamiento; P3 hacer controlable la decisión; P4 migrar sin retirar el original; P5 probar comportamiento y efectos; P6 retirar el original y ajustar dependencias; P7 integrar y verificar; P8 registrar costo y versionar. Entradas, salidas y criterios de cada paso en `07c_diseno_artefacto.md`.
+P1 delimitar el incremento; P2 caracterizar el comportamiento; P3 hacer controlable la decisión con datos y dependencias pertinentes; P4 migrar sin retirar el original; P5 comprobar resultados normales, ausencia y fallos con sus efectos; P6 retirar el original y ajustar dependencias; P7 distinguir verificación local e integración en el entorno objetivo; P8 documentar, versionar y registrar mediciones previstas. Entradas, salidas y criterios en `07c_diseno_artefacto.md` y detalles operativos en el manual M-R1.
+
+P3 exige instante solo cuando la decisión depende del tiempo. P7 mantiene estado parcial si falta integración; P8 distingue trazabilidad obligatoria de mediciones con protocolo, sin eliminar las medidas necesarias para una afirmación de mejora. Estas instrucciones no se atribuyen retrospectivamente al participante P01.
 
 Roles: practicante (desarrollador), revisor independiente y fuente funcional.
 
@@ -46,6 +50,8 @@ Roles: practicante (desarrollador), revisor independiente y fuente funcional.
 
 V1 (antecedente de marzo de 2025, evaluado formativamente en octubre de 2026); V2 (comprobaciones de la decisión temporal, octubre–noviembre); V3 (consolidación del método y de la evidencia). Detalle en `07d_plan_construccion.md`.
 
+Para el rediseño posterior se identifican separadamente M-P01 (instrucciones efectivamente recibidas por el participante) y M-R1 (cuatro ajustes aprobados tras su aplicación). No son nuevas denominaciones del software V1–V3. La aplicación asistida P01 tiene productos y ratificación recibidos; M-R1 todavía no tiene un episodio de evaluación posterior.
+
 ## 7. Verificación interna
 
 - `make test`: 188 pruebas, 540 aserciones, PHPUnit 9.6.15.
@@ -56,6 +62,8 @@ V1 (antecedente de marzo de 2025, evaluado formativamente en octubre de 2026); V
 ## 8. Instrucciones de uso
 
 Para aplicar el método a otro subcircuito, seguir P1–P8 en orden, con el revisor independiente en P1/P5 y la fuente funcional ratificando las reglas en P2. Para reproducir la instanciación: clonar SIGPP en la revisión `7c0bca08`, ejecutar `make test` y la batería de certificación en un contenedor con PHP 7.4.29 y PHPUnit 9.6.15. No se requieren credenciales productivas; las comprobaciones usan dobles y datos ficticios.
+
+La reproducción controlada P01 se conserva por separado en la copia sobre master `7ef29a4f`, sin usar el contenedor habitual: sus comandos y material originales no deben sustituirse por M-R1. No se modificaron su código o registros al rediseñar el método. Preparar una evaluación nueva requiere referencia, entorno, materiales, asistencia y criterios fijados antes de ejecutar; repetir la batería de P01 no evalúa por sí solo el método rediseñado.
 
 ## 9. Limitaciones conocidas
 
