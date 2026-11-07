@@ -1,5 +1,7 @@
 # Balance global de evaluación y condiciones pendientes de cierre
 
+> **Estado final del balance:** E8 y E9 están cerradas y el tesista ha adoptado PA1–PA3 y las conclusiones de E10 mediante «aceptado». Las valoraciones inferiores de contribución pendiente corresponden al momento de análisis y se conservan para mostrar su evolución; no reabren una decisión aceptada ni eliminan sus reservas. Los resultados parciales/no medidos siguen vigentes. La formulación final y el alcance de validación contextual están en E10, y el control documental final se registra separadamente.
+
 > **Decisión posterior del tesista:** ante la pregunta de si las reglas de adaptación de fronteras y comprobaciones representan el conocimiento que pretende aportar, responde «si, es lo que representa». Queda aceptado el foco de análisis, no la originalidad o validez de los principios ni una modificación retrospectiva de objetivos/criterios. La sección 6 desarrolla candidatos para contrastar, sin sustituir todavía los cinco enunciados históricos de E10.
 
 > **Estado vigente de evaluación:** el cierre acotado de E8 fue aceptado por el tesista y se registra en la sección 8. Las reservas anteriores sobre contribución y cumplimiento de objetivos siguen vigentes, pero no significan que la etapa de evaluación permanezca abierta; su suficiencia global continúa en E9/E10.

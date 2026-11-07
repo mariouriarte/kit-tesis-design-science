@@ -66,7 +66,7 @@ La prueba omitida requiere una conexión PostgreSQL específica no configurada y
 
 ## 6. Análisis estructural posterior y límites
 
-El código pasa de 14 a 18 métodos activos y de dos implementaciones de la multiplicación a una, utilizada desde dos lugares. El conteo textual de líneas con llamadas internas pasa de 16 a 21 e incluye algunas apariciones comentadas presentes en ambos estados. Estos recuentos describen estructura y eliminación de una duplicación concreta; no miden facilidad de comprensión o costo de mantenimiento. El autor considera favorable la separación de operaciones, pero la contrapartida de más métodos y conexiones debe permanecer visible.
+El código pasa de 14 a 18 métodos activos y de dos implementaciones de la multiplicación a una, utilizada desde dos lugares. El conteo textual de líneas con llamadas internas pasa de 16 a 21 e incluye algunas apariciones comentadas presentes en ambos estados. Estos recuentos describen estructura y eliminación de una duplicación concreta; no miden facilidad de comprensión o costo de mantenimiento. El autor considera favorable la separación de operaciones, pero la contrapartida de más métodos y conexiones debe permanecer visible. La separación y reutilización se alinean con los criterios de Metz (2019, pp. 29–32), ahora cotejados con el ejemplar aportado. Ese fundamento justifica la decisión bajo criterios explícitos, no una mejora empírica de mantenibilidad ni ausencia de costo de ejecución.
 
 Después de construir se formularon cuatro cambios hipotéticos y se contaron sus lugares de edición, sin ejecutarlos. Cambiar la fórmula pasa de dos lugares a uno; cambiar el origen del disponible o cualquiera de los dos mensajes mantiene un lugar en cada caso. Es análisis estructural exploratorio posterior, no evaluación prospectiva del esfuerzo de cambio ni cumplimiento de I04. No se reclaman ahorro, menor riesgo de error o mantenibilidad empírica a partir de esos recuentos.
 
@@ -78,4 +78,10 @@ El episodio muestra una aplicación a otra decisión del mismo sistema y una int
 
 **Lámina de evidencia:** cinco escenarios aceptados antes de transformar y prueba final reproducida 5/25 → batería 164/285/1 omitida → límites: autor con IA, mismo sistema, sin persistencia real, esfuerzo o mantenibilidad medidos.
 
-Este resumen es contenido propuesto en Markdown, no una presentación generada ni una sustitución de la explicación del tesista. Las referencias teóricas y eventuales citas directas del material original requieren sus propios localizadores verificados; este ejemplo no reproduce citas de libro pendientes de cotejo por la asesoría. La formulación final de principios y conclusiones corresponde al análisis global de la evidencia, no a esta lámina explicativa.
+Este resumen es contenido propuesto en Markdown, no una presentación generada ni una sustitución de la explicación del tesista. La ficha `lectura_metz_diseno_2026-11-07.md` conserva los localizadores y el cotejo de los pasajes aportados; esta versión prefiere una síntesis propia, sin necesidad de reproducir todas las citas textuales. La formulación final de principios y conclusiones corresponde al análisis global de la evidencia, no a esta lámina explicativa.
+
+## 8. Referencia de la justificación de diseño
+
+Metz, S. (2019). *Practical object-oriented design: An agile primer using Ruby* (2nd ed.). Addison-Wesley Professional. https://www.informit.com/store/practical-object-oriented-design-an-agile-primer-using-9780134456478
+
+**Verificada:** ejemplar aportado, pp. impresas 29–32, con las cautelas de pp. 9–10 y 13. La fundamentación no sustituye medir esfuerzo o cambios posteriores, y su incorporación documental no se presenta como criterio de éxito fijado antes de la actividad.

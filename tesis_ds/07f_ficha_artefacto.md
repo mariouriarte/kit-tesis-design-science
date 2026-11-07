@@ -1,16 +1,17 @@
 # E7f. Ficha del artefacto
 
-> **Versión vigente del método: M-R1, rediseñada después de P01 y aún no evaluada posteriormente.** Manual operativo en `metodo_refactorizacion_incremental_mr1.md`; evidencia, versión anterior y cuatro cambios aprobados en `registro_redisenio_metodo_mr1.md`. La ficha no acredita integración completa ni principios validados.
+> **Versión vigente del método: M-R1, rediseñada después de P01 y evaluada posteriormente en el episodio P02.** Manual operativo en `metodo_refactorizacion_incremental_mr1.md`; evidencia, versión anterior y cuatro cambios aprobados en `registro_redisenio_metodo_mr1.md`; resultados y dictamen aceptado en `revision_aplicacion_p02_2026-11-06.md`, sección 7. La aplicación de importe utiliza un suplemento de registro progresivo identificado por separado. La ficha no acredita integración completa, beneficios no medidos o validación general de principios.
 
-**Estado:** en curso. Esta ficha es el documento de diseño reproducible que servirá de anexo. Debe permitir a otro investigador entender y reproducir el artefacto sin acceso al tesista. Consolida lo formalizado en E7a–E7e; no añade decisiones nuevas.
+**Estado:** ficha documental con referencias de evaluación actualizadas. Debe permitir entender y aplicar el método con sus entradas, productos y condiciones, sin depender de decisiones tácitas del tesista. Consolida lo formalizado en E7a–E7e y distingue el antecedente de software de los episodios posteriores; no añade reglas nuevas o criterios retrospectivos. El cierre documental histórico se conserva en la sección 11.
 
 ## 1. Identificación y tipología
 
 - **Nombre:** método de refactorización arquitectónica incremental para subcircuitos de aplicaciones MVC heredadas.
 - **Tipología:** composición método + instanciación (Design Science).
 - **Base operativa:** ciclo de Girjoaba y Capiluppi (2024), con adaptaciones A01–A04 y selección proporcional, complementado por Feathers (2004), Fowler (2018) y Bass et al. (2021).
-- **Instanciación:** subcircuito de creación de certificación en SIGPP (Caja Petrolera de Salud), rama `feature/propuesta-tesis`, revisión `7c0bca08`.
-- **Versión de la ficha:** actualización M-R1 posterior a la aplicación P01; la ficha consolidada del 4 de noviembre se conserva en el registro de versiones.
+- **Contexto de instanciación:** subcircuito de creación de certificación en SIGPP (Caja Petrolera de Salud). Antecedente técnico en `feature/propuesta-tesis`, revisión `7c0bca08`; no es la referencia inicial o final de todos los episodios.
+- **Episodios del método:** P01 sobre copia de master `7ef29a4f`; M-R1/P02 en la rama de evaluación correspondiente; aplicación adicional de importe por el autor desde `7ef29a4f`, con suplemento explícito. Referencias y estados de productos en las revisiones de cada episodio; no se presume un commit final cuando los cambios se recibieron locales.
+- **Versión de la ficha:** actualización documental posterior a la recepción de P02 e importe; la formulación anterior y las decisiones del método se conservan en sus registros.
 
 ## 2. Problema que resuelve
 
@@ -36,11 +37,11 @@ Roles: practicante (desarrollador), revisor independiente y fuente funcional.
 
 ### 4.2. Componentes de la instanciación
 
-`CreateCertificacionService` (coordinación), `CreateCertificacionInput` (entrada), `CreateCertificacionAutorizacionService` (autorización), `RestriccionSubPartidaResolver` (regla focalizada), repositorios, DTOs y archivos de prueba. El controlador se reduce a coordinación HTTP; la autoridad de la regla temporal reside en el servidor. El detalle de la arquitectura de referencia del caso —responsabilidades, dependencias, detección de deuda y criterios de verificación— está en `anexo_arquitectura_referencia_certificacion.md`.
+Los componentes de referencia incluyen `CreateCertificacionService` (coordinación), `CreateCertificacionInput` (entrada), `CreateCertificacionAutorizacionService` (autorización), el resolvedor focalizado, repositorios, DTOs y pruebas. Los selectores concretos difieren entre el antecedente, P01 y P02; el método no obliga a copiar un nombre de clase o una extracción específica. Reducir el controlador a coordinación y unificar la autoridad temporal son objetivos de la arquitectura de referencia, no resultados completamente construidos: la corrección temporal sigue pendiente. El detalle de responsabilidades y criterios está en `anexo_arquitectura_referencia_certificacion.md`; el cumplimiento efectivo, en E9 T01–T14.
 
 ## 5. Decisiones y alternativas descartadas
 
-- **M1 (aplicación literal del ciclo):** descartada; es ingeniería sin decisión propia que evaluar.
+- **M1 (aplicación literal del ciclo):** descartada para esta propuesta porque no explicita por sí sola las adaptaciones que el estudio decidió examinar; aplicar un antecedente no se convierte automáticamente en aporte original.
 - **M3 (migración estructural amplia):** descartada; contradice el alcance y exige independencia de Symfony/Doctrine no sostenible.
 - **Arquitectónica A (extracciones sin contrato):** descartada; desplaza sin verificar.
 - **Arquitectónica C (núcleo con puertos y adaptadores):** descartada; costo desproporcionado.
@@ -50,28 +51,34 @@ Roles: practicante (desarrollador), revisor independiente y fuente funcional.
 
 V1 (antecedente de marzo de 2025, evaluado formativamente en octubre de 2026); V2 (comprobaciones de la decisión temporal, octubre–noviembre); V3 (consolidación del método y de la evidencia). Detalle en `07d_plan_construccion.md`.
 
-Para el rediseño posterior se identifican separadamente M-P01 (instrucciones efectivamente recibidas por el participante) y M-R1 (cuatro ajustes aprobados tras su aplicación). No son nuevas denominaciones del software V1–V3. La aplicación asistida P01 tiene productos y ratificación recibidos; M-R1 todavía no tiene un episodio de evaluación posterior.
+Para el rediseño posterior se identifican separadamente M-P01 (instrucciones efectivamente recibidas por el participante) y M-R1 (cuatro ajustes aprobados tras su aplicación). No son nuevas denominaciones del software V1–V3. P01 tiene productos y ratificación recibidos y M-R1 cuenta con P02 posterior; importe examina otra decisión con ejecución del autor y suplemento identificado. PA1–PA3 se formulan después del análisis de resultados, no como otro método o una versión recibida retrospectivamente por los participantes.
 
 ## 7. Verificación interna
+
+Los conteos siguientes pertenecen al antecedente técnico; no son la batería vigente de todas las ramas ni la evaluación completa del método:
 
 - `make test`: 188 pruebas, 540 aserciones, PHPUnit 9.6.15.
 - `vendor/bin/phpunit tests/Certificacion`: 37 pruebas, 305 aserciones.
 - PHP 7.4.29; `git diff --check` sin errores.
 - Prueba directa del servicio principal con dobles; comprobaciones aisladas de la decisión temporal en E6.
 
+La evidencia posterior se mantiene por episodio: P01, batería reproducida 183/341/1 omitida; P02, dos clases nuevas reproducidas 7/18 y 7/11, batería final conservada 173/289/1 omitida; importe, prueba final reproducida 5/25 y batería 164/285/1 omitida. Los numeradores son pruebas/aserciones según sus revisiones y las omisiones no cuentan como éxito. No se suman esas baterías ni se utilizan para afirmar mejoras de atributos no medidos.
+
 ## 8. Instrucciones de uso
 
 Para aplicar el método a otro subcircuito, seguir P1–P8 en orden, con el revisor independiente en P1/P5 y la fuente funcional ratificando las reglas en P2. Para reproducir la instanciación: clonar SIGPP en la revisión `7c0bca08`, ejecutar `make test` y la batería de certificación en un contenedor con PHP 7.4.29 y PHPUnit 9.6.15. No se requieren credenciales productivas; las comprobaciones usan dobles y datos ficticios.
 
-La reproducción controlada P01 se conserva por separado en la copia sobre master `7ef29a4f`, sin usar el contenedor habitual: sus comandos y material originales no deben sustituirse por M-R1. No se modificaron su código o registros al rediseñar el método. Preparar una evaluación nueva requiere referencia, entorno, materiales, asistencia y criterios fijados antes de ejecutar; repetir la batería de P01 no evalúa por sí solo el método rediseñado.
+Para aplicar el método a otra decisión, utilice el manual operativo M-R1 y prepare referencia de código, necesidad, actores, datos, ayudas y comprobaciones antes de transformar. Los comandos del antecedente o P01 no se trasladan automáticamente a otra PC o rama: cada episodio registra su contenedor/configuración y material. Conserve productos, pruebas, salidas y registros antes de limpiar copias, especialmente cuando no exista un commit final; no se certifica disponibilidad pública de originales sensibles. Repetir una batería no sustituye observar la aplicación del método.
+
+P01 se conserva por separado sobre master `7ef29a4f`; su material no se reemplaza retrospectivamente por M-R1. P02 usa la base local y datos/efectos autorizados documentados en su revisión, sin asumir anonimización completa. Importe se realiza en `eval/metodo-mr1-importe-autor`, con guía, registro progresivo y cinco escenarios aceptados antes de transformar; el anexo académico muestra decisiones y límites. La autoría asistida, el punto de observación, la coexistencia relatada y lo que se reproduce posteriormente deben quedar separados en cualquier reproducción o informe.
 
 ## 9. Limitaciones conocidas
 
 - I04 (modificabilidad por ampliación de ventana) no se midió: su precondición, una capacidad extraordinaria existente, no está construida.
 - La corrección del límite mensual 8/9 no se implementó; es un hallazgo del diagnóstico, no una solución entregada.
 - La cronología: la separación a `src/Service` es de marzo de 2025, anterior al encuadre; la tesis la evalúa, no la reclama como construcción propia.
-- La verificación usa dobles y datos ficticios; no acredita persistencia real, respuesta HTTP ni atomicidad en base.
-- La evaluación sumativa prevista es más débil que el estándar pleno de maestría; las condiciones de contorno se declaran en E8 y E10.
+- Los niveles de verificación difieren: P01 no acredita integración real, P02 dispone de procedimientos/salidas de integración en su alcance y de controlador directo, e importe usa consumidor con dobles y configuración. No se afirma HTTP completo o atomicidad por esas comprobaciones.
+- No hubo evaluación de campo; P02 es valoración controlada posterior con alcance asistido. E8/E9 están cerradas en sus alcances y E10 tiene PA1–PA3 y conclusiones adoptados. La ficha no convierte esa adopción en aprobación institucional o cumplimiento integral de metas técnicas.
 
 ## 10. Relación con la base de conocimiento
 

@@ -1,6 +1,8 @@
 # Método de refactorización arquitectónica incremental — M-R1
 
-**Estado:** versión rediseñada y aprobada por el tesista después de P01; aún no evaluada en una aplicación posterior. **Identificador:** M-R1. **Fecha de formalización:** 6 de noviembre de 2026, America/La_Paz. No sustituye retrospectivamente la versión que recibió P01 ni convierte sus pendientes en pasos cumplidos.
+**Estado vigente:** versión rediseñada y aprobada después de P01, aplicada posteriormente por P02 con el alcance asistido documentado en `revision_aplicacion_p02_2026-11-06.md`, sección 7. **Identificador:** M-R1. **Fecha de formalización:** 6 de noviembre de 2026, America/La_Paz. Esta actualización de estado no cambia los ocho pasos, no sustituye retrospectivamente la versión recibida por P01 ni convierte sus pendientes en pasos cumplidos.
+
+La aplicación de importe por el autor utilizó M-R1 con un suplemento operativo posterior de registro progresivo, identificado en sus guías y revisión; no se atribuye ese suplemento a P02. E8, E9 y E10 están cerradas en sus alcances aceptados; PA1–PA3 y las conclusiones vigentes constan en E10. Las reservas y preguntas de evaluación del apartado 8 conservan el momento de formalización; no deben interpretarse como ausencia vigente de P02 ni generar otra solicitud de aplicación. El cierre no altera los ocho pasos ni convierte el suplemento en beneficio medido.
 
 ## 1. Propósito y alcance
 

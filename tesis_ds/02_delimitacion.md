@@ -1,5 +1,7 @@
 # E2. Delimitación
 
+> **Lectura al cierre de DS:** se conserva la delimitación del perfil y su cronología, sin convertirla en descripción de resultados finales. La precisión empírica vigente identifica separación parcial existente, duplicación concreta de selección y discrepancia temporal, no ausencia total de arquitectura o pruebas; fuentes en E6/E8 y E9 T01–T14. El objeto sigue siendo el método, con composición método/instanciación, y SIGPP el contexto. Objetivos y criterios se conservan con cumplimiento parcial; la contribución adoptada es PA1–PA3 en E10. Los pendientes del perfil inferiores son históricos y no reabren etapas cerradas.
+
 > **Precisión aprobada el 28 de octubre de 2026:** MVC caracteriza las aplicaciones heredadas; «institucional» describe su contexto, no una variante arquitectónica. El título aprobado y las formulaciones actuales se armonizan en `03_perfil_ds.md`. El caso continúa siendo ejecución POA de SIGPP; no se añade FastAPI ni se amplía automáticamente la transferibilidad.
 
 ## Problema de diseño

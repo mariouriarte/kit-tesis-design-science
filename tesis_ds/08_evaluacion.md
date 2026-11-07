@@ -4,7 +4,7 @@
 
 El tesista acepta mediante «si aceptado» cerrar E8 como **evaluación realizada y documentada con resultados parciales y límites explícitos**. El fundamento es la revisión de condiciones de la sección 8 de `balance_global_evaluacion_2026-11-07.md`: P01 formativo y rediseño M-R1, P02 posterior controlado, roles distintos, criterios previos y amenazas con controles e impacto residual. La aplicación de importe aporta evidencia adicional del autor, no sustituye P02 ni añade independencia. No se repiten episodios, criterios o confirmaciones personales por este cierre.
 
-El cierre no acredita cumplimiento integral de los objetivos, indicadores temporales, esfuerzo o modificabilidad, ni validación definitiva de PA1–PA3. Se conservan resultados parciales, no medidos y amenazas. E9 actualizará la trazabilidad y E10 debe resolver suficiencia de la contribución; no se autoriza traducción final ni se declara la tesis completa. Este cierre se sustenta en evidencia posterior a la auditoría y no rehabilita el cierre observado del 4 de noviembre.
+El cierre no acredita cumplimiento integral de los objetivos, indicadores temporales, esfuerzo o modificabilidad, ni valida por sí solo PA1–PA3. Se conservan resultados parciales, no medidos y amenazas. Posteriormente se cerró E9 y se adoptó la contribución acotada de E10; la habilitación para traducción depende del control final registrado en `00_estado.md` y no de E8 por sí sola. Este cierre se sustenta en evidencia posterior a la auditoría y no rehabilita el cierre observado del 4 de noviembre.
 
 ## Registro previo al cierre: análisis, propuestas y antecedentes
 

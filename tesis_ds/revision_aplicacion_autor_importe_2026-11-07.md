@@ -2,7 +2,7 @@
 
 > **Aclaración posterior del autor:** confirma que revisó el material pendiente y olvidó actualizar el estado; solicita que lo actualice la asesoría. Se incorpora su confirmación en el registro original sin atribuirla a un momento anterior. Queda resuelta la diferencia documental sobre revisión personal de pruebas/registro, no la suficiencia global de E8 ni la comprensión mediante examen independiente. Las observaciones iniciales se conservan abajo como secuencia de revisión.
 
-> **Estado vigente:** dictamen de revisión del episodio consolidado en la sección 10. No se atribuye al tesista aceptación de un dictamen que no se le haya solicitado; su confirmación anterior corresponde a revisión personal del material. Posteriormente el tesista aceptó cerrar E8 en alcance acotado; la suficiencia global continúa en E9/E10. No hay motivo localizado para repetir esta actividad o sus aprobaciones; el anexo adecuado y el análisis del conjunto son trabajos documentales distintos del episodio ejecutado.
+> **Estado vigente:** dictamen de revisión del episodio consolidado en la sección 10. No se atribuye al tesista aceptación de un dictamen que no se le haya solicitado; su confirmación anterior corresponde a revisión personal del material. Posteriormente aceptó los cierres acotados de E8/E9 y la contribución/conclusiones de E10; las reservas empíricas de esta revisión permanecen. No hay motivo localizado para repetir esta actividad o sus aprobaciones; el anexo adecuado y el análisis del conjunto son trabajos documentales distintos del episodio ejecutado.
 
 ## 1. Recepción y alcance
 
@@ -79,6 +79,8 @@ Antes de incorporarlo se requieren estas adecuaciones, sin alterar silenciosamen
 No se exige convertir las dieciséis secciones del archivo en dieciséis diapositivas. Para una exposición breve puede resumirse en una lámina de decisiones/fronteras y otra de evidencia/límites; el desarrollo completo puede servir de anexo explicativo Markdown, adaptado y vinculado a esta revisión. No se genera aquí una presentación ni se incorpora el original como anexo final sin esas adecuaciones.
 
 ## 8. Fuente de diseño invocada y verificación
+
+**Verificación posterior con ejemplar recibido:** el tesista aporta «PDF 1» en esta conversación, con texto y páginas; se cotejan portada/página legal y pasajes de pp. impresas 29–32 (PDF 52–55). Se resuelve la literalidad antes pendiente de estos pasajes, con síntesis y cautelas en `lectura_metz_diseno_2026-11-07.md`. La nota inferior conserva el estado de la primera revisión, anterior a esa recepción; no debe leerse como falta de acceso vigente ni motivar otra solicitud del libro. No cambia el dictamen de mantenibilidad no medida.
 
 El autor fundamenta su preferencia por métodos de responsabilidad acotada en Metz (2019). La ficha editorial primaria verifica autora, título, segunda edición, editorial e ISBN, e informa publicación comercial el 22 de agosto de 2018 y copyright 2019. Se conserva 2019 como identificación del ejemplar declarado por el tesista; no se confunde copyright con fecha comercial ni se modifica retrospectivamente su referencia. Las citas de las páginas 29–32 se declaran cotejadas con su PDF en el material recibido, pero ese ejemplar no fue inspeccionado en esta revisión; su literalidad queda **[por verificar por esta asesoría]** antes de reutilizarlas como citas directas.
 

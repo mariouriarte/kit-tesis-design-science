@@ -2,6 +2,8 @@
 
 **Decisión:** el tesista responde «aprobado» a los cuatro ajustes de P3, P5, P7 y P8 después de recibir y ratificar la aplicación P01. **Estado:** rediseño formalizado; evaluación posterior pendiente. La aprobación no precedió a P01 y no se presenta como tal.
 
+> **Actualización de estado posterior a la formalización:** P02 ya aplicó M-R1 y su dictamen está aceptado en `revision_aplicacion_p02_2026-11-06.md`, sección 7. E8, E9 y E10 están cerradas en sus alcances aceptados; E10 recoge los principios y conclusiones adoptados. Las formulaciones «pendiente» de este registro describen la situación al rediseñar y las preguntas fijadas entonces, no una ausencia actual de evaluación. No se reescribe RD01–RD04 como si sus resultados posteriores se hubieran conocido al decidirlos.
+
 **Fecha de formalización:** 6 de noviembre de 2026, comprobada con el reloj del entorno en America/La_Paz. La sesión P01 conserva su fecha declarada del 5 de noviembre; no se atribuye el rediseño a esa sesión ni se inventa una hora de aprobación.
 
 ## 1. Versiones y preservación

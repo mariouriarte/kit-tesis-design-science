@@ -1,5 +1,7 @@
 # E3. Perfil de investigación Design Science
 
+> **Estado al cierre de DS:** este archivo conserva compromisos y evidencia del perfil borrador del 31 de octubre. E8/E9/E10 ya están cerradas en sus alcances aceptados; los resultados vigentes se consultan en E8, la trazabilidad en E9, la contribución/conclusiones en E10 y su relación con los objetivos en el balance global. No se cambian los objetivos después de los resultados ni se presenta cumplimiento integral: se conservan metas parciales o no medidas. Las frases inferiores de etapas abiertas y trabajo aún previsto son históricas. El título, objeto y campo se mantienen; PA1–PA3 es la formulación final de principios adoptada, no una hipótesis literal previa a las aplicaciones.
+
 **Actualización para presentación del perfil borrador del 31 de octubre de 2026.** Documento de compromisos preliminares, no informe de investigación concluida. E4 y E5 están cerradas al alcance registrado; E6 permanece abierta y E7–E10 pendientes. La actualización armoniza decisiones ya tomadas y evidencia disponible, sin aprobar nuevos requisitos, una integración con contratación o el cierre del diseño metodológico.
 
 ## Título provisional
