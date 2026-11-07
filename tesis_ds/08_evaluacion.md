@@ -1,6 +1,24 @@
 # E8. Evaluación
 
-## Estado vigente al 6 de noviembre de 2026: revisión de P02
+## Estado vigente: E8 cerrada en alcance acotado el 7 de noviembre de 2026
+
+El tesista acepta mediante «si aceptado» cerrar E8 como **evaluación realizada y documentada con resultados parciales y límites explícitos**. El fundamento es la revisión de condiciones de la sección 8 de `balance_global_evaluacion_2026-11-07.md`: P01 formativo y rediseño M-R1, P02 posterior controlado, roles distintos, criterios previos y amenazas con controles e impacto residual. La aplicación de importe aporta evidencia adicional del autor, no sustituye P02 ni añade independencia. No se repiten episodios, criterios o confirmaciones personales por este cierre.
+
+El cierre no acredita cumplimiento integral de los objetivos, indicadores temporales, esfuerzo o modificabilidad, ni validación definitiva de PA1–PA3. Se conservan resultados parciales, no medidos y amenazas. E9 actualizará la trazabilidad y E10 debe resolver suficiencia de la contribución; no se autoriza traducción final ni se declara la tesis completa. Este cierre se sustenta en evidencia posterior a la auditoría y no rehabilita el cierre observado del 4 de noviembre.
+
+## Registro previo al cierre: análisis, propuestas y antecedentes
+
+Las menciones inferiores de E8 abierta o aceptación pendiente reflejan el estado de cada revisión anterior. La decisión vigente es el cierre acotado descrito arriba; esas notas no deben usarse para solicitar nuevamente la aprobación o repetir actividades.
+
+### Estado de revisión al 7 de noviembre de 2026: P02 y aplicación del autor
+
+**Propuesta de cierre acotado, pendiente de decisión del tesista:** las cinco condiciones de E8 se contrastan con la nueva evidencia en la sección 8 de `balance_global_evaluacion_2026-11-07.md`. Se propone cerrar evaluación como realizada con resultados parciales, sin declarar cumplimiento integral de objetivos, indicadores o principios. La suficiencia global seguiría en E9/E10 y la traducción final continuaría bloqueada. El cierre no se registra todavía ni se atribuye aceptación por el solo hecho de que los episodios ya estén revisados.
+
+**Foco aceptado y candidatos de adaptación redactados:** el tesista confirma el foco en fronteras y comprobaciones. El balance global, sección 6, formula PA1–PA3 con contexto, prescripción, mecanismo propuesto y límites; son una interpretación posterior de resultados, no hipótesis prospectivas ni sustitución aprobada de los cinco principios históricos. Falta contrastar conocimiento adicional y suficiencia; no se vuelve a solicitar aceptación del foco general ni se cierra E8 por esa aceptación.
+
+**Balance global disponible:** `balance_global_evaluacion_2026-11-07.md` contrasta objetivos y condiciones de cierre. Se dispone de diseño, ciclo formativo/rediseño y evaluación posterior acotada; no de cumplimiento integral del objetivo general o contribución suficientemente respaldada. El foco de conocimiento propuesto se refiere a adaptación de fronteras, observables y niveles de comprobación; está pendiente de valoración del tesista y de análisis específico, no es una nueva contribución aprobada. Se mantiene E8 abierta, sin modificar retrospectivamente objetivos o exigir más implementación por defecto.
+
+La valoración del episodio de importe está consolidada por la asesoría en la sección 10 de `revision_aplicacion_autor_importe_2026-11-07.md`: favorable en el alcance acordado como aplicación del autor con IA, con estado final reproducido y secuencia intermedia sustentada en el registro. La revisión personal está confirmada y no se solicita otra ratificación de la actividad. `anexo_ejemplo_aplicacion_importe.md` ofrece una versión académica de trabajo y una síntesis para exposición, con el original conservado. Ni el dictamen del episodio ni el anexo cierran E8 global, validan automáticamente principios o satisfacen indicadores temporales pendientes.
 
 Existe ya una aplicación posterior de M-R1 por P02; las notas inferiores que indicaban ausencia de episodio posterior conservan su sentido histórico, no el estado actual. El tesista confirma autorización durante la actividad para dejar efectos en la base local, con borrado anunciado para el final del día; no se registra ese borrado como realizado.
 
@@ -112,7 +130,9 @@ Después de la propuesta de examinar otro incremento, el tesista informa que no 
 
 Una aplicación adicional por el autor podría ampliar la evidencia sobre otra decisión y sus puntos de comprobación, pero mantendría el sesgo del constructor y no demostraría aplicabilidad independiente o transferencia a otros desarrolladores. No sustituiría P02 ni se exigiría como condición automática de suficiencia. Su conveniencia depende de un objetivo de evidencia específico y un alcance viable; por ahora no se autoriza construcción, nueva funcionalidad ni ampliación del alcance. Se mantiene la prioridad de resolver suficiencia con afirmaciones proporcionadas y de reservar tiempo para análisis y redacción.
 
-## Aplicación adicional del autor sobre importe: preparación aceptada
+## Aplicación adicional del autor sobre importe: resultados y registro de preparación
+
+**Dictamen de revisión consolidado y ejemplo adecuado:** sección 10 de la revisión y anexo derivado disponibles. Se documenta aplicación asistida a otra decisión, conservación acotada A01–A05, elección justificada sin clase nueva y distinción entre fronteras de observación e intervención. El anexo elimina generalizaciones sobre efectos y mantenibilidad y clasifica los escenarios posteriores como exploratorios. Es una versión de trabajo para el tesista, no una presentación generada o anexo institucional final. No atribuir aceptación del dictamen de asesoría al tesista ni cerrar suficiencia global por esta consolidación.
 
 **Revisión personal confirmada después de la recepción:** el tesista indica que revisó el material señalado y olvidó cambiar el estado; solicita actualización por la asesoría. Registro original y revisión actualizados, sin retrotraer la confirmación. Se resuelve ese pendiente documental y no se repite la consulta. Restan adecuación del ejemplo y dictamen consolidado, no otra ejecución; E8 global permanece abierta.
 

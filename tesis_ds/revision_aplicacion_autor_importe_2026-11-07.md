@@ -2,6 +2,8 @@
 
 > **Aclaración posterior del autor:** confirma que revisó el material pendiente y olvidó actualizar el estado; solicita que lo actualice la asesoría. Se incorpora su confirmación en el registro original sin atribuirla a un momento anterior. Queda resuelta la diferencia documental sobre revisión personal de pruebas/registro, no la suficiencia global de E8 ni la comprensión mediante examen independiente. Las observaciones iniciales se conservan abajo como secuencia de revisión.
 
+> **Estado vigente:** dictamen de revisión del episodio consolidado en la sección 10. No se atribuye al tesista aceptación de un dictamen que no se le haya solicitado; su confirmación anterior corresponde a revisión personal del material. Posteriormente el tesista aceptó cerrar E8 en alcance acotado; la suficiencia global continúa en E9/E10. No hay motivo localizado para repetir esta actividad o sus aprobaciones; el anexo adecuado y el análisis del conjunto son trabajos documentales distintos del episodio ejecutado.
+
 ## 1. Recepción y alcance
 
 El tesista informa que terminó la actividad y produjo un ejemplo de decisiones para presentación y posible inclusión en la tesis. Se revisan `docs/registro-metodo-importe-autor.md`, `docs/ejemplo-importe-autor-para-diapositivas.md`, el servicio modificado, la prueba nueva y la diferencia respecto de `7ef29a4f438e5d2474d39b67f530cb940c922e76`. Los documentos sitúan la actividad el 7 de noviembre de 2026 y aclaran que P1 fue explorado el día anterior y registrado después. No se atribuye registro contemporáneo a esa entrada inicial.
@@ -82,8 +84,25 @@ El autor fundamenta su preferencia por métodos de responsabilidad acotada en Me
 
 Metz, S. (2019). *Practical object-oriented design: An agile primer using Ruby* (2nd ed.). Addison-Wesley Professional. https://www.informit.com/store/practical-object-oriented-design-an-agile-primer-using-9780134456478
 
-## 9. Dictamen preliminar y siguiente paso
+## 9. Dictamen preliminar y siguiente paso — registro histórico
 
 Hay evidencia favorable del estado final para A01–A05 y de la aplicación del método a una segunda decisión del mismo sistema, por el autor y con asistencia sustantiva de IA. La intervención elegida no impone una nueva clase, revisa fronteras y elimina una duplicación concreta. No demuestra transferencia a otro sistema o practicante, ahorro, superioridad, mantenibilidad empírica, cumplimiento de los indicadores temporales ni suficiencia global de maestría. Tampoco convierte automáticamente la evolución de fronteras en principio original validado.
 
 La revisión personal del archivo de pruebas y las entradas queda confirmada posteriormente por el autor; recepción documental aclarada sin repetir actividad o reaprobar criterios/alcance. Permanecen las adecuaciones del ejemplo y la consolidación del dictamen del episodio, antes de relacionar este aporte con E9/E10 sin ampliar las afirmaciones más allá de la evidencia. La confirmación no modifica los resultados técnicos ni cierra E8 por sí sola.
+
+## 10. Dictamen de revisión consolidado
+
+La valoración del episodio por la asesoría es **favorable en el alcance acordado, como aplicación del método por su autor con asistencia sustantiva de IA**. A01–A05 cuentan con respaldo del estado final reproducido y el registro documenta resultados previos, coexistencia y retirada. P7 satisface el alcance acotado aceptado de pruebas del consumidor con dobles, configuración y revisión de conexiones; no equivale a integración de persistencia real. P8 dispone de productos por pasos y revisión personal confirmada, con las reservas cronológicas y de asistencia ya expuestas.
+
+| Afirmación | Dictamen y fundamento |
+|:--|:--|
+| El material se aplicó a otra decisión del mismo sistema. | Respaldada por la intervención de importe y su registro; ejecutor autor con IA, no independencia adicional. |
+| Los cinco escenarios conservan el comportamiento examinado. | Respaldada por el estado final reproducido y resultados previos documentados; comparación temporal solo relatada, sin equivalencia universal. |
+| El método no impone una clase nueva. | Ejemplo concreto respaldado: se justificó permanecer dentro del servicio y ampliar la intervención hasta el uso duplicado del cálculo. No demuestra que esa opción sea óptima para toda decisión. |
+| La frontera de observación puede diferir de la de intervención. | Distinción identificable en el episodio: observar `create()` para comprobar efectos no implicó inicialmente modificarlo; luego se lo modificó para reutilizar el cálculo. Es aprendizaje del caso, no validación automática de un principio original. |
+| El suplemento de registro progresivo mejora la documentación. | Hay registros distribuidos por pasos, pero su mejora frente a documentar al final no fue medida. P1 fue retrospectivo y P3 se documentó después de P2. |
+| La modificabilidad, el esfuerzo o la mantenibilidad mejoraron. | No demostrado empíricamente. Se eliminó una duplicación y se añadieron métodos/conexiones; los escenarios posteriores solo describen lugares de edición hipotéticos. |
+
+La recepción y valoración del episodio quedan documentadas; no se necesita otra ejecución ni ratificación de escenarios/P7 para continuar el análisis. Se conserva su aporte como evidencia adicional, no como solución a R12–R13 temporales o sustitución de mediciones ausentes. No se declara cerrado el examen de suficiencia científica ni se autoriza traducción institucional. El trabajo siguiente consiste en adecuar el ejemplo y contrastar el conjunto con objetivos y contribución, sin convertir estas reservas en una demanda automática de más implementación.
+
+**Adecuación documental posterior:** `anexo_ejemplo_aplicacion_importe.md` recoge una versión académica de trabajo con síntesis para exposición; el original de SIGPP permanece intacto. Se excluyen citas directas pendientes de cotejo y se acotan resultados, recuentos y escenarios posteriores. La incorporación final queda sujeta a revisión del tesista y al cierre de coherencia del conjunto; la elaboración del anexo no es otra evaluación ni prueba de un principio adicional.
