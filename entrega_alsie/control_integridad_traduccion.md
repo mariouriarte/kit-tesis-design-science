@@ -68,7 +68,7 @@ Esta tabla registra los destinos principales, no demuestra por sí sola aprovech
 
 ## 5. Consecuencias para la autoevaluación
 
-ANX-1 conserva Bien, 1/1, por originales identificados completos; no por volumen o reproducción nueva. Se mantienen límites de comandos y código medido sin exigir una ejecución adicional. CI-3 se reexamina en Bien, 3/3: las tablas 1–4 y anexos contienen resultados de los instrumentos aplicados, incluidos errores, negativos, controles y medidas ausentes. El criterio no exige auditar descartes o todo el archivo histórico; esa penalización añadida se retira. El total actual es 92,40/100, sin cambios de resultados o conclusiones científicas. Los cortes anteriores se conservan como registro, no como pendientes activos.
+ANX-1 conserva Bien, 1/1, y CI-3 Bien, 3/3, por originales y resultados identificados presentes, no por volumen, auditoría indiscriminada o reproducción nueva. Se mantienen los límites de procedimiento y evidencia. El puntaje total vigente se consulta únicamente en `autoevaluacion_indicadores.md`; las cifras de cortes anteriores de este control son registro de cambios, no notas actuales o pendientes activos.
 
 V06 deja de ser una solicitud de documentos externos para requisitos ya definidos. Esto no agregó puntos a CIV-3, que ya estaba acreditado por estructura con autor y desarrollo. La incorporación de originales no cambió entonces HIP-1, POB-1, CII-2 o REF-2. La posterior resolución de la formulación institucional de hipótesis se registra separadamente; ninguna de estas operaciones cambia evidencia científica, relaciones resueltas o reservas de generalización.
 
@@ -141,3 +141,19 @@ El tesista señaló el costo de revisar históricos y descartes que no entrarán
 CI-3 se cotejó con el texto exacto de la rúbrica: exige presentar los resultados de todos los instrumentos aplicados y aspectos medidos. Las tablas 1–4 y anexos ya cumplen esa exigencia en el conjunto identificado. La observación anterior se apoyaba en una auditoría histórica indiscriminada, no en un resultado omitido identificado; por ello se corrige de 2,25 a 3/3. El total queda en 92,40/100: 35 Bien, seis con observaciones y tres que requieren mejora. La corrección no acredita éxito de I01–I04, causalidad o efectos no medidos.
 
 Se verifican solo el cambio de criterio, sus evidencias, subtotales y sincronización del mapa/Anexo C. Se mantienen los controles previos de originales sin repetirlos; solo se reabrirían ante discrepancia concreta. Persisten pendientes normativos de bibliografía, presentación y población/muestra, y limitaciones científicas que no se resuelven mediante nuevas construcciones o eliminación retórica de reservas.
+
+## 12. Identificación e índices editoriales
+
+Se completaron los índices del IFI vigente con 33 tablas editoriales —24 principales, cinco instrumentales A1–A5 y cuatro del mapa C1–C4— y cuatro figuras —1–3/D1—, usando los títulos exactos y sus apartados. Se añadieron los nueve números/títulos faltantes de anexos, también en el mapa canónico. No se modificaron las celdas de datos, los instrumentos o las transcripciones cercadas; estas últimas no se cuentan como tablas editoriales independientes.
+
+V07 y la fila IND-2 distinguen este avance de la composición pendiente. La paginación, revisión visual de figuras y proporción de páginas de Introducción no se certifican desde el índice Markdown. IND-2 conserva 0,40/1 y el total estimado permanece en 92,40/100. Se retiró asimismo una nota residual del cierre del IFI que todavía exigía cotejar indiscriminadamente todos los auxiliares; no se abrió ningún archivo descartado para ello.
+
+La verificación de esta edición se limita a correspondencia de títulos/números/localizadores, cobertura de las tablas visibles, igualdad mapa/Anexo C y preservación del contenido previo en el cambio. No se repiten los cotejos contra originales o sus huellas ya resueltos.
+
+## 13. Precisiones metodológicas, contraste y forma APA
+
+Se aclaró en §1.7 la diferencia entre clase de referencia, caso empírico y material seleccionado, sin modificar unidades, actores, episodios o criterios. Las dos relaciones esenciales de población se sostienen en el alcance analítico, conservando la observación cuantitativa de POB-1; coherencia de selección no equivale a representatividad nueva. En §3.4 se fundamentó la función macro/meso/micro del contraste y se mantuvo el carácter nacional indirecto de sustitución, sin reclamar equivalencia o trasladar mejoras. CII-2 se valora con observaciones, no como ausencia de antecedentes nacionales.
+
+La revisión de la forma APA de las referencias vigentes normalizó «En» en las actas y separó campos/estilo de límites de acceso o contenido. No se cambiaron autores, años, títulos, DOI, versiones o cantidades; no hubo consultas externas o lecturas adicionales. REF-3 se reexamina por forma, mientras REF-2 conserva 11/29 recientes. No se retiraron fundacionales ni se incorporaron citas para modificar la proporción.
+
+Las verificaciones se limitan a estos cambios, sus evidencias, aritmética y sincronización; no se reabren originales o descartes. Una ampliación para atender la actualidad bibliográfica sería trabajo adicional de revisión de literatura, no corrección de estilo o una tarea que el tesista deba redactar por su cuenta en Word.

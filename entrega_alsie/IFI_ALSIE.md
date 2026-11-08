@@ -116,9 +116,52 @@ La localización se realiza por epígrafes y títulos. No se atribuyen páginas 
     - D.1. Arquitectura de referencia, excepciones y hallazgos
     - D.2. Ejemplo explicado de importe
 
-**Índice de tablas:** tabla 1, Operacionalización (§2.2); tabla 2, Consulta funcional (§2.3); tabla 3, Comprobaciones diagnósticas (§2.4); tabla 4, Esfuerzo (§2.5); tabla 5, Antecedentes (§3.4); tabla 6, Decisiones fundamentadas (§3.5); tabla 7, Respaldo del modelo (§4.4); tabla 8, Alternativas (§5.2); tabla 9, Requisitos (§5.3); tabla 10, Pasos del método (§5.4); tabla 11, Responsabilidades (§5.5); tabla 12, Plan y riesgos (§5.6); tabla 13, Verificación histórica (§5.6); tabla 14, Hallazgos y rediseño (§5.7); tabla 15, Resultados P01 (§5.7); tabla 16, Dictamen P02 (§5.8); tabla 17, Resultados P02 (§5.8); tabla 18, Criterios de importe (§5.9); tabla 19, Resultados de importe (§5.9); tabla 20, Correspondencia con el modelo (§5.10); tabla 21, Matriz T01–T14 (§5.10); tabla 22, Cobertura R1–R14 (§5.10); tabla 23, Balance de objetivos (§5.11); tabla 24, Amenazas (§5.11). Las tablas instrumentales de los anexos se identifican por su anexo y denominación, sin simular una página.
+**Índice de tablas**
 
-**Índice de figuras:** figura 1, Modelo relacional (§4.2); figura 2, Secuencia operativa (§5.4); figura 3, Dependencias de referencia (§5.5); figura D1, Reutilización del cálculo (Anexo D). Las representaciones Mermaid son provisionales: deben renderizarse como figuras conservando número, título y nota APA 7, sin generar aquí otro formato.
+- Tabla 1. Operacionalización y estado de los cuatro indicadores — §2.2.
+- Tabla 2. Resultados completos del cuestionario y sus aclaraciones — §2.3.
+- Tabla 3. Resultados diagnósticos por instrumento y nivel observado — §2.4.
+- Tabla 4. Esfuerzo humano descriptivo consolidado de la actividad B01/B02 — §2.5.
+- Tabla 5. Siete antecedentes comparados y posición de la propuesta — §3.4.
+- Tabla 6. Decisiones D01–D09 y fundamento aplicado — §3.5.
+- Tabla 7. Respaldo contextual y frontera de validación del modelo — §4.4.
+- Tabla 8. Configuraciones del método y destino arquitectónico considerados — §5.2.
+- Tabla 9. Catorce requisitos de la propuesta — §5.3.
+- Tabla 10. Guía operativa M-R1: entradas, productos y condiciones — §5.4.
+- Tabla 11. Responsabilidades, conexiones y límites de la aplicación de referencia — §5.5.
+- Tabla 12. Plan histórico, preguntas y riesgos preservados — §5.6.
+- Tabla 13. Verificación histórica del software de referencia — §5.6.
+- Tabla 14. Hallazgos de P01 y cuatro ajustes aprobados en M-R1 — §5.7.
+- Tabla 15. Comprobaciones finales reproducidas de P01 — §5.7.
+- Tabla 16. Dictamen por paso de P02 aceptado por el tesista — §5.8.
+- Tabla 17. Resultados y procedencia de las comprobaciones P02 — §5.8.
+- Tabla 18. Criterios previos A01–A05 y conservación observada — §5.9.
+- Tabla 19. Resultados y secuencia documentada de importe — §5.9.
+- Tabla 20. Concreción del modelo y respuesta al diagnóstico — §5.10.
+- Tabla 21. Matriz vigente de problema, requisito, decisión, criterio, evidencia, grado y límite — §5.10.
+- Tabla 22. Control íntegro de cobertura de requisitos — §5.10.
+- Tabla 23. Cumplimiento de los objetivos fuente conservados — §5.11.
+- Tabla 24. Amenazas, controles y efecto residual de la evaluación — §5.11.
+- Tabla A1. Casos del cuestionario funcional: modelo en blanco — Anexo A.1.
+- Tabla A2. Matriz de escenarios ordinarios y observables de registro — Anexo A.2.
+- Tabla A3. Campos de la bitácora humana por tramo — Anexo A.3.
+- Tabla A4. Expectativas no ejecutadas de ampliación de ventana extraordinaria — Anexo A.4.
+- Tabla A5. Registro de observación por paso del método — Anexo A.5.
+- Tabla C1. Archivos de la entrega anterior preservados y huellas de identificación — Anexo C.1.
+- Tabla C2. Equivalencias terminológicas entre Design Science y ALSIE — Anexo C.2.
+- Tabla C3. Trazabilidad de los apartados del IFI a sus fuentes — Anexo C.3.
+- Tabla C4. Estado de vacíos, decisiones y verificaciones — Anexo C.5.
+
+Se identifican 33 tablas editoriales: 24 principales y nueve de anexos. Las tablas reproducidas dentro de bloques cercados son contenido literal de documentos/instrumentos, no tablas editoriales adicionales del IFI; se localizan por su apartado A.6–A.27 sin modificar sus originales. Los localizadores anteriores son apartados, no números de página.
+
+**Índice de figuras**
+
+- Figura 1. Modelo relacional de delimitación, observación y acreditación del incremento — §4.2.
+- Figura 2. Secuencia operativa de aplicación del método — §5.4.
+- Figura 3. Dependencias de la arquitectura de referencia para certificación — §5.5.
+- Figura D1. Coordinación y reutilización del cálculo del importe — Anexo D.2.
+
+Las cuatro representaciones Mermaid son provisionales: requieren inspección visual tras renderizado y comprobación de su ubicación en la composición final. Se conservarán número, título y nota APA 7; este índice no certifica esa revisión ni una paginación inexistente.
 
 # 1. Introducción
 
@@ -202,6 +245,8 @@ Se distinguen tres familias técnicas examinadas en el conjunto del trabajo y do
 **Contexto humano del caso:** el equipo de mantenimiento de SIGPP durante el período del estudio comprende dos personas, incluido el autor, según su respuesta expresa «2 personas». Al precisar la pertenencia de P01, el tesista aclara que trabajaba en otro proyecto y colaboró únicamente para la actividad documentada: P01 no corresponde a la otra persona del equipo de mantenimiento. El tesista confirma además que P02 colaboró únicamente para la evaluación y tampoco integraba ese equipo. Así, los dos practicantes evaluadores se distinguen de los dos mantenedores; el autor intervino adicionalmente en la aplicación de importe. No se infieren institución distinta, nombre del proyecto actual de P02 o ausencia de experiencia previa. Esta delimitación no acredita censo, autonomía, independencia plena o transferencia externa.
 
 La selección fue intencional, por acceso al código, relevancia de decisiones distribuidas, posibilidad de comprobación y disponibilidad técnica antes del plazo. Se justificó para examinar mecanismos y condiciones, no para estimar parámetros poblacionales. No fue un estudio censal ni una muestra probabilística. Se conservaron la exposición, familiarización, asistencia, entorno y referencia de cada episodio para interpretar sus productos y límites. La clase de referencia no tiene un total numérico acreditado y no se presenta un inventario exhaustivo del universo técnico accesible; ello limita la generalización cuantitativa, sin autorizar a reconstruir una población después de conocer los resultados. La selección analítica no exige por sí sola un censo de todo el código: su sustento se encuentra en las condiciones de inclusión, los casos delimitados, los productos examinados y el alcance de las conclusiones.
+
+**Alcance de la selección y de las inferencias.** Se distinguen tres planos: la clase de referencia delimita las condiciones bajo las cuales podrían resultar pertinentes las relaciones propuestas; el caso empírico es SIGPP, con aplicaciones y evaluaciones en La Paz; y el material seleccionado comprende las familias y episodios cuantificados anteriormente. El vínculo entre problema y población se concreta en las decisiones y tareas de mantenimiento examinadas de ese caso, no en una frecuencia estimada para todas las aplicaciones de la clase. La relación entre población y muestra se sustenta en la selección intencional de decisiones pertinentes, consumidores identificables y evidencia examinable. Los resultados permiten argumentar mecanismos, condiciones y límites en el caso; no estimar prevalencias, representar estadísticamente a otros equipos o atribuir eficacia poblacional. Estas distinciones explicitan la selección documentada, sin añadir casos, transformar los episodios en un censo o atribuirles independencia no acreditada.
 
 # 2. Capítulo I. Diagnóstico de la investigación: caracterización de la refactorización y su verificación
 
@@ -460,7 +505,9 @@ El proyecto describe desarrollo con Scrum, modelado UWE y evaluación de caracte
 
 La lectura crítica mantiene reservas sobre la interpretación de magnitudes. La tabla de usabilidad de Huanca Mamani (2024, p. 116) presenta promedios por ítem, un total de 4,3 y un cálculo posterior de 82,5 % redondeado a 83 %, cuya correspondencia no se reconstruye de manera transparente en el pasaje. La descripción alterna un encargado y un grupo sin que se infiera de ello un tamaño muestral. La tabla de calidad global (p. 122) informa varios porcentajes y un agregado de 70,39 %; esos valores no se adoptan como medidas equivalentes de costo de cambio o mantenibilidad de SIGPP. Una prueba de agendamiento satisfactoria acredita el recorrido examinado, no fiabilidad universal. Esta cautela delimita la evidencia consultada, sin declarar que todo el proyecto sea inválido o que no exista otro material fuera de los pasajes leídos.
 
-Este es un **antecedente nacional indirecto de reingeniería y sustitución, no un método boliviano equivalente de refactorización conservadora**. Su pertinencia radica en responder a limitaciones de sistemas institucionales existentes y en permitir distinguir unificación/ampliación de capacidades de conservación del comportamiento. Los pasajes revisados no acreditan una comparación conservadora completa entre GEHMA/SIGHO y la plataforma resultante, ni un cambio posterior medido equivalente a I04. Por tanto, no se elimina la diferencia de alcance para completar artificialmente un rótulo geográfico. Sigue pendiente una cobertura nacional más directa del problema específico, si puede localizarse y verificarse.
+Este es un **antecedente nacional indirecto de reingeniería y sustitución, no un método boliviano equivalente de refactorización conservadora**. Su pertinencia radica en responder a limitaciones de sistemas institucionales existentes y en permitir distinguir unificación/ampliación de capacidades de conservación del comportamiento. Los pasajes revisados no acreditan una comparación conservadora completa entre GEHMA/SIGHO y la plataforma resultante, ni un cambio posterior medido equivalente a I04. Se conserva esa diferencia: no se atribuyen a su autor las mismas restricciones de continuidad o el mismo método de SIGPP para completar un rótulo geográfico.
+
+**Justificación de los niveles de contraste.** El problema común de los antecedentes es cómo transformar sistemas existentes y con qué evidencia se acredita el cambio. El nivel macro aporta métodos y mecanismos de protección, transformación y evaluación; el meso permite contrastar selección y control de secuencias estructurales; el micro documenta, en un contexto institucional boliviano, una trayectoria de sustitución y ampliación de capacidades frente a la conservación incremental de esta propuesta. El antecedente nacional cumple así una función comparativa delimitada, no de validación del método o demostración de equivalencia técnica. Su carácter indirecto limita el contraste disponible, pero no significa que el nivel nacional esté ausente. La revisión no exige encontrar una propuesta idéntica en cada nivel ni permite afirmar que no existen otras por no haberlas localizado. Tampoco se trasladan al caso boliviano las mejoras o magnitudes de otra investigación.
 
 **Síntesis del complemento y posición crítica.** El contraste macro permanece sustentado por los siete antecedentes originales; el meso se amplía con una investigación mexicana de control de secuencias y límites de acreditación estructural; el micro incorpora una respuesta boliviana de reingeniería con comparabilidad indirecta. La bibliografía posterior refuerza la necesidad de declarar intención, atributo, procedimiento y evidencia, sin constituir nueva comprobación de PA1–PA3. No se reclama ausencia universal de métodos en Bolivia ni exhaustividad de la búsqueda regional. El detalle no equivale a una lectura personal del tesista ya realizada por el hecho de haber autorizado la búsqueda; su examen para la defensa permanece necesario.
 
@@ -1021,7 +1068,7 @@ Fowler, M. (2018). *Refactoring: Improving the design of existing code* (2nd ed.
 
 Fowler, M. (2023, 11 de diciembre). *Test driven development*. https://martinfowler.com/bliki/TestDrivenDevelopment.html
 
-Girjoaba, A. V., & Capiluppi, A. (2024). Refactoring legacy code using cleaning up cycles: An experience report. In *2024 IEEE International Conference on Software Maintenance and Evolution (ICSME)* (pp. 753–764). IEEE. https://doi.org/10.1109/ICSME58944.2024.00079
+Girjoaba, A. V., & Capiluppi, A. (2024). Refactoring legacy code using cleaning up cycles: An experience report. En *2024 IEEE International Conference on Software Maintenance and Evolution (ICSME)* (pp. 753–764). IEEE. https://doi.org/10.1109/ICSME58944.2024.00079
 
 Gregor, S., & Hevner, A. R. (2013). Positioning and presenting design science research for maximum impact. *MIS Quarterly, 37*(2), 337–355. https://doi.org/10.25300/MISQ/2013/37.2.01
 
@@ -1077,6 +1124,10 @@ Los anexos presentan instrumentos, ficha, mapeo y materiales de aplicación. Una
 
 **Instrucciones originales de resolución:** en cada caso marcar admitir, rechazar o requiere aclaración y explicar el motivo. Responder según comportamiento institucional, no según la pantalla actual. Identificar cambios propuestos frente a reglas vigentes y corregir supuestos si no representan la práctica. Día de registro significa día del intento; fecha documental, fecha solicitada; gestión, año de la tarea; ordinaria, apertura habitual; extraordinaria, apertura específica cuya extensión se consulta. Suponga permiso, tarea elegible y saldo suficiente. Solo se consulta fecha/habilitación y admitir no dispensa otros controles. Ordinaria vigente en casos 1–6.
 
+**Tabla A1**
+
+*Casos del cuestionario funcional: modelo en blanco*
+
 | Caso completo del instrumento | Decisión en blanco | Motivo/condición |
 |:--|:--|:--|
 | 1. Intento 15/06/2026, tarea 2026, documento 15/06/2026. | Admitir [ ] Rechazar [ ] Aclarar [ ] | ______ |
@@ -1109,6 +1160,10 @@ Los anexos presentan instrumentos, ficha, mapeo y materiales de aplicación. Una
 
 **Condiciones comunes:** gestión de tarea 2026, permiso/elegibilidad/saldo pertinentes y apertura ordinaria como supuestos. Control temporal solo en el instrumento que lo permita; no cambiar reloj productivo. Registrar referencia, estado local, entorno, fuente/huellas, comando, resultado, motivo, errores, asistencia y límites. Una etiqueta de día no cambia el contexto de un servicio que no recibe ese dato.
 
+**Tabla A2**
+
+*Matriz de escenarios ordinarios y observables de registro*
+
 | Caso | Intento | Documento | Expectativa previa | Resultado/observable por completar |
 |:--|:--|:--|:--|:--|
 | O01 | 08/06/2026 | 08/06/2026 | Admitir respecto de fecha. | ______ |
@@ -1127,6 +1182,10 @@ M08/M09 observan el mismo cierre mensual el 8 y 9 con documento 31/05 y control 
 Identificar participante autorizado, fecha, referencia/estado local, escenario, punto de comprobación, expectativa y condición de término antes de cronometrar. Registrar conocimiento previo, asistencia e instrumentos reutilizados. La fuente es autoinforme con cronómetro y capturas auxiliares, no inferencia desde chat o tiempo del agente. Se permite IA y no se exige escribir código a mano.
 
 **Fase A:** abrir registro antes de revisar datos/expectativas y redactar lo que se comprobará. Parar al terminar y anotar duración, pausas y ayuda. **Fase B:** revisar programa/instrucciones, entradas/observables y solicitar ajustes, separando espera; no ejecutar durante la revisión. **Ejecución automática:** conservar comando/salida y duración aparte. **Fase C:** leer salida, explicar concordancias/discrepancias y límites, con cronómetro activo solo durante el trabajo. Conservar errores, intentos y correcciones; si falta un tramo, no asignar cero o estimar. Sumar intervalos humanos activos no superpuestos.
+
+**Tabla A3**
+
+*Campos de la bitácora humana por tramo*
 
 | Campo por tramo | Registro en blanco |
 |:--|:--|
@@ -1149,6 +1208,10 @@ El producto reúne fuente, referencia, huellas, programa, salidas por caso, expl
 
 Ventana ficticia de la misma gestión destinataria: inicio 01/02/2027, cierre original 08/02 y ampliado 10/02. Inicio a 00:00 incluido; corte exclusivo a 00:00 del día posterior al cierre; ejemplos con segundos no excluyen fracciones. Mantener otros controles e identificar separadamente apertura ordinaria para que no oculte rechazos de la extraordinaria.
 
+**Tabla A4**
+
+*Expectativas no ejecutadas de ampliación de ventana extraordinaria*
+
 | Caso | Instante ficticio en Bolivia | Original | Ampliada |
 |:--|:--|:--|:--|
 | X01 | 31/01/2027 23:59:59 | No habilitado | No habilitado |
@@ -1165,6 +1228,10 @@ Separar decisión directa de lectura efectiva por consumidor antes de creación;
 **Apertura:** fecha/horario, código participante/consentimiento, referencia/entorno, versión entregada, ayudas y exposición previa. Distinguir familiarización del uso. No entregar solución resuelta como instrucción. P01 utiliza autorregistro; P02 observación del autor. La unidad es paso en la tarea, no opinión global.
 
 **Categorías:** explicación de comprensión atribuida al participante; aplicación sin aclaración del observador (admite documentación/IA, no autonomía); con aclaración (conservar consulta/respuesta); no completado (motivo y consecuencias); no aplicable justificado (no éxito automático); producto examinable; dificultad y fuente de ayuda; IA con propuestas adoptadas/rechazadas. Si la causa no es distinguible, mantenerla indeterminada. Registrar errores y aciertos sin sugerir solución.
+
+**Tabla A5**
+
+*Registro de observación por paso del método*
 
 | Paso del material recibido | Comprensión | Aplicación | Producto | Dificultad/ayuda |
 |:--|:--|:--|:--|:--|
@@ -3261,6 +3328,10 @@ La cabecera de `tesis_ds/00_estado.md` y `tesis_ds/control_final_coherencia_ds_2
 
 Los tres Markdown anteriores se trasladaron sin modificación a `entrega_alsie/respaldo_anterior_2026-11-07/`. El IFI anterior tiene actualización del 30/10; su mapa y autoevaluación conservan corte 22/10. No se trataron como una versión sincronizada o como evaluación puntuada actual. Los binarios preexistentes permanecen intactos.
 
+**Tabla C1**
+
+*Archivos de la entrega anterior preservados y huellas de identificación*
+
 | Archivo preservado | SHA-256 |
 |:--|:--|
 | `IFI_ALSIE_AVANCE.md` | `5ae8bd776bdfaef44b0670c4bd6f00176ec8b8b1d6702dfe7e86287005d79e30` |
@@ -3268,6 +3339,10 @@ Los tres Markdown anteriores se trasladaron sin modificación a `entrega_alsie/r
 | `autoevaluacion_indicadores_avance.md` | `e9983a97711ab4109d6c4aa8180791008e620f5784aac117d1229044badbfe1e` |
 
 ### C.2. Equivalencias terminológicas
+
+**Tabla C2**
+
+*Equivalencias terminológicas entre Design Science y ALSIE*
 
 | Design Science | ALSIE | Transformación y límite |
 |:--|:--|:--|
@@ -3288,6 +3363,10 @@ Los tres Markdown anteriores se trasladaron sin modificación a `entrega_alsie/r
 
 Rutas de origen relativas a `tesis_ds/`, excepto este mapa, la normativa, el complemento autorizado y los originales de SIGPP expresamente identificados por repositorio y revisión. **[vacío]** significa información no acreditada o decisión institucional pendiente, no permiso para rellenar. Las notas de aprobación/cierre históricas no prevalecen sobre las cabeceras finales. La traducción reúne contenido sustantivo y distingue antecedentes de resultados actuales.
 
+**Tabla C3**
+
+*Trazabilidad de los apartados del IFI a sus fuentes*
+
 | Apartado/destino del IFI | Fuente concreta y localizador | Transformación y contenido conservado | Criterios |
 |:--|:--|:--|:--|
 | Carátula y título | `00_estado.md`, Datos; `03_perfil_ds.md`, Título; respuestas expresas del tesista sobre institución/ALSIE y «si confirmo» para grado, ciudad y fecha; registro en `entrega_alsie/referencia_presentacion_institucional.md` | Título editorial de quince palabras sin siglas; original aprobado: «Diseño y evaluación de un método de refactorización arquitectónica incremental para subcircuitos de aplicaciones MVC heredadas: aplicación en la ejecución POA de SIGPP». Institución, ALSIE, fórmula «Tesis de grado para optar al grado de Magíster en Ingeniería de Software» y presentación «Cochabamba–Bolivia, noviembre de 2026» confirmados para la entrega propia. Logo sin verificación institucional; presentación no equivale a lugar del estudio. | TIT-1, TIT-2 |
@@ -3304,7 +3383,7 @@ Rutas de origen relativas a `tesis_ds/`, excepto este mapa, la normativa, el com
 | Aporte §1.6, capítulo III | `10_contribucion_conclusiones.md`, A–H; balance §7 | Explicitación contextual y nivel de clase; mecanismos, antecedentes, evidencia y límites. | APT-1, T4 |
 | Significación §1.6 | `09_enlace_solucion.md`, B–D; `08_evaluacion.md`, resultados | Aplicación asistida, escenarios conservados y trazabilidad; no ahorro o mantenibilidad medida. | SIG-1, T4 |
 | Métodos §1.7 | `04_marco_teorico.md`; `05_estado_del_arte.md`, protocolo; `07c_diseno_artefacto.md`; `08_evaluacion.md`; manual M-R1 | Análisis/modelación, documentos/código/consulta/aplicaciones y técnicas, con función por objetivos. | MET-1 |
-| Población/muestra §1.7 | E6; instrumento original de observación, §1; revisiones P01/P02/importe; balance §2; respuestas del tesista sobre mantenimiento y practicantes | Un sistema; tres familias examinadas, dos familias de aplicación y tres episodios con versiones distintas. Unidad de observación: paso aplicado a tarea; unidad técnica: decisión/consumidores/efectos. Dos practicantes externos al equipo, autor con aplicación adicional y dos mantenedores, sin confundir colectivos. Selección intencional sustentada y límites; total de la clase técnica no acreditado, sin exigir o inventar censo completo del código. | POB-1, CI-2 |
+| Población/muestra §1.7 | E6; instrumento original de observación, §1; revisiones P01/P02/importe; balance §2; respuestas del tesista sobre mantenimiento y practicantes | Distinguir clase de referencia, caso empírico y material seleccionado: un sistema, tres familias examinadas, dos de aplicación y tres episodios. Unidad de observación: paso aplicado a tarea; unidad técnica: decisión/consumidores/efectos. Dos practicantes ajenos al equipo y dos mantenedores, sin sumar colectivos. Selección intencional sustentada, inferencia analítica/contextual y sin censo o total de clase inventados. La limitación cuantitativa no se confunde con ruptura de las relaciones metodológicas. | POB-1, CI-2 |
 | Capítulo I §§2.1–2.2 | `06_diagnostico.md`, §§1–5; `matriz_escenarios_temporales_e6.md` | Contexto objetivo/subjetivo, variable/dimensiones, cuatro indicadores/fórmulas/criterios/líneas base parciales e instrumentos. | CI-1, CI-2, CI-3 |
 | Capítulo I §§2.3–2.6 | Cuestionario funcional; confirmación WhatsApp; `comprobacion_*_e6.md`; instrumento/bitácora/resultado I03; `comparacion_extraccion_restriccion_2026-10-29.md`, §6; originales SIGPP recuperados en revisión `7c0bca084b05c462137fd62c24e6b025bb09a12c`, localizados en A.16–A.21 | Doce casos/seis aclaraciones, correcciones de reglas, pruebas positivas/fallidas, esfuerzo y I04 no aplicado; análisis antes de tablas e inferencias integradas. Recuperación documental de los ensayos del 30/10 y del instrumento retrospectivo, no nuevas ejecuciones o resultados. | CI-3–CI-6, T2, T3 |
 | Capítulo II §§3.1–3.3 | `04_marco_teorico.md`; mapa D01–D09; fichas de Feathers/Fowler/Bass/Metz y búsqueda E4 | Fuentes, categorías, contraste y definiciones asumidas. Acceso parcial/versiones reconocidos, sin usar cita como medición. | CII-1, CII-3, CII-4, CII-6 |
@@ -3320,7 +3399,7 @@ Rutas de origen relativas a `tesis_ds/`, excepto este mapa, la normativa, el com
 | Capítulo IV §5.11 | Balance global §§2/7/8; E10 E–H; revisiones | Seis compromisos, resultados parciales y amenazas con controles/efecto residual. | CIV-6, T4, T5 |
 | Conclusiones §6 | `10_contribucion_conclusiones.md`, F/H; balance y E8/E9 | Cuatro por capítulos, sin ampliar PA1–PA3 o inferir mejora no medida; seis compromisos fuente preservados. | CON-1, T5 |
 | Recomendaciones §7 | `10_contribucion_conclusiones.md`, G | Trabajo futuro viable y sugestivo: transferencia, comprensión, esfuerzo, regla temporal y registro. No condiciones retroactivas de cierre. | REC-1, T5 |
-| Referencias §8 | `referencias.md`; fuentes utilizadas; dos incorporaciones autorizadas; auditoría en `entrega_alsie/control_bibliografico_apa7.md` | APA 7 y 29 entradas citadas. Renovados metadatos de once fuentes sin importar errores de cubierta, confundir identificador con página o sustituir versiones consultadas. No nuevas lecturas/resultados por verificar un campo. Persisten límites editoriales precisos y falta de predominio reciente. | REF-1–REF-3 |
+| Referencias §8 | `referencias.md`; fuentes utilizadas; dos incorporaciones autorizadas; control de metadatos y revisión formal en `entrega_alsie/control_bibliografico_apa7.md` | APA 7 y 29 entradas citadas, con tipos y versiones identificados. Normalización de «En» para actas en el texto español, sin cambiar títulos/autores/años/DOI. Se separa forma APA de acceso al contenido y de actualidad: las reservas de resumen/manuscrito permanecen, pero no equivalen por sí mismas a un error formal. No se simulan nuevas lecturas o fuentes recientes. | REF-1–REF-3 |
 | Anexo A | Cuestionario/consulta, matriz, instrumento I03/observación, bitácora, instrucciones, material completo de revisión B, seguimiento y originales anteriores; cinco originales SIGPP `7c0bca084b05c462137fd62c24e6b025bb09a12c` en A.16–A.20 y registro `5e0fec3d854f0cf74feaa4935caeb19736b40bbb:tmp/propuesta-tesis.md`, §2.5, en A.27; controles de integridad e inventario D01–D25/G01–G06 | A.1–A.5: modelos/expectativas; A.6–A.27: veintidós bloques exactos y tres extractos de seguimiento en A.26. Incluyen registro histórico completo de cuatro matrices iniciales; resuelta su localización, no identificados sus comandos o código medido. No ejecuciones nuevas, reconstrucción de resultados o tiempos del agente como humanos. | ANX-1, CI-3 |
 | Anexo B | `07f_ficha_artefacto.md`; manual M-R1 | Identidad, requisitos, diseño, alternativas, versiones, reproducción, episodios, condiciones y límites. No disponibilidad pública certificada de originales sensibles. | ANX-1, CIV-5 |
 | Anexo C | `entrega_alsie/mapeo_ds_alsie.md` | Mismo contenido íntegro que este archivo; referenciado en cuerpo con «Ver anexo C». | ANX-1, T1–T5 |
@@ -3334,16 +3413,20 @@ I01 conserva discrepancia; I02 es parcial; I03 es descriptivo por autoinforme; I
 
 ### C.5. Vacíos, tensiones y control de integridad
 
+**Tabla C4**
+
+*Estado de vacíos, decisiones y verificaciones*
+
 | ID | Estado/pregunta o acción pendiente | Criterios afectados |
 |:--|:--|:--|
 | V01 | Resuelto: objeto institucional validado expresamente. No repetir. | INT-3, T1 |
 | V02 — resuelto | El tesista ratificó mediante «si ratificamos» los cuatro objetivos del §1.4: Caracterizar, Sistematizar, Precisar y Elaborar. Se conservan seis compromisos fuente y su balance; no repetir la consulta ni inferir éxito integral. | OBJ-2, CON-1, T2, T5 |
 | V03 — resuelto: hipótesis institucional adoptada | Tras retirar códigos y siglas, el tesista responde «aceptado» a la hipótesis de diseño del §1.5: método, características, finalidad y mecanismo derivados de E10/E8/E9. Se mantiene formulación posterior y respaldo contextual; no aprobación del tutor o contraste causal literal previo. No se reabren PA1–PA3 o conclusiones, no se infieren mejoras no medidas y no se solicita otra adopción de ese enunciado. | HIP-1 |
 | V04 — datos y ciudad del estudio confirmados; logo pendiente | Institución, ALSIE, fórmula del grado y presentación «Cochabamba–Bolivia, noviembre de 2026» confirmados. Además, el tesista respondió «En La Paz» a la ubicación de las aplicaciones/evaluaciones documentadas de SIGPP; se explicita La Paz, Bolivia, en §§1.1–1.4 y 2.1, sin confundirla con Cochabamba ni inferir dirección o despliegue nacional. Registro de presentación en `entrega_alsie/referencia_presentacion_institucional.md`. No repetir esos datos; sigue pendiente verificar el logo y no se infiere cootorgamiento. | INT-2, OBJ-1, T1 y carátula |
-| V05 — complemento realizado, cobertura parcial | El tesista aclaró ausencia de lecturas adicionales y autorizó la búsqueda mediante «si, autorizo». Se verificaron e incorporaron Barón Pérez (2026), México, y Huanca Mamani (2024), Bolivia, con registro posterior y primarios focalizados. El nacional es reingeniería/sustitución indirecta, no refactorización conservadora equivalente. CII-2 mejora parcialmente; no se declara cobertura nacional suficiente, búsqueda exhaustiva o lectura previa del autor. | CII-2 |
+| V05 — tres niveles tratados; alcance micro indirecto explícito | El complemento autorizado aporta Barón Pérez (2026), México, y Huanca Mamani (2024), Bolivia. §3.4 fundamenta su vínculo con la evolución de sistemas institucionales existentes y distingue secuenciación estructural, sustitución y conservación incremental. La rúbrica exige tratar antecedentes en tres niveles, no hallar un método nacional idéntico o demostrar una búsqueda exhaustiva. Se conserva observación por comparabilidad técnica indirecta, no una ausencia del nivel micro o una obligación de inventar otro antecedente. No lectura previa atribuida al autor. | CII-2 |
 | V06 — resuelto para las exigencias definidas en las fuentes disponibles | El tesista transmite la indicación docente de resolver con rúbrica, guía de contenido y APA 7 del repositorio; se aplican también los indicadores compatibles. La estructura con autor y su desarrollo se verifican en CIV-2–CIV-5 sin suponer contenido de los auxiliares externos citados en notas. No se solicitan esos auxiliares para resolver requisitos ya definidos; los vacíos de dato, decisión o estructura se consultan de forma concreta. | CIV-2–CIV-5 y formato |
-| V07 | Paginación, representación final de figuras y proporción de páginas de Introducción no verificables por simple Markdown. | IND-2, INT-1, CIII-2 |
-| V08 — auditoría bibliográfica realizada, reservas precisadas | `entrega_alsie/control_bibliografico_apa7.md` registra once fuentes cotejadas, versiones exactas y discrepancias preservadas: Zou/FSE019 en publicación de Noei frente a cubierta; paginación 2:1–14 de Fischer frente al recurso a13; Abbasi 58(12), 1–44 sin número adicional inventado. No se certifica renovación externa de las 29 fuentes o texto completo donde solo hay resumen. Persisten cotejo editorial fino/manuscrito y 11/29 recientes, sin añadir citas para inflar proporción. | REF-2, REF-3 |
+| V07 — índices completos; composición pendiente | Tablas 1–24/A1–A5/C1–C4 y figuras 1–3/D1 identificadas individualmente en los índices, con títulos y localizadores. Las tablas dentro de transcripciones cercadas no son tablas editoriales adicionales. Persisten paginación exacta, inspección visual final y proporción de páginas de Introducción; no se certifican por simple Markdown. | IND-2, INT-1, CIII-2 |
+| V08 — forma APA revisada; actualidad observada | Se conservan los metadatos contrastados, tipos y versiones de las 29 referencias, incluidos Zou/FSE019, páginas 2:1–14 de Fischer y datos confirmados de Abbasi. La revisión formal no certifica lectura completa o equivalencia editorial del manuscrito utilizado; esas reservas de acceso permanecen sin tratarlas como fallos de APA. REF-3 se reexamina por su exigencia de forma. REF-2 conserva 11/29 recientes: superar esa proporción exige revisión bibliográfica adicional pertinente, no cambiar fechas o añadir citas decorativas. | REF-2, REF-3 |
 | V09 — resultados y originales diagnósticos incorporados | Inventario de fuentes pertinentes, veintidós bloques exactos y tres extractos, con huellas. Tablas 1–4 y A.1–A.27 presentan indicadores, resultados y originales identificados; G06 recupera el registro inicial. CI-3 y ANX-1 se satisfacen por el contenido presente, no por auditar todo el archivo histórico. Los límites de comandos y código medido permanecen explícitos. Por instrucción del tesista se excluyen de nuevas pasadas basura, descartados, duplicados, predefensas y borradores superados sin contenido necesario para el IFI. Solo una omisión concreta de una fuente final pertinente reabre el cotejo. | ANX-1, CI-3 y regla de integridad |
 
 Veintidós bloques y tres extractos de seguimiento están incorporados y cotejados, con trazabilidad a las fuentes pertinentes. La revisión final se limita al IFI vigente y los productos finales que lo sustentan; no exige volcar versiones superadas, logística, duplicados o descartes ajenos a su contenido. No se repiten verificaciones resueltas salvo discrepancia concreta. Se mantiene el detalle sustantivo de las fuentes finales, las limitaciones científicas y la normativa disponible, sin confundir registros históricos con observaciones nuevas. No se borran originales o anexos ya incorporados por este ajuste del procedimiento.
@@ -3385,4 +3468,4 @@ Se preservaron los mensajes y el rechazo de no positivos antes de exceso. El tex
 
 La implementación pasó de catorce a dieciocho métodos activos y de dos implementaciones de multiplicación a una con dos usos. Las llamadas contadas textualmente fueron 16→21, con comentarios incluidos. Los cambios hipotéticos posteriores no se ejecutaron: fórmula dos→un punto potencial de edición; origen del disponible y dos mensajes, un punto cada uno antes/después. La separación/reutilización se fundamenta en Metz (2019), sin costo de cambio medido. El suplemento de registro progresivo no acreditó menor reconstrucción; P1 fue retrospectivo y P3 posterior a P2.
 
-**Estado de revisión institucional:** los cuatro objetivos están ratificados, la hipótesis de diseño sin códigos/siglas está adoptada y los datos de presentación y de aplicación/evaluación en La Paz están confirmados. La resolución de esos enunciados no acredita nuevos resultados ni confirmación causal. Este IFI no se declara listo para entrega mientras permanezcan pendientes las reservas de delimitación de la clase de referencia, verificación del logotipo, cobertura nacional más directa o valoración del contraste indirecto, revisión bibliográfica/formal y cotejo exhaustivo de originales y auxiliares. El mapa está incorporado en el Anexo C y se verifica contra el archivo de trabajo. La autoevaluación mantiene separados puntaje, límites científicos y requisitos de cierre.
+**Estado de revisión institucional:** objetivos, hipótesis, datos de presentación, lugar y actores están confirmados. La selección y las inferencias se explicitan en su alcance analítico; la clase sin total acreditado y el contraste nacional indirecto permanecen como límites, no como población inventada o antecedente ausente. La forma APA y los índices están revisados. Persisten la falta de predominio bibliográfico reciente, logotipo, paginación e inspección visual final. No se exige auditar históricos o repetir cotejos resueltos. El mapa del Anexo C coincide con su archivo de trabajo salvo encabezados. No se acreditan resultados nuevos, eficacia causal o aprobación institucional por resolver redacción y correspondencias.

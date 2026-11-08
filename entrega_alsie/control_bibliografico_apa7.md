@@ -70,7 +70,7 @@ Fowler, M. (2014, 7 de enero). *Branch by abstraction*. https://martinfowler.com
 
 Fowler, M. (2023, 11 de diciembre). *Test driven development*. https://martinfowler.com/bliki/TestDrivenDevelopment.html
 
-Girjoaba, A. V., & Capiluppi, A. (2024). Refactoring legacy code using cleaning up cycles: An experience report. In *2024 IEEE International Conference on Software Maintenance and Evolution (ICSME)* (pp. 753–764). IEEE. https://doi.org/10.1109/ICSME58944.2024.00079
+Girjoaba, A. V., & Capiluppi, A. (2024). Refactoring legacy code using cleaning up cycles: An experience report. En *2024 IEEE International Conference on Software Maintenance and Evolution (ICSME)* (pp. 753–764). IEEE. https://doi.org/10.1109/ICSME58944.2024.00079
 
 Gregor, S., & Hevner, A. R. (2013). Positioning and presenting design science research for maximum impact. *MIS Quarterly, 37*(2), 337–355. https://doi.org/10.25300/MISQ/2013/37.2.01
 
@@ -86,8 +86,12 @@ Zakeri-Nasrabadi, M., & Parsa, S. (2022). *An ensemble meta-estimator to predict
 
 Se actualizan las reservas bibliográficas del IFI, V08 del mapa y su copia en Anexo C, así como REF-3 y la nota de auditoría. No se cambian las once entradas por supuestas correcciones que los datos no respaldan. Se incorporan enlaces de versión exacta y fuentes de contraste en este archivo para trazabilidad.
 
-REF-3 conserva la valoración con observaciones: permanecen el cotejo editorial fino de Abbasi y la correspondencia exacta del manuscrito del ciclo con la publicación final. Esta reserva no se oculta, aunque estén confirmados los campos básicos. Los límites de lectura se distinguen de la forma APA; no se afirma que una consulta bibliográfica haya proporcionado contenido científico nuevo.
+La revisión formal posterior examinó las 29 referencias vigentes: autoría y año, títulos, tipo de obra, edición/versión, medio/editorial y DOI/URL según corresponda, junto con su uso en el texto. Se normalizó «En» para la referencia de actas en español. Se conservaron los metadatos contrastados, sin inventar un identificador adicional de Abbasi, cambiar autoría de Noei, páginas de Fischer o fechas para aumentar actualidad. No fue una nueva verificación externa ni lectura de las 29 obras.
+
+REF-3 se reexamina en Bien, 1/1, por forma APA. El alcance de resumen, la correspondencia no certificada del manuscrito con la edición final y la autenticación jurídica no realizada permanecen como límites de uso, no como errores formales automáticos. La rúbrica no exige lectura íntegra o renovación externa de todo el corpus para puntuar la forma. REF-2 sigue observado por falta de predominio reciente; no se oculta esa diferencia.
 
 El total de referencias del IFI sigue siendo **29**. El recuento de actualidad respecto del corte científico permanece en **11/29 (37,93 %)** para ventana móvil y **9/19 (47,37 %)** entre las académicas/libros/manuscritos/trabajos de grado. No se añadieron citas para superar una proporción. Este cotejo no modifica por sí mismo la puntuación de otros criterios; el total vigente se consulta en `autoevaluacion_indicadores.md`, sin duplicarlo aquí. La comunicación personal y los metadatos internos de registros originales no se convierten en nuevas publicaciones. No se repiten consultas resueltas o búsquedas sobre descartes sin una discrepancia concreta del IFI.
 
 Este control se limita a las fuentes usadas por el IFI; no inicia una revisión indiscriminada de auxiliares históricos. El contraste nacional y la presentación gráfica/paginada conservan sus observaciones concretas. Los informes iniciales recuperados e incorporados en A.16–A.17 no son material pendiente de búsqueda. Verificar metadatos no resuelve por sí solo las demás reservas, ni exige volver a consultar fuentes ya cotejadas sin detectar una discrepancia.
+
+**Decisión sobre actualidad:** manteniendo las 29 entradas y añadiendo exclusivamente referencias recientes, al menos ocho serían necesarias aritméticamente para superar la mitad. No se adopta esa cifra como cuota editorial: cualquier ampliación requiere pertinencia, lectura efectiva, contraste e incorporación al texto con procedencia posterior explícita. La otra opción es conservar el corpus fundacional y reconocer la observación de REF-2. Ninguna opción permite cambiar años o retirar fuentes trabajadas solo para mejorar un porcentaje.
