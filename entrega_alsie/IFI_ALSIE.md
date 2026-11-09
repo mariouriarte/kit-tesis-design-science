@@ -1,23 +1,26 @@
 # Carátula
 
-**Informe Final de Investigación — versión institucional para revisión**  
-**Modelo:** ALSIE, nivel de maestría.  
-**Institución que otorga el grado:** UNIVERSIDAD AUTÓNOMA DEL BENI «JOSÉ BALLIVIÁN», denominación confirmada expresamente por el tesista.  
-**Entidad institucional consignada por el tesista:** ALSIE CONSULTORES PEDAGÓGICOS. No se atribuye un rol de cootorgamiento del grado que no haya sido acreditado.  
-**Logotipo institucional autorizado:** pendiente de verificación institucional. El ejemplar facilitado contiene una imagen en su portada, pero su identificación visual y autorización no se certifican a partir de la estructura del archivo. El nombre confirmado no acredita por sí solo una versión gráfica o su disposición en la carátula.
+**UNIVERSIDAD AUTÓNOMA DEL BENI**
 
-**Título institucional, traducción editorial:** Diseño y evaluación de un método de refactorización arquitectónica incremental para subcircuitos de aplicaciones heredadas.
+**«JOSÉ BALLIVIÁN»**
 
-Se conserva el fondo del título aprobado —diseño, evaluación, método, refactorización arquitectónica incremental y subcircuitos heredados—, con quince palabras y sin siglas. El patrón modelo-vista-controlador y la aplicación en la ejecución de la planificación operativa anual de SIGPP se precisan en el objeto, la delimitación y el objetivo, no se eliminan del estudio. La formulación original y su equivalencia se conservan en el Anexo C; esta normalización no renombra oficialmente el sistema.
+**ALSIE CONSULTORES PEDAGÓGICOS**
 
-**Modalidad y grado:** Tesis de grado para optar al grado de Magíster en Ingeniería de Software.  
-**Postulante:** Mario Arturo Uriarte Marin.  
-**Tutor:** Luis Roberto Pérez Rios, Ph.D.  
-**Corte de los resultados:** 7 de noviembre de 2026.  
-**Mes y año de presentación oficial:** noviembre de 2026.  
-**Ciudad y país de presentación:** Cochabamba–Bolivia. Esta localización de presentación, confirmada por el tesista, no se utiliza como prueba del lugar donde se ejecutaron las actividades del estudio.
+[Logotipo institucional pendiente de incorporación y verificación]
 
-**Procedencia de los datos de presentación:** después de inspeccionar el ejemplar aportado, el tesista confirmó expresamente mediante «si confirmo» que la fórmula del grado y «Cochabamba–Bolivia, noviembre de 2026» corresponden a su propia entrega. No se adoptan por copia automática de otro trabajo. La inspección, la confirmación y sus límites se registran en `entrega_alsie/referencia_presentacion_institucional.md`; el logotipo permanece sujeto a verificación institucional.
+**TÍTULO**
+
+**Diseño y evaluación de un método de refactorización arquitectónica incremental para subcircuitos de aplicaciones heredadas**
+
+**Tesis de grado para optar al grado de Magíster en Ingeniería de Software**
+
+**Postulante:** Mario Arturo Uriarte Marin
+
+**Tutor:** Luis Roberto Pérez Rios, Ph.D.
+
+**Mes y año:** noviembre de 2026
+
+**Cochabamba–Bolivia**
 
 # Agradecimientos
 
@@ -563,29 +566,31 @@ La figura distingue tres grupos relacionados: fronteras, semántica de escenario
 *Modelo relacional de delimitación, observación y acreditación del incremento*
 
 ```mermaid
+%%{init: {"theme":"base","fontFamily":"Arial","themeVariables":{"fontFamily":"Arial","fontSize":"24px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#444444","lineColor":"#444444","clusterBkg":"#f5f5f5","clusterBorder":"#777777","edgeLabelBackground":"#ffffff"},"flowchart":{"htmlLabels":false,"nodeSpacing":18,"rankSpacing":12,"padding":6,"diagramPadding":8,"wrappingWidth":280}}}%%
 flowchart TB
-    C[Condiciones de aplicación e intención del cambio]
-    subgraph F[Fronteras diferenciadas]
-      D[Frontera de decisión]
-      O[Frontera de observación]
-      I[Frontera de intervención]
-      D ---|consecuencias y consumidores| O
-      D ---|comportamiento y dependencias| I
-      O ---|alcance revisable y justificado| I
+    C["Condiciones de aplicación<br/>e intención del cambio"]
+    subgraph F["Fronteras diferenciadas"]
+      direction LR
+      D["Frontera de<br/>decisión"]
+      O["Frontera de<br/>observación"]
+      I["Frontera de<br/>intervención"]
+      D ---|"consecuencias y<br/>consumidores"| O
+      D ---|"comportamiento y<br/>dependencias"| I
+      O ---|"alcance revisable<br/>y justificado"| I
     end
-    S[Semántica: datos determinantes, resultados y efectos]
-    A[Acreditación: propiedad, condiciones, comprobación y nivel]
-    E[Evidencia localizada y estado de cumplimiento]
-    R[Afirmaciones y límites de conservación, utilidad y transferencia]
+    S["Semántica:<br/>datos determinantes,<br/>resultados y efectos"]
+    A["Acreditación:<br/>propiedad, condiciones,<br/>comprobación y nivel"]
+    E["Evidencia localizada<br/>y estado de cumplimiento"]
+    R["Afirmaciones y límites<br/>de conservación, utilidad<br/>y transferencia"]
     C --> F
     C --> S
     C --> A
-    F <-->|selecciona observables pertinentes| S
-    S <-->|requiere comprobación adecuada| A
+    F <-->|"selecciona observables<br/>pertinentes"| S
+    S <-->|"requiere comprobación<br/>adecuada"| A
     A --> E
     E -->|revisión fundada| F
     E -->|respalda y limita| R
-    A -->|impide equivalencias indebidas| R
+    A -->|"impide equivalencias<br/>indebidas"| R
 ```
 
 *Nota.* Elaboración relacional a partir de PA1–PA3 adoptadas en E10 y del diseño de la propuesta. La figura representa una síntesis conceptual original de esas relaciones, no una copia del ciclo de un autor ni un hallazgo empírico adicional. Las flechas no prueban causalidad. Representación Mermaid provisional para convertir en figura APA 7 conservando título y nota.
@@ -729,16 +734,17 @@ La figura 2 muestra el proceso operativo, deliberadamente diferente del modelo d
 *Secuencia operativa de aplicación del método*
 
 ```mermaid
+%%{init: {"theme":"base","fontFamily":"Arial","themeVariables":{"fontFamily":"Arial","fontSize":"16px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#444444","lineColor":"#444444","edgeLabelBackground":"#ffffff"},"flowchart":{"htmlLabels":false,"nodeSpacing":18,"rankSpacing":18,"diagramPadding":8,"wrappingWidth":240}}}%%
 flowchart TD
-    P1[P1 Delimitar] --> P2[P2 Caracterizar]
-    P2 --> P3[P3 Controlar datos y dependencias]
-    P3 --> P4[P4 Migrar en coexistencia]
-    P4 --> P5[P5 Comprobar comportamiento y efectos]
-    P5 -->|discrepancia: revisar contrato e intención| P2
-    P5 -->|comprobación pertinente satisfecha| P6[P6 Retirar y conectar]
-    P6 --> P7[P7 Verificación local e integración]
-    P7 --> P8[P8 Documentar, versionar y registrar mediciones]
-    P8 -->|otro incremento justificado| P1
+    P1["P1 Delimitar"] --> P2["P2 Caracterizar"]
+    P2 --> P3["P3 Controlar datos<br/>y dependencias"]
+    P3 --> P4["P4 Migrar en<br/>coexistencia"]
+    P4 --> P5["P5 Comprobar<br/>comportamiento y efectos"]
+    P5 -->|"discrepancia: revisar<br/>contrato e intención"| P2
+    P5 -->|"comprobación pertinente<br/>satisfecha"| P6["P6 Retirar y conectar"]
+    P6 --> P7["P7 Verificación local<br/>e integración"]
+    P7 --> P8["P8 Documentar, versionar<br/>y registrar mediciones"]
+    P8 -->|"otro incremento<br/>justificado"| P1
 ```
 
 *Nota.* Adaptación del diseño E7c a la terminología institucional. Es un diagrama procesal del método, no representación del modelo teórico. Una integración pendiente conserva estado parcial aunque continúe la documentación.
@@ -765,6 +771,7 @@ La aplicación conserva el monolito, entidades y repositorios existentes. La fro
 *Dependencias de la arquitectura de referencia para certificación*
 
 ```mermaid
+%%{init: {"theme":"base","fontFamily":"Arial","themeVariables":{"fontFamily":"Arial","fontSize":"16px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#444444","lineColor":"#444444","edgeLabelBackground":"#ffffff"},"flowchart":{"htmlLabels":false,"nodeSpacing":24,"rankSpacing":24,"diagramPadding":8,"wrappingWidth":220}}}%%
 flowchart TD
     C[Controlador: HTTP y formulario] --> P[Preparación de contexto cuando se justifique]
     C --> A[Servicio de creación]
@@ -1055,9 +1062,9 @@ Estas conclusiones responden, en el mismo orden, a los cuatro objetivos instituc
 
 Las referencias corresponden a fuentes citadas en este documento. Los archivos internos identifican procedencia de datos propios y se rastrean en el Anexo C; no se inventan como publicaciones científicas. Las reservas de acceso y versión no se eliminan al normalizar APA 7.
 
-Abgaz, Y., McCarren, A., Elger, P., Solan, D., Lapuz, N., Bivol, M., Jackson, G., Yilmaz, M., Buckley, J., & Clarke, P. (2023). Decomposition of monolith applications into microservices architectures: A systematic review. *IEEE Transactions on Software Engineering, 49*(8), 4213–4242. https://doi.org/10.1109/TSE.2023.3287297
-
 Abbasi, N., Parsa, S., & Zakeri, M. (2026). A systematic literature review on design for testability approaches in software systems. *ACM Computing Surveys, 58*(12), 1–44. https://doi.org/10.1145/3787493
+
+Abgaz, Y., McCarren, A., Elger, P., Solan, D., Lapuz, N., Bivol, M., Jackson, G., Yilmaz, M., Buckley, J., & Clarke, P. (2023). Decomposition of monolith applications into microservices architectures: A systematic review. *IEEE Transactions on Software Engineering, 49*(8), 4213–4242. https://doi.org/10.1109/TSE.2023.3287297
 
 AlOmar, E. A., Wang, T., Raut, V., Mkaouer, M. W., Newman, C., & Ouni, A. (2021). *Refactoring for reuse: An empirical study* [Prepublicación, versión 1]. arXiv. https://doi.org/10.48550/arXiv.2111.07002
 
@@ -3398,7 +3405,7 @@ Rutas de origen relativas a `tesis_ds/`, excepto este mapa, la normativa, el com
 
 | Apartado/destino del IFI | Fuente concreta y localizador | Transformación y contenido conservado | Criterios |
 |:--|:--|:--|:--|
-| Carátula y título | `00_estado.md`, Datos; `03_perfil_ds.md`, Título; respuestas expresas del tesista sobre institución/ALSIE y «si confirmo» para grado, ciudad y fecha; registro en `entrega_alsie/referencia_presentacion_institucional.md` | Título editorial de quince palabras sin siglas; original aprobado: «Diseño y evaluación de un método de refactorización arquitectónica incremental para subcircuitos de aplicaciones MVC heredadas: aplicación en la ejecución POA de SIGPP». Institución, ALSIE, fórmula «Tesis de grado para optar al grado de Magíster en Ingeniería de Software» y presentación «Cochabamba–Bolivia, noviembre de 2026» confirmados para la entrega propia. Logo sin verificación institucional; presentación no equivale a lugar del estudio. | TIT-1, TIT-2 |
+| Carátula y título | `00_estado.md`, Datos; `03_perfil_ds.md`, Título; respuestas expresas del tesista sobre institución/ALSIE y «si confirmo» para grado, ciudad y fecha; registro y especificación de presentación en `entrega_alsie/referencia_presentacion_institucional.md`, §6, a partir del PDF 1 aportado | Título editorial de quince palabras sin siglas; original aprobado: «Diseño y evaluación de un método de refactorización arquitectónica incremental para subcircuitos de aplicaciones MVC heredadas: aplicación en la ejecución POA de SIGPP». Datos de institución, grado y presentación confirmados. La carátula conserva solo campos editoriales y marcador del logotipo pendiente; las explicaciones de traducción y procedencia se mantienen fuera de la portada. Cochabamba es presentación y La Paz es lugar de las actividades, sin modificar sus alcances. | TIT-1, TIT-2 |
 | Agradecimientos/Dedicatoria | [vacío] de textos personales | Notas opcionales, sin atribuir sentimientos o colaboraciones. | — |
 | Resumen | `03_perfil_ds.md`, Objetivo; `08_evaluacion.md`, cabecera; `10_contribucion_conclusiones.md`, A–H | Objetivo, métodos, contexto, novedad y resultados parciales en 200–250 palabras, pasado. | RES-1, RES-2 |
 | Índices | Encabezados/tablas/figuras del propio IFI | Desde Introducción a Anexos, excluidos preliminares. Localizadores verificables; no páginas inventadas. | IND-1, IND-2 |
@@ -3454,7 +3461,7 @@ I01 conserva discrepancia; I02 es parcial; I03 es descriptivo por autoinforme; I
 | V04 — datos y ciudad del estudio confirmados; logo pendiente | Institución, ALSIE, fórmula del grado y presentación «Cochabamba–Bolivia, noviembre de 2026» confirmados. Además, el tesista respondió «En La Paz» a la ubicación de las aplicaciones/evaluaciones documentadas de SIGPP; se explicita La Paz, Bolivia, en §§1.1–1.4 y 2.1, sin confundirla con Cochabamba ni inferir dirección o despliegue nacional. Registro de presentación en `entrega_alsie/referencia_presentacion_institucional.md`. No repetir esos datos; sigue pendiente verificar el logo y no se infiere cootorgamiento. | INT-2, OBJ-1, T1 y carátula |
 | V05 — tres niveles tratados; alcance micro indirecto explícito | El complemento autorizado aporta Barón Pérez (2026), México, y Huanca Mamani (2024), Bolivia. §3.4 fundamenta su vínculo con la evolución de sistemas institucionales existentes y distingue secuenciación estructural, sustitución y conservación incremental. La rúbrica exige tratar antecedentes en tres niveles, no hallar un método nacional idéntico o demostrar una búsqueda exhaustiva. Se conserva observación por comparabilidad técnica indirecta, no una ausencia del nivel micro o una obligación de inventar otro antecedente. No lectura previa atribuida al autor. | CII-2 |
 | V06 — resuelto para las exigencias definidas en las fuentes disponibles | El tesista transmite la indicación docente de resolver con rúbrica, guía de contenido y APA 7 del repositorio; se aplican también los indicadores compatibles. La estructura con autor y su desarrollo se verifican en CIV-2–CIV-5 sin suponer contenido de los auxiliares externos citados en notas. No se solicitan esos auxiliares para resolver requisitos ya definidos; los vacíos de dato, decisión o estructura se consultan de forma concreta. | CIV-2–CIV-5 y formato |
-| V07 — índices completos; composición pendiente | Tablas 1–24/A1–A5/C1–C4 y figuras 1–3/D1 identificadas individualmente en los índices, con títulos y localizadores. Las tablas dentro de transcripciones cercadas no son tablas editoriales adicionales. Persisten paginación exacta, inspección visual final y proporción de páginas de Introducción; no se certifican por simple Markdown. | IND-2, INT-1, CIII-2 |
+| V07 — fuente editorial corregida; nueva composición pendiente | Carátula depurada; diagramas 1 y 2 compactados en la fuente sin cambiar relaciones y cuatro fuentes Mermaid con Arial/alto contraste. La especificación de la sección B de la guía está en `referencia_presentacion_institucional.md`, §6. Se mantienen los índices de 33 tablas y cuatro figuras. El Word y los PNG anteriores no se regeneraron: sus recortes no se consideran corregidos por editar Markdown. Persisten renderizado del nuevo trazado, legibilidad física, paginación, logotipo y proporción de páginas de Introducción. | IND-2, INT-1, CIII-2 |
 | V08 — forma APA y actualidad resueltas | Se conservan los metadatos contrastados y se incorporan nueve fuentes recientes verificadas: 20/38 recientes (52,6 %), con predominio. Reich y Maalej se cita como prepublicación; Cordeiro y Gheyi por versiones publicadas, no por preprints que difieren. Las reservas de resumen/manuscrito permanecen sin tratarse como errores formales de APA. | REF-2, REF-3 |
 | V09 — resultados y originales diagnósticos incorporados | Inventario de fuentes pertinentes, veintidós bloques exactos y tres extractos, con huellas. Tablas 1–4 y A.1–A.27 presentan indicadores, resultados y originales identificados; G06 recupera el registro inicial. CI-3 y ANX-1 se satisfacen por el contenido presente, no por auditar todo el archivo histórico. Los límites de comandos y código medido permanecen explícitos. Por instrucción del tesista se excluyen de nuevas pasadas basura, descartados, duplicados, predefensas y borradores superados sin contenido necesario para el IFI. Solo una omisión concreta de una fuente final pertinente reabre el cotejo. | ANX-1, CI-3 y regla de integridad |
 
@@ -3482,6 +3489,7 @@ El ejemplo deriva de la aplicación del autor y no añade participante, sistema 
 *Coordinación y reutilización del cálculo del importe*
 
 ```mermaid
+%%{init: {"theme":"base","fontFamily":"Arial","themeVariables":{"fontFamily":"Arial","fontSize":"16px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#444444","lineColor":"#444444","edgeLabelBackground":"#ffffff"},"flowchart":{"htmlLabels":false,"nodeSpacing":24,"rankSpacing":24,"diagramPadding":8,"wrappingWidth":220}}}%%
 flowchart TD
     A[create: consumidor público] --> B[topeCertificacion: coordinación]
     B --> C[Obtener disponible]
@@ -3497,4 +3505,4 @@ Se preservaron los mensajes y el rechazo de no positivos antes de exceso. El tex
 
 La implementación pasó de catorce a dieciocho métodos activos y de dos implementaciones de multiplicación a una con dos usos. Las llamadas contadas textualmente fueron 16→21, con comentarios incluidos. Los cambios hipotéticos posteriores no se ejecutaron: fórmula dos→un punto potencial de edición; origen del disponible y dos mensajes, un punto cada uno antes/después. La separación/reutilización se fundamenta en Metz (2019), sin costo de cambio medido. El suplemento de registro progresivo no acreditó menor reconstrucción; P1 fue retrospectivo y P3 posterior a P2.
 
-**Estado de revisión institucional:** objetivos, hipótesis, datos de presentación, lugar y actores están confirmados. La selección y las inferencias se explicitan en su alcance analítico; la clase sin total acreditado y el contraste nacional indirecto permanecen como límites, no como población inventada o antecedente ausente. La forma APA y los índices están revisados. Persisten la falta de predominio bibliográfico reciente, logotipo, paginación e inspección visual final. No se exige auditar históricos o repetir cotejos resueltos. El mapa del Anexo C coincide con su archivo de trabajo salvo encabezados. No se acreditan resultados nuevos, eficacia causal o aprobación institucional por resolver redacción y correspondencias.
+**Estado de revisión institucional:** los datos y el alcance científico conservan sus confirmaciones y límites. La ampliación bibliográfica está incorporada con sus reservas; la carátula y las fuentes de diagramas se ajustaron para una composición posterior conforme a la guía aportada. Esto no acredita figuras nuevas renderizadas o un Word corregido: los archivos de conversión anteriores siguen siendo preliminares. Persisten logotipo, composición institucional, legibilidad física, paginación e inspección visual final. El mapa del Anexo C coincide con su archivo de trabajo salvo encabezados. No se acreditan resultados nuevos, eficacia causal o aprobación institucional por resolver presentación.

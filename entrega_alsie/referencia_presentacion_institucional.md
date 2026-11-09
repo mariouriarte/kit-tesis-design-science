@@ -42,3 +42,42 @@ La ausencia de un rótulo en los párrafos directos examinados tampoco autoriza 
 Después de proponer como bloque de datos de carátula la fórmula «Tesis de grado para optar al grado de Magíster en Ingeniería de Software» y la presentación «Cochabamba–Bolivia, noviembre de 2026», el tesista respondió «si confirmo». Quedan adoptados expresamente para su propia entrega. No se vuelve a solicitar esta confirmación ni se modifica la denominación por inferencia de otra portada.
 
 La confirmación de carátula se registró sin cambiar los puntajes en ese momento, porque la ciudad de presentación no determinaba la del estudio. Posteriormente, preguntado por la ciudad de las aplicaciones y evaluaciones documentadas de SIGPP, el tesista respondió «En La Paz». Se adopta La Paz, Bolivia, para esas actividades y se actualizan INT-2/T1 en la autoevaluación; Cochabamba conserva su función exclusiva de presentación. No se infieren una dirección física, la ubicación de todas las dependencias o el alcance de todo el despliegue. Permanecen la verificación del logotipo y las demás verificaciones documentales. El documento de salida continúa siendo Markdown.
+
+## 6. Especificación de composición a partir de la guía aportada
+
+**Fuente primaria de presentación:** Santos Santos, A. (2023). *Guía para la elaboración del informe final de investigación* (2.ª ed.) [Guía institucional aportada por el tesista como PDF 1]. Los localizadores siguientes corresponden a las páginas físicas del PDF de 44 páginas, no a su numeración interna. La sección B, y no el formato de la tesis del compañero, determina estas instrucciones. La rúbrica vigente prevalece si existe contradicción y se mantiene APA 7.
+
+| Elemento | Instrucción de composición | Localizador |
+|:--|:--|:--|
+| Papel | Carta, 21,59 × 27,94 cm. No mantener A4 por copia del ejemplar o por valores predeterminados. | PDF, p. 22. |
+| Márgenes | Izquierdo 3 cm; superior, inferior y derecho 2,5 cm. Área geométrica resultante: 16,09 × 22,94 cm, antes de reservar espacio para rótulos, títulos y notas. | PDF, pp. 22 y 27. |
+| Cuerpo | Arial 11, justificado e interlineado 2,0. Espaciado de párrafo: 12 puntos antes y 8 después en el ejemplo de cuerpo. | PDF, pp. 22 y 28. |
+| Apartados y capítulos | Arial 11, negrita, mayúscula sostenida, centrados y sin punto final. No conservar títulos grandes coloreados del estilo predeterminado. | PDF, pp. 22, 27 y 28. |
+| Epígrafes | Arial 11, mayúscula inicial, negrita y alineación izquierda; subepígrafes en cursiva, según los niveles del ejemplo. | PDF, pp. 22 y 28. |
+| Carátula | Aplicar la disposición del modelo: universidad en Tahoma 16; ALSIE en Tahoma 14; rótulo y título en Tahoma 20, centrados y en negrita; campos personales según Tahoma 14 y fecha/ciudad según Tahoma 12. Conservar los datos propios confirmados, no el contenido de otra tesis. | PDF, p. 24. |
+| Limpieza de portada | La portada del Markdown contiene ahora únicamente los campos de presentación y el marcador de logotipo pendiente. No imprimir el encabezado de trabajo «Carátula», instrucciones, procedencia, corte científico o explicaciones sobre la traducción. La equivalencia del título y el corte permanecen en el mapa. | PDF, pp. 9 y 24; Anexo C del IFI. |
+| Numeración de capítulos | Usar «CAPÍTULO I» a «CAPÍTULO IV» y la jerarquía correspondiente de epígrafes. Los localizadores de trabajo del Markdown no se trasladan automáticamente como prefijos editoriales delante del capítulo romano; cualquier normalización debe actualizar también índices y remisiones. No copiar las inconsistencias de numeración de los ejemplos como si fueran contenido propio. | PDF, pp. 25 y 28. |
+| Foliación | Números arábigos en esquina superior derecha, con inicio en la Introducción y final en Recomendaciones según la sección B. No numerar la portada por el solo hecho de que el PDF de trabajo muestre un contador físico. Mantener referencias/anexos en el índice conforme al modelo y cotejar las exigencias de localización con IND-2 antes de certificar el resultado. | PDF, pp. 22 y 25. |
+| Índices | Generar o componer las entradas con los títulos reales del documento y cotejar cada página. El índice de tablas y figuras comienza en hoja nueva. No reemplazar la comprobación por números estimados desde el Markdown. | PDF, pp. 25 y 26. |
+| Tablas y figuras | Arial entre 8 y 12 puntos dentro de tablas y gráficos, usando el mayor tamaño legible que permita la composición. La fuente CSS de Mermaid no acredita por sí sola ese tamaño físico final. | PDF, p. 22. |
+| Número y título de figura | Arriba de la imagen: número Arial 11 en negrita y título Arial 11 en cursiva, alineados a la izquierda y sin punto final en el título. No moverlos debajo de la imagen. | PDF, p. 32; APA 7. |
+| Notas | Debajo de tabla/figura, Arial 10, interlineado 1,5, alineación izquierda; «Nota» en cursiva, no el párrafo completo. Conservar aclaraciones y fuentes pertinentes. | PDF, pp. 31 y 32. |
+| Referencias | Orden alfabético y sangría francesa de 1,27 cm; conservar los elementos y la puntuación de APA 7, no copiar referencias de los ejemplos de la guía. | PDF, p. 34. |
+| Conclusiones y recomendaciones | Listas numeradas con texto justificado, bajo sus apartados correspondientes. No cambiar resultados o convertir recomendaciones en conclusiones para ajustar la presentación. | PDF, p. 33. |
+| Anexos | Conservar identificación ascendente A–D del IFI y sus remisiones. Iniciar cada anexo en hoja nueva; no comenzar dos anexos diferentes en una misma página. No recortar un instrumento extenso para obligarlo a ocupar una sola hoja: «un anexo por página» no equivale a «una página como máximo por anexo». | PDF, p. 35; estructura vigente del IFI. |
+
+### 6.1. Corrección de diagramas en la fuente
+
+La figura 1 conserva componentes, conexiones, sentidos y textos: se dispone horizontalmente el grupo de fronteras y se reducen separaciones, con cortes de línea explícitos en rótulos. La figura 2 conserva P1–P8, el retorno por discrepancia a P2 y el nuevo incremento hacia P1; se reducen espacios y envolturas innecesarias. Las cuatro fuentes Mermaid declaran Arial y una apariencia de alto contraste. Ningún cambio de disposición añade una relación científica o acredita una comprobación nueva.
+
+Para la composición posterior se deben imponer simultáneamente límites de ancho y alto, conservando la proporción de la imagen. Los 22,94 cm de altura útil no están íntegramente disponibles para el gráfico: deben alojar también número, título, nota y sus espaciados. No basta fijar un ancho y permitir que una figura vertical alcance 40 cm. Si al ajustar el tamaño el texto cae por debajo de 8 puntos, se debe reorganizar el trazado, no aprobar la reducción ilegible.
+
+Como comprobación técnica inicial se utiliza una caja máxima de 16,09 cm de ancho por 17 cm de alto para la imagen, dejando margen para título y nota. La altura de 17 cm es una reserva de composición de esta revisión, **no una medida exigida por ALSIE**. Ajustar después al espacio real y a la mayor letra legible entre 8 y 12 puntos. Los 24 píxeles CSS de la fuente de la figura 1 no significan 24 puntos impresos: el tamaño físico depende de la escala final.
+
+El número, título y gráfico deben mantenerse juntos; evitar un rótulo al pie de una página y su imagen en la siguiente. La nota debe acompañar la figura conforme al espacio disponible. Cotejar en el resultado renderizado que estén todos los componentes y, en la figura 2, el nodo P8 completo. Revisar también las figuras 3 y D1 en su tamaño final, aunque sus PNG anteriores fueran legibles.
+
+### 6.2. Estado y frontera de esta corrección
+
+Esta entrega corrige Markdown y especifica la composición; **no regenera el Word ni los PNG**. El archivo `IFI_ALSIE.docx` y las imágenes de `figuras/` producidos antes de esta corrección siguen siendo los anteriores y no se declaran conformes. La salida de este agente es exclusivamente Markdown. La composición en otros formatos corresponde a un proceso posterior que aplique estas instrucciones y realice inspección visual.
+
+Antes de cerrar esa etapa deberán comprobarse también márgenes, tipografía, saltos, índices/páginas, legibilidad de todas las tablas, ausencia de contenido recortado y proporción de páginas de Introducción ≤10 %. La autoevaluación provisional del Markdown no sustituye esas verificaciones. No se cambian resultados científicos o limitaciones para corregir la presentación.
