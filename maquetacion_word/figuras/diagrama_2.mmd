@@ -1,0 +1,11 @@
+%%{init: {"theme":"base","fontFamily":"Arial","themeVariables":{"fontFamily":"Arial","fontSize":"16px","primaryColor":"#ffffff","primaryTextColor":"#111111","primaryBorderColor":"#444444","lineColor":"#444444","edgeLabelBackground":"#ffffff"},"flowchart":{"htmlLabels":false,"nodeSpacing":18,"rankSpacing":18,"diagramPadding":8,"wrappingWidth":240}}}%%
+flowchart TD
+    P1["P1 Delimitar"] --> P2["P2 Caracterizar"]
+    P2 --> P3["P3 Controlar datos<br/>y dependencias"]
+    P3 --> P4["P4 Migrar en<br/>coexistencia"]
+    P4 --> P5["P5 Comprobar<br/>comportamiento y efectos"]
+    P5 -->|"discrepancia: revisar<br/>contrato e intención"| P2
+    P5 -->|"comprobación pertinente<br/>satisfecha"| P6["P6 Retirar y conectar"]
+    P6 --> P7["P7 Verificación local<br/>e integración"]
+    P7 --> P8["P8 Documentar, versionar<br/>y registrar mediciones"]
+    P8 -->|"otro incremento<br/>justificado"| P1
