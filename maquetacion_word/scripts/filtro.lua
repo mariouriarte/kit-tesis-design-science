@@ -52,9 +52,9 @@ function Blocks(blocks)
   return out
 end
 
--- Código: solo php, bash, python y json se resaltan. Los bloques markdown, text o sin
+-- Código: php, bash, python, json y markdown se resaltan. Los bloques text o sin
 -- lenguaje son transcripciones literales de documentos: monoespaciado sin color.
-local RESALTAR = { php = true, bash = true, python = true, json = true }
+local RESALTAR = { php = true, bash = true, python = true, json = true, markdown = true }
 function CodeBlock(cb)
   local lang = cb.classes[1]
   if lang == nil or not RESALTAR[lang] then

@@ -25,7 +25,10 @@ REPO = ROOT.parent
 FUENTE = REPO / "entrega_alsie" / "IFI_ALSIE.md"
 BUILD = ROOT / "build"
 FIG = ROOT / "figuras"
-SALIDA = ROOT / "IFI_ALSIE.docx"
+SALIDA = ROOT / "IFI_ALSIE-mario-uriarte.docx"
+SALIDA_PDF = ROOT / "IFI_ALSIE-mario-uriarte.pdf"
+LOGO = FIG / "logo.png"
+LOGO_ALTO_CM = 3.5
 
 WNS = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
 RNS = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
@@ -88,7 +91,10 @@ def caratula_md(lineas):
     div("Caratula Universidad", c[0])
     div("Caratula Universidad", c[1])
     div("Caratula ALSIE", c[2])
-    div("Caratula Logo", logo)
+    if not LOGO.exists():
+        raise SystemExit(f"No se encontró el logotipo: {LOGO}. No se imprime el marcador ni se inventa una imagen.")
+    w, h = dims_png(LOGO)
+    div("Caratula Logo", f"![Logotipo institucional](figuras/logo.png){{width={LOGO_ALTO_CM * w / h:.2f}cm height={LOGO_ALTO_CM:.2f}cm}}")
     div("Caratula Titulo", titulo_rot)
     div("Caratula Titulo", titulo)
     div("Caratula Campo", grado)
@@ -99,15 +105,18 @@ def caratula_md(lineas):
     return "\n".join(sal)
 
 
+def texto_apartado(lineas, titulo):
+    """Texto íntegro del apartado preliminar tal como está en el Markdown (debe existir y no ser reserva)."""
+    ps = [l for l in seccion(lineas, titulo) if l.strip()]
+    assert ps and not ps[0].startswith("Apartado opcional reservado"), f"{titulo}: sin texto del tesista"
+    return "\n\n".join(ps) + "\n"
+
+
 def resumen_md(lineas):
     parrafos = [l for l in seccion(lineas, "Resumen") if l.strip()]
     assert len(parrafos) == 1
     return parrafos[0]
 
-
-# Apartado reservado al tesista: el Markdown no trae un texto personal y no se redacta uno en su nombre.
-# Para publicarlo, reemplazar este marcador por el texto de agradecimientos.
-TEXTO_AGRADECIMIENTOS = "[Texto de agradecimientos pendiente: lo aporta el tesista]\n"
 
 SECT_PLACEHOLDER = "@@SECT_{}@@"
 
@@ -124,7 +133,9 @@ def frontales_md(lineas):
     p = []
     p.append(caratula_md(lineas))
     p.append('\n::: {custom-style="Apartado"}\nAgradecimientos\n:::\n')
-    p.append(TEXTO_AGRADECIMIENTOS)
+    p.append(texto_apartado(lineas, "Agradecimientos"))
+    p.append('\n::: {custom-style="Apartado"}\nDedicatoria\n:::\n')
+    p.append(texto_apartado(lineas, "Dedicatoria"))
     p.append('\n::: {custom-style="Apartado"}\nResumen\n:::\n')
     p.append(resumen_md(lineas))
     p.append('\n::: {custom-style="Apartado"}\nÍndice\n:::\n')
@@ -773,6 +784,7 @@ def main():
     d_tof = localizar(tof, pgs, intro_fisica, intro_fisica)
     estructura_docx(raw, SALIDA, {"toc": d_toc, "tot": d_tot, "tof": d_tof})
     pdf2 = a_pdf(SALIDA)
+    shutil.copyfile(pdf2, SALIDA_PDF)
     pgs2 = textos_paginas(pdf2)
     print("páginas físicas:", len(pgs2) - (1 if not pgs2[-1].strip() else 0), "intro física:", intro_fisica + 1)
     print("TOC:", len(toc), "tablas:", len(tot), "figuras:", len(tof))
