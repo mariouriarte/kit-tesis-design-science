@@ -13,9 +13,9 @@
 | Títulos | Apartados y capítulos: Arial 11, negrita, mayúscula sostenida, centrados, en hoja nueva. Epígrafes: negrita, mayúscula inicial, izquierda. Subepígrafes: negrita cursiva. Son estilos reales de Word (Título 1 a 3). |
 | Carátula | Tahoma: universidad 16, ALSIE 14, rótulo y título 20, campos 14, fecha y ciudad 12. Sin numeración. |
 | Orden | Carátula, Agradecimientos, Dedicatoria, Resumen, Índice, Índice de tablas y figuras, Introducción, Capítulos I–IV, Conclusiones, Recomendaciones, Referencias, Anexos A–D. |
-| Índices | Campos TOC reales (contenido, tablas, figuras) con páginas calculadas sobre el render. Para actualizar en Word: seleccionar todo y pulsar F9. |
+| Índices | Campos TOC reales (contenido, tablas, figuras) con páginas calculadas sobre el render. Los de tablas y figuras usan campos `TC` (independientes del separador regional de Word). Para actualizar en Word: seleccionar todo y pulsar F9. |
 | Foliación | Arábiga, esquina superior derecha, desde la Introducción hasta Recomendaciones. Referencias y Anexos continúan la cuenta sin número visible. |
-| Tablas | Ancho útil completo, bordes APA, encabezado repetido en continuaciones, filas sin cortar, Arial de 10, 9 u 8 pt según el número de columnas. |
+| Tablas | Ancho útil completo, **cuadrícula completa de bordes negros** y encabezado en negrita con fondo gris claro, repetido en continuaciones; filas sin cortar; Arial de 10, 9 u 8 pt según el número de columnas. La Tabla 21 (8 columnas) va en hoja horizontal propia, con la numeración continua. |
 | Figuras | Número en negrita y título en cursiva arriba; nota debajo, Arial 10, «Nota.» en cursiva. |
 | Referencias | Sangría francesa de 1,27 cm, sin cambios en autores, años ni DOI. |
 | Anexos | Cada anexo (A–D) en hoja nueva. Interlineado 1,15 y sin sangría de primera línea. |
@@ -45,10 +45,10 @@ La letra se calculó como tamaño CSS declarado en la fuente por el factor de es
 
 ## 4. Pendientes y reservas
 
-1. **Logotipo:** insertado automáticamente desde `figuras/logo.png` (centrado, 3,5 cm de alto, sobre el rótulo «TÍTULO»). Si el archivo falta, `maquetar.py` se detiene y no imprime marcador. La carátula conserva el marcador solo en el Markdown, no en el Word.
+1. **Logotipo:** insertado automáticamente desde `figuras/logo.png` (centrado, 6 cm de alto, sobre el rótulo «TÍTULO»; el archivo tiene solo 235 × 317 px, unos 134 ppp a ese tamaño: una versión de mayor resolución o vectorial imprimiría más nítida). Si el archivo falta, `maquetar.py` se detiene y no imprime marcador. La carátula conserva el marcador solo en el Markdown, no en el Word.
 2. **Agradecimientos y Dedicatoria:** se imprimen con el texto del Markdown, cada uno en hoja propia, sin foliar. El script se detiene si el apartado vuelve a ser texto de reserva.
-3. **Paginación e índices:** calculados con LibreOffice. El documento lleva `updateFields`: al abrirlo, Word pregunta si actualizar los campos; responder **Sí** recalcula índice, índice de tablas y figuras y números de página. También se puede forzar con Ctrl+A y F9. La verificación final de páginas debe hacerse en Word.
-4. **Tabla 21** (ocho columnas): a 8 pt algunas palabras largas se parten entre líneas. No se pierde contenido. Si se desea mejorarla, es decisión de composición (orientación horizontal u otro reparto).
+3. **Paginación e índices:** calculados con LibreOffice. Se retiró `updateFields`: Word ya no recalcula los índices al abrir (era la causa probable del índice desordenado en Windows, junto con el separador regional de la opción `\t`, que se sustituyó por campos `TC`). **Para imprimir, usar el PDF**, cuya paginación coincide con sus índices. Si se edita el Word, recalcular con Ctrl+A y F9; la paginación puede variar levemente entre LibreOffice y Word.
+4. **Fuentes en el PDF:** esta máquina no tiene Tahoma; el PDF usa una sustituta (Noto Sans) en la carátula. En Word se verá en Tahoma. Para una carátula idéntica en el PDF, generarlo desde Word en Windows (Archivo > Exportar > PDF).
 5. **Código y transcripciones de anexos:** Courier New 8 pt (código en línea, 10 pt). Es una excepción a «Arial en todo el documento» (la guía no trata el código). Ver §6.
 6. **Numeración de epígrafes:** se retiró solo el prefijo de trabajo delante del capítulo (p. ej. «2. Capítulo I» pasa a «Capítulo I»). Los números de epígrafe (1.1, 2.1, 3.1…) se conservaron porque el texto los cita (§1.3, sección 2.5). Los epígrafes del Capítulo I quedan numerados 2.x.
 7. **Divergencias entre el encargo recibido y el repositorio.** Se siguió el repositorio (`encargo_composicion_final.md` y §6 de `referencia_presentacion_institucional.md`, derivado de la guía):

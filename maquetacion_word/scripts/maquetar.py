@@ -28,7 +28,7 @@ FIG = ROOT / "figuras"
 SALIDA = ROOT / "IFI_ALSIE-mario-uriarte.docx"
 SALIDA_PDF = ROOT / "IFI_ALSIE-mario-uriarte.pdf"
 LOGO = FIG / "logo.png"
-LOGO_ALTO_CM = 3.5
+LOGO_ALTO_CM = 6.0
 
 WNS = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
 RNS = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
@@ -51,6 +51,7 @@ CAJA_W, CAJA_H = 16.09, 17.0
 ALTO_MAX = {1: 16.0}  # figura 1: reduce un poco para que su letra no supere 12 pt
 
 ANCHO_UTIL = 9121  # twips
+ANCHO_HORIZONTAL = 15840 - 1701 - 1418  # hoja horizontal (tablas de 8 o más columnas)
 
 
 # ---------------------------------------------------------------------------
@@ -332,12 +333,12 @@ def run_rpr(r):
     return rpr
 
 
-def sectpr_xml(tipo, header_rid=None, pg_start=None):
+def sectpr_xml(tipo, header_rid=None, pg_start=None, horizontal=False):
     h = f'<w:headerReference w:type="default" r:id="{header_rid}"/>' if header_rid else ""
     pg = f'<w:pgNumType w:start="{pg_start}"/>' if pg_start else ""
     return (
         f'<w:sectPr xmlns:w="{WNS}" xmlns:r="{RNS}">{h}<w:type w:val="nextPage"/>'
-        f'<w:pgSz w:w="12240" w:h="15840"/>'
+        + ('<w:pgSz w:w="15840" w:h="12240" w:orient="landscape"/>' if horizontal else '<w:pgSz w:w="12240" w:h="15840"/>') +
         f'<w:pgMar w:top="1418" w:right="1418" w:bottom="1418" w:left="1701" w:header="709" w:footer="709" w:gutter="0"/>'
         f'{pg}</w:sectPr>'
     )
@@ -356,11 +357,13 @@ HDR_VACIO = (
 )
 
 
-def tabla_a_formato(tbl):
+def tabla_a_formato(tbl, ANCHO_UTIL=ANCHO_UTIL, pt_horizontal=None):
     """Aplica ancho útil, bordes APA, encabezado repetido y tamaño de letra."""
     filas = tbl.findall("w:tr", NS)
     ncol = len(tbl.findall("w:tblGrid/w:gridCol", NS))
     pt = 10 if ncol <= 3 else (9 if ncol <= 5 else 8)
+    if pt_horizontal:
+        pt = pt_horizontal
     sz = str(pt * 2)
 
     # pesos de columna: texto total + palabra más larga (ancho mínimo para no partir palabras)
@@ -374,6 +377,10 @@ def tabla_a_formato(tbl):
                 mw = max((len(w_) for w_ in re.split(r"\s+", txt) if w_), default=0)
                 palabra[i] = max(palabra[i], mw * (1.12 if ri_ == 0 else 1.0))
     minimos = [int(palabra[i] * pt * 10.6 + 150) for i in range(ncol)]
+    if sum(minimos) > ANCHO_UTIL:
+        # una palabra muy larga (ruta, URL, hash) no debe arrastrar el ancho de toda la tabla:
+        # el mínimo protege palabras de hasta 14 caracteres; las más largas se parten.
+        minimos = [int(min(palabra[i], 14 * 1.12) * pt * 10.6 + 150) for i in range(ncol)]
     if sum(minimos) > ANCHO_UTIL:
         # columnas rígidas (códigos/ID de pocas letras) conservan su mínimo; el resto se reduce
         rig = [i for i in range(ncol) if palabra[i] <= 7]
@@ -403,9 +410,9 @@ def tabla_a_formato(tbl):
     tw.set(q("w:w"), str(ANCHO_UTIL))
     tw.set(q("w:type"), "dxa")
     b = etree.SubElement(tblpr, q("w:tblBorders"))
-    for lado in ("top", "bottom"):
+    for lado in ("top", "left", "bottom", "right", "insideH", "insideV"):
         x = etree.SubElement(b, q(f"w:{lado}"))
-        x.set(q("w:val"), "single"); x.set(q("w:sz"), "8"); x.set(q("w:space"), "0"); x.set(q("w:color"), "000000")
+        x.set(q("w:val"), "single"); x.set(q("w:sz"), "6"); x.set(q("w:space"), "0"); x.set(q("w:color"), "000000")
     lay = etree.SubElement(tblpr, q("w:tblLayout")); lay.set(q("w:type"), "fixed")
     cm = etree.SubElement(tblpr, q("w:tblCellMar"))
     for lado, v in (("top", 20), ("left", 60), ("bottom", 20), ("right", 60)):
@@ -440,8 +447,11 @@ def tabla_a_formato(tbl):
             if ri == 0:
                 bd = etree.Element(q("w:tcBorders"))
                 x = etree.SubElement(bd, q("w:bottom"))
-                x.set(q("w:val"), "single"); x.set(q("w:sz"), "6"); x.set(q("w:space"), "0"); x.set(q("w:color"), "000000")
+                x.set(q("w:val"), "single"); x.set(q("w:sz"), "12"); x.set(q("w:space"), "0"); x.set(q("w:color"), "000000")
                 tcpr.insert(1, bd)
+                sh = etree.Element(q("w:shd"))
+                sh.set(q("w:val"), "clear"); sh.set(q("w:color"), "auto"); sh.set(q("w:fill"), "E7E6E6")
+                tcpr.insert(2, sh)
             for p in tc.findall("w:p", NS):
                 set_pstyle(p, "CeldaTabla")
                 for r in p.iter(q("w:r")):
@@ -540,8 +550,13 @@ def estructura_docx(raw, destino, paginas=None):
                 ordenar_rpr(rpr)
 
     # --- Tablas
+    tablas_horizontales = []
     for tbl in body.iter(q("w:tbl")):
-        tabla_a_formato(tbl)
+        if len(tbl.findall("w:tblGrid/w:gridCol", NS)) >= 8:
+            tabla_a_formato(tbl, ANCHO_HORIZONTAL, 9)
+            tablas_horizontales.append(tbl)
+        else:
+            tabla_a_formato(tbl)
 
     # --- Párrafos de imagen: asegurar alineación centrada y mantener con rótulo
     # (ya definidos por el estilo 'Imagen')
@@ -572,6 +587,21 @@ def estructura_docx(raw, destino, paginas=None):
     sx2 = sect_pars[2].find("w:pPr/w:sectPr", NS)
     pg = etree.SubElement(sx2, q("w:pgNumType")); pg.set(q("w:start"), "1")
     # pgNumType debe ir tras pgMar: ya está al final -> correcto.
+    # --- Tablas de 8 o más columnas: hoja horizontal propia (rótulo, tabla y nota).
+    # La numeración (inicio en 1) pasa al primer tramo del cuerpo; el resto continúa.
+    if tablas_horizontales:
+        pg2 = sx2.find("w:pgNumType", NS)
+        sx2.remove(pg2)
+        primera = True
+        for tbl in tablas_horizontales:
+            rot, nota = tbl.getprevious(), tbl.getnext()
+            assert pstyle(rot) == "RotuloTabla" and pstyle(nota) == "Nota", (ptext(rot)[:40], ptext(nota)[:40])
+            ant = rot.getprevious()
+            assert ant is not None and ant.tag == q("w:p")
+            antes = etree.fromstring(sectpr_xml("nextPage", header_rid="rIdHdrBody", pg_start=1 if primera else None))
+            ppr_of(ant).append(antes)
+            ppr_of(nota).append(etree.fromstring(sectpr_xml("nextPage", header_rid="rIdHdrBody", horizontal=True)))
+            primera = False
     # Sección 3 final (Referencias, Anexos): encabezado vacío y numeración continua.
     final = body.find("w:sectPr", NS)
     if final is not None:
@@ -624,6 +654,18 @@ def estructura_docx(raw, destino, paginas=None):
             etiq = "".join(x.text or "" for x in runs[0].findall("w:t", NS)).strip()
             tit = "".join("".join(x.text or "" for x in r.findall("w:t", NS)) for r in runs[1:]).strip()
             (entradas_tot if clase[0] == "tot" else entradas_tof).append((1, f"{etiq}. {tit}", nombre, st, etiq))
+            ident = "T" if clase[0] == "tot" else "F"
+            txt_tc = f"{etiq}. {tit}".replace('"', "'").replace("\\", "/")
+            for tipo in ("begin", "instr", "end"):
+                r_tc = etree.Element(q("w:r"))
+                rp = etree.SubElement(r_tc, q("w:rPr")); etree.SubElement(rp, q("w:vanish"))
+                if tipo == "instr":
+                    it_ = etree.SubElement(r_tc, q("w:instrText"))
+                    it_.set("{http://www.w3.org/XML/1998/namespace}space", "preserve")
+                    it_.text = f' TC "{txt_tc}" \\f {ident} \\l 1 '
+                else:
+                    fc_ = etree.SubElement(r_tc, q("w:fldChar")); fc_.set(q("w:fldCharType"), tipo)
+                be.addprevious(r_tc)
 
     def entrada_p(nivel, texto, bm, num, estilo):
         p = etree.Element(q("w:p"))
@@ -669,8 +711,8 @@ def estructura_docx(raw, destino, paginas=None):
     p_tot = paginas["tot"] if paginas else None
     p_tof = paginas["tof"] if paginas else None
     reemplazar("@@TOC@@", campo(entradas_toc, ' TOC \\o "1-3" \\h \\z \\u ', lambda n: f"TOC{n}", p_toc))
-    reemplazar("@@TOT@@", campo(entradas_tot, ' TOC \\h \\z \\t "Rotulo Tabla,1" ', lambda n: "TableofFigures", p_tot))
-    reemplazar("@@TOF@@", campo(entradas_tof, ' TOC \\h \\z \\t "Rotulo Figura,1" ', lambda n: "TableofFigures", p_tof))
+    reemplazar("@@TOT@@", campo(entradas_tot, ' TOC \\f T \\h \\z ', lambda n: "TableofFigures", p_tot))
+    reemplazar("@@TOF@@", campo(entradas_tof, ' TOC \\f F \\h \\z ', lambda n: "TableofFigures", p_tof))
 
     tree.write(str(doc_path), xml_declaration=True, encoding="UTF-8", standalone=True)
 
@@ -686,10 +728,10 @@ def estructura_docx(raw, destino, paginas=None):
     r = r.replace("</Relationships>",
                   '<Relationship Id="rIdSettings" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/settings" Target="settings.xml"/></Relationships>')
     rels.write_text(r, encoding="utf8")
-    # Word recalcula índices y números de página al abrir (pregunta una vez; aceptar con «Sí»)
+    # Sin updateFields: Word muestra los índices ya calculados (el PDF es la copia de impresión).
+    # Para recalcular tras editar: Ctrl+E y F9.
     (tmp / "word" / "settings.xml").write_text(
-        f'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:settings xmlns:w="{WNS}">'
-        '<w:updateFields w:val="true"/></w:settings>', encoding="utf8")
+        f'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:settings xmlns:w="{WNS}"></w:settings>', encoding="utf8")
     ct = tmp / "[Content_Types].xml"
     c = ct.read_text(encoding="utf8")
     if 'Extension="png"' not in c:
