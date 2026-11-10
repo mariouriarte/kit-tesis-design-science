@@ -185,7 +185,7 @@ ESTILOS.append(estilo_builtin(
 ))
 # Estilos de carácter
 CAR = [
-    ('VerbatimChar', 'Verbatim Char', ARIAL + SZ(10)),
+    ('VerbatimChar', 'Verbatim Char', '<w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>' + SZ(8)),
     ('Hyperlink', 'Hyperlink', ''),
 ]
 
@@ -221,7 +221,7 @@ def main():
     s = re.sub(
         r'(<w:style w:type="character"[^>]*w:styleId="VerbatimChar".*?</w:style>)',
         '<w:style w:type="character" w:customStyle="1" w:styleId="VerbatimChar"><w:name w:val="Verbatim Char"/>'
-        '<w:rPr>' + ARIAL + SZ(10) + '</w:rPr></w:style>', s, flags=re.S)
+        '<w:rPr><w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/>' + SZ(8) + '</w:rPr></w:style>', s, flags=re.S)
     s = re.sub(r'<w:style w:type="character"[^>]*w:styleId="Hyperlink".*?</w:style>', '<w:style w:type="character" w:styleId="Hyperlink"><w:name w:val="Hyperlink"/><w:rPr/></w:style>', s, flags=re.S)
     s = s.replace("</w:styles>", "".join(nuevos.values()) + "</w:styles>")
     sp.write_text(s, encoding="utf8")

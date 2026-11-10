@@ -105,6 +105,10 @@ def resumen_md(lineas):
     return parrafos[0]
 
 
+# Apartado reservado al tesista: el Markdown no trae un texto personal y no se redacta uno en su nombre.
+# Para publicarlo, reemplazar este marcador por el texto de agradecimientos.
+TEXTO_AGRADECIMIENTOS = "[Texto de agradecimientos pendiente: lo aporta el tesista]\n"
+
 SECT_PLACEHOLDER = "@@SECT_{}@@"
 
 
@@ -119,6 +123,8 @@ def sect_par(n):
 def frontales_md(lineas):
     p = []
     p.append(caratula_md(lineas))
+    p.append('\n::: {custom-style="Apartado"}\nAgradecimientos\n:::\n')
+    p.append(TEXTO_AGRADECIMIENTOS)
     p.append('\n::: {custom-style="Apartado"}\nResumen\n:::\n')
     p.append(resumen_md(lineas))
     p.append('\n::: {custom-style="Apartado"}\nÍndice\n:::\n')
@@ -229,7 +235,7 @@ def pandoc():
         "-t", "docx",
         "--reference-doc", str(BUILD / "referencia.docx"),
         "--lua-filter", str(ROOT / "scripts" / "filtro.lua"),
-        "--syntax-highlighting=none",
+        "--syntax-highlighting=" + str(ROOT / "scripts" / "tema_codigo.theme"),
         "--resource-path", str(ROOT),
         "-o", str(sal),
     ], check=True, cwd=ROOT)
@@ -492,6 +498,36 @@ def estructura_docx(raw, destino, paginas=None):
                     etree.SubElement(rpr, q("w:caps"))
                 ordenar_rpr(rpr)
 
+    # --- Código resaltado: fondo claro y borde fino en todo bloque con fichas de sintaxis
+    # (rStyle *Tok distinto de NormalTok). Los bloques sin resaltado (transcripciones) no se tocan.
+    for p in body.iter(q("w:p")):
+        if pstyle(p) != "SourceCode":
+            continue
+        est = {e.get(q("w:val")) for e in p.iter(q("w:rStyle"))}
+        if any(x.endswith("Tok") and x != "NormalTok" for x in est):
+            put_ppr(p, "shd", {"val": "clear", "color": "auto", "fill": "F6F8FA"})
+            bd = etree.Element(q("w:pBdr"))
+            for lado in ("top", "left", "bottom", "right"):
+                x = etree.SubElement(bd, q(f"w:{lado}"))
+                x.set(q("w:val"), "single"); x.set(q("w:sz"), "4"); x.set(q("w:space"), "4"); x.set(q("w:color"), "D0D7DE")
+            ppr_of(p).append(bd)
+            put_ppr(p, "pBdr")  # reordena respetando el orden del esquema
+            put_ppr(p, "ind", {"left": "113", "right": "113"})
+
+    # --- Código en línea (fuera de bloques): monoespaciado a 10 pt para no verse diminuto en Arial 11
+    for p in body.iter(q("w:p")):
+        if pstyle(p) == "SourceCode":
+            continue
+        for r in p.iter(q("w:r")):
+            rs = r.find("w:rPr/w:rStyle", NS)
+            if rs is not None and rs.get(q("w:val")) == "VerbatimChar":
+                rpr = run_rpr(r)
+                for e in rpr.findall("w:sz", NS) + rpr.findall("w:szCs", NS):
+                    rpr.remove(e)
+                for tag in ("sz", "szCs"):
+                    x = etree.SubElement(rpr, q(f"w:{tag}")); x.set(q("w:val"), "20")
+                ordenar_rpr(rpr)
+
     # --- Tablas
     for tbl in body.iter(q("w:tbl")):
         tabla_a_formato(tbl)
@@ -636,12 +672,19 @@ def estructura_docx(raw, destino, paginas=None):
                   '<Relationship Id="rIdHdrBody" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/header" Target="header1.xml"/>'
                   '<Relationship Id="rIdHdrEmpty" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/header" Target="header2.xml"/>'
                   '</Relationships>')
+    r = r.replace("</Relationships>",
+                  '<Relationship Id="rIdSettings" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/settings" Target="settings.xml"/></Relationships>')
     rels.write_text(r, encoding="utf8")
+    # Word recalcula índices y números de página al abrir (pregunta una vez; aceptar con «Sí»)
+    (tmp / "word" / "settings.xml").write_text(
+        f'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:settings xmlns:w="{WNS}">'
+        '<w:updateFields w:val="true"/></w:settings>', encoding="utf8")
     ct = tmp / "[Content_Types].xml"
     c = ct.read_text(encoding="utf8")
     if 'Extension="png"' not in c:
         c = c.replace("<Override", '<Default Extension="png" ContentType="image/png"/><Override', 1)
     c = c.replace("</Types>",
+                  '<Override PartName="/word/settings.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.settings+xml"/>'
                   '<Override PartName="/word/header1.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.header+xml"/>'
                   '<Override PartName="/word/header2.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.header+xml"/>'
                   '</Types>')

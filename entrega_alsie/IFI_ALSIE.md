@@ -24,11 +24,11 @@
 
 # Agradecimientos
 
-Apartado opcional reservado al tesista. Se requiere su decisión de omitirlo o aportar el texto personal; no se atribuyen agradecimientos ni autorizaciones no documentadas.
+A mi madre, Jaquelin, por creer siempre en mí, incluso en los momentos en que yo mismo dudaba.
 
 # Dedicatoria
 
-Apartado opcional reservado al tesista. Se requiere su decisión de omitirlo o aportar una dedicatoria propia; no se redacta una manifestación personal en su nombre.
+A mi hija, Fernanda, mi mayor fuente de inspiración, por darme cada día un motivo para seguir creciendo y alcanzar mis metas.
 
 # Resumen
 
