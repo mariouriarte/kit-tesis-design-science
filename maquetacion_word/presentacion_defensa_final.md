@@ -1,6 +1,7 @@
 <!-- Presentación de defensa final en Markdown, conforme al modelo ALSIE.
-Separadores horizontales delimitan diapositivas. 15 diapositivas, tiempo objetivo
-20 minutos (~1 min por diapositiva; el modelo teórico usa 2). Notas de orador como
+Separadores horizontales delimitan las 16 diapositivas del recorrido principal,
+desde la portada hasta las recomendaciones. Tiempo objetivo: 20 minutos máximo.
+Las secciones posteriores son material de preparación, no diapositivas. Notas de orador como
 citas bajo cada diapositiva; no son texto para leer. Sin términos de Design Science:
 se habla de modelo, hipótesis, propuesta, validación y aporte (regla 8 de la plantilla
 ALSIE). Las figuras ya están renderizadas como PNG en `figuras/` y se referencian en
@@ -47,21 +48,30 @@ documento ya entregado; nada se inventa aquí. -->
 
 ---
 
-## 4. Objetivos e hipótesis
+## 4. Objetivos de la investigación
 
 **Objetivo general:** diseñar y evaluar un método de refactorización arquitectónica incremental para subcircuitos de aplicaciones heredadas modelo-vista-controlador, aplicado en la ejecución del plan operativo anual de SIGPP, con la finalidad de mejorar modificabilidad, testabilidad y trazabilidad sin reescritura completa.
 
 *«Mejorar» expresa la finalidad original, no el resultado alcanzado.*
 
-Cuatro logros institucionales: **Caracterizar** · **Sistematizar** · **Precisar** · **Elaborar**.
+1. **Caracterizar** el estado de la refactorización y su comprobación en el subcircuito de ejecución de SIGPP mediante los indicadores y registros documentados.
+2. **Sistematizar** los fundamentos de cambio seguro, responsabilidades arquitectónicas, testabilidad y métodos incrementales que sustentan el objeto y el campo.
+3. **Precisar** los componentes y relaciones esenciales entre fronteras, escenarios y acreditación de propiedades, con su respaldo contextual y sus límites.
+4. **Elaborar** la propuesta metodológica que concreta esas relaciones y documentar su aplicación y validación para atender las dificultades de delimitación y comprobación del caso.
 
-**Hipótesis:** el método de refactorización incremental, de ocho pasos y caracterizado por la diferenciación de fronteras de decisión, observación e intervención, la selección de escenarios según la semántica del comportamiento y la acreditación de propiedades por nivel de comprobación, **permite delimitar y sustentar la verificación** de cambios sobre las decisiones de creación de certificaciones de SIGPP, **porque vincula cada decisión con sus consumidores, efectos observables y evidencia pertinente.**
+> [Los cuatro objetivos organizan los resultados de los capítulos: diagnóstico, fundamentos, modelo y propuesta aplicada. La finalidad original de mejorar atributos se contrasta con los resultados efectivamente obtenidos; no se presenta como una mejora integral medida.]
+
+---
+
+## 5. Hipótesis de diseño
+
+**Hipótesis de diseño:** el método de refactorización arquitectónica incremental, estructurado en ocho pasos y caracterizado por la diferenciación de fronteras de decisión, observación e intervención, la selección de escenarios según la semántica del comportamiento y la acreditación de propiedades por nivel de comprobación, permite delimitar y sustentar la verificación de cambios sobre las decisiones seleccionadas de creación de certificaciones del sistema institucional de planificación operativa y presupuesto de la Caja Petrolera de Salud, en La Paz, Bolivia, porque vincula explícitamente cada decisión con sus consumidores, efectos observables y evidencia pertinente.
 
 > [La hipótesis no promete ahorro ni mejora medida de atributos: promete delimitación y sustento de la verificación, y su mecanismo es la correspondencia explícita entre decisión, consumidores, efectos y evidencia. Se formuló después del análisis de las aplicaciones; lo digo con claridad y no la presento como una predicción prospectiva que nunca existió.]
 
 ---
 
-## 5. Diseño metodológico
+## 6. Diseño metodológico
 
 | Método | Objetivo institucional | Técnica representativa |
 |:--|:--|:--|
@@ -76,7 +86,7 @@ Cuatro logros institucionales: **Caracterizar** · **Sistematizar** · **Precisa
 
 ---
 
-## 6. Diagnóstico: línea base y hallazgos
+## 7. Diagnóstico: línea base y hallazgos
 
 | Indicador | Estado documentado |
 |:--|:--|
@@ -91,7 +101,7 @@ Cuatro logros institucionales: **Caracterizar** · **Sistematizar** · **Precisa
 
 ---
 
-## 7. Marco teórico esencial
+## 8. Marco teórico esencial
 
 | Fundamento | Toma de posición |
 |:--|:--|
@@ -106,17 +116,21 @@ Cuatro logros institucionales: **Caracterizar** · **Sistematizar** · **Precisa
 
 ---
 
-## 8. Modelo teórico: componentes
+## 9. Modelo teórico: componentes
 
 **Figura 1 — Modelo relacional de delimitación, observación y acreditación del incremento**
 
-*Imagen ya renderizada:* `figuras/figura_1.png` (insertarla grande, a página completa; título y nota APA 7 al pie).
+![Modelo relacional de delimitación, observación y acreditación del incremento](figuras/figura_1.png)
+
+*Nota.* Representación conceptual propia de las relaciones del modelo. Las flechas expresan correspondencia, alcance y restricción; no prueban causalidad.
+
+<!-- Composición: figura grande y legible; número y título arriba, nota debajo. -->
 
 > [Este es el corazón de la tesis. Tres grupos de componentes: las fronteras diferenciadas, la semántica de los escenarios y la acreditación por nivel de comprobación. El contexto condiciona a los tres, y la evidencia retroalimenta la revisión de la frontera y limita lo que se puede afirmar. Las flechas son relaciones de correspondencia y restricción, no causalidad.]
 
 ---
 
-## 9. Modelo teórico: relaciones esenciales
+## 10. Modelo teórico: relaciones esenciales
 
 **Fronteras diferenciadas y revisables** — distinguir dónde se decide, desde dónde se observan los efectos y qué se interviene; el lugar de una condición no coincide necesariamente con el de sus consecuencias.
 
@@ -130,9 +144,11 @@ Cuatro logros institucionales: **Caracterizar** · **Sistematizar** · **Precisa
 
 ---
 
-## 10. Propuesta: método M-R1
+## 11. Propuesta: método rediseñado M-R1
 
 **Método de ocho pasos (P1–P8) y catorce requisitos.**
+
+**Estructura de referencia:** ciclo de Girjoaba y Capiluppi (2024), adaptado al caso. M-R1 identifica la versión rediseñada tras la primera aplicación.
 
 | Paso | Acción esencial |
 |:--|:--|
@@ -147,27 +163,36 @@ Cuatro logros institucionales: **Caracterizar** · **Sistematizar** · **Precisa
 
 *El método concreta el modelo: las fronteras (P1–P2), la semántica (P3, P5) y la acreditación (P7–P8).*
 
-**Figura 2 — Secuencia operativa de aplicación del método:** `figuras/figura_2.png` (el retorno por discrepancia revisa contrato e intención antes de continuar).
+<!-- Usar la tabla como representación principal. La figura 2, en figuras/figura_2.png,
+queda como respaldo fuera del recorrido oral: no comprimir tabla y diagrama vertical
+en una misma diapositiva. El retorno por discrepancia exige revisar contrato e intención. -->
 
 > [La propuesta es una guía que otro practicante puede seguir, no una lista de clases de SIGPP. Cada paso tiene entrada, producto y condición de salida, y el retorno por discrepancia obliga a revisar contrato e intención antes de continuar. No es un flujo rígido: admite justificar que una comprobación no aplique.]
 
 ---
 
-## 11. Demostración: aplicación en el caso real
-
-**Selección de restricciones** — antes: la selección estaba implementada en dos consumidores; después: ambos delegan en un resolvedor compartido, con comportamiento examinado conservado.
+## 12. Demostración: decisión de importe
 
 **Importe frente al disponible** — cinco escenarios (admisión y rechazo antes de efectos) con veinticinco aserciones reproducidas satisfactoriamente.
 
-*Figura de apoyo:* `figuras/figura_4.png` (decisión de importe: consumidor público, coordinación y efectos).
+**Recorrido del ejemplo:** delimitar la decisión → fijar escenarios y efectos → comprobar desde el consumidor público → localizar la evidencia.
 
-*Respaldo disponible por escrito: captura y registro de ejecución, por si no conviene demostración en vivo.*
+**Figura D1 — Coordinación y reutilización del cálculo del importe**
 
-> [La demostración no es la validación: muestra que el método es aplicable. Muestro un caso concreto donde la decisión estaba duplicada y quedó centralizada sin cambiar el comportamiento examinado, y otro donde los criterios se fijaron antes de ejecutar. No pretendo mostrar el sistema entero ni un ahorro medido.]
+![Coordinación y reutilización del cálculo del importe](figuras/figura_4.png)
+
+*Nota.* Ejemplo de la aplicación del autor en SIGPP; no constituye otro sistema ni otra muestra.
+
+<!-- Antes de exponer: localizar el registro de ejecución y preparar una captura
+verificada si existe. No afirmar que un video o captura está preparado sin comprobarlo.
+La imagen explica la estructura; el registro respalda las cinco pruebas/25 aserciones.
+No ejecutar escrituras reales ni mostrar datos institucionales durante la demostración. -->
+
+> [Muestro una sola aplicación: la decisión de importe. Explico qué se delimitó, qué escenarios se fijaron y desde dónde se observaron los efectos. El resultado reproducido fue de cinco pruebas y veinticinco aserciones satisfactorias. La centralización del cálculo es un resultado estructural observado; no mide por sí sola el costo de un cambio futuro.]
 
 ---
 
-## 12. Validación y resultados
+## 13. Validación y resultados
 
 **Tres episodios:** P01 (primer participante) → cuatro ajustes → M-R1 → P02 (segundo participante) → aplicación adicional del autor (importe).
 
@@ -183,7 +208,7 @@ Cuatro logros institucionales: **Caracterizar** · **Sistematizar** · **Precisa
 
 ---
 
-## 13. Aporte teórico y significación práctica
+## 14. Aporte teórico y significación práctica
 
 **Aporte teórico:** la explicitación conjunta de tres relaciones contextualizadas —fronteras diferenciadas y revisables, comprobaciones según la semántica y acreditación por nivel de comprobación— que explican cómo adaptar la delimitación y verificación del incremento sin copiar una estructura de clases.
 
@@ -195,24 +220,31 @@ Cuatro logros institucionales: **Caracterizar** · **Sistematizar** · **Precisa
 
 ---
 
-## 14. Conclusiones y recomendaciones
+## 15. Conclusiones: síntesis por objetivo
 
 **Conclusiones, por objetivo institucional:**
 
 1. **Caracterizar:** la distribución de decisiones produjo alcances de comprobación no equivalentes; la evidencia justificó separar decisión, observación e intención.
-2. **Sistematizar:** se fundamentaron nueve decisiones y se compararon siete antecedentes; la adaptación se delimitó como explicitación contextual, no invención.
+2. **Sistematizar:** se fundamentaron nueve decisiones y se compararon los antecedentes relevantes; la adaptación se delimitó como explicitación contextual, no invención.
 3. **Precisar:** las tres relaciones articulan fronteras, escenarios y acreditación, con validación contextual de su operacionalización.
 4. **Elaborar:** se formalizó un método de ocho pasos y catorce requisitos; P01 motivó cuatro ajustes, valorados luego por P02 y por la aplicación del autor.
 
-**Recomendación principal:** contrastar las relaciones en decisiones y sistemas independientes para examinar la transferencia, sin prometer los mismos resultados.
+<!-- Síntesis oral, NO transcripción literal de las conclusiones del IFI. Se conserva
+la adaptación autorizada «los antecedentes relevantes». La guía pide conclusiones
+literales: esta síntesis constituye una diferencia pendiente de decisión antes de
+generar la versión definitiva. No modificar el IFI para hacerla coincidir. -->
 
 > [Cada objetivo institucional tiene su resultado en el mismo orden en que fue planteado, y cada resultado conserva su límite. Las conclusiones son resultados, no sugerencias: la sugerencia va en las recomendaciones, y la principal es seguir el estudio fuera del caso antes de generalizar.]
 
 ---
 
-## 15. Cierre
+## 16. Recomendaciones y cierre
 
-**Un método para delimitar y sustentar la verificación de cambios en decisiones distribuidas, aplicado y examinado en el caso real, con su aporte y sus límites declarados.**
+**Recomendación seleccionada del IFI (texto literal):**
+
+En relación con las conclusiones 2 y 3, sería pertinente contrastar las relaciones en decisiones y sistemas independientes, caracterizando experiencia y asistencia, para examinar condiciones de transferencia sin prometer los mismos resultados.
+
+**Gracias por su atención.**
 
 > [El estudio aporta una manera explícita de delimitar, comprobar y acreditar cambios en un sistema heredado sin reescribirlo, y reconoce con la misma claridad qué no demostró. Gracias por su atención; quedo a disposición de sus preguntas.]
 
@@ -220,10 +252,13 @@ Cuatro logros institucionales: **Caracterizar** · **Sistematizar** · **Precisa
 
 ## Notas de preparación (fuera del recorrido oral)
 
-- **Tiempo:** 20 minutos; ensayar con cronómetro. La distribución sigue la plantilla ALSIE: apertura 1,5; problema/objeto/campo 2; objetivos/hipótesis 2; metodología 1; diagnóstico 1,5; marco 1; modelo 3,5; propuesta 2; demostración 1,5; validación 1,5; aporte 1,5; conclusiones 1; cierre —.
-- **Figuras listas:** ya renderizadas en `figuras/` — `figura_1.png` (modelo, diapositiva 8), `figura_2.png` (secuencia P1–P8, diapositiva 10), `figura_3.png` (arquitectura de referencia, opcional) y `figura_4.png` (caso importe, diapositiva 11). Insertarlas con título y nota APA 7; comprobar legibilidad desde el fondo de la sala.
+- **IFI cerrado:** el documento impreso y entregado no se modifica. Consultar `../entrega_alsie/CIERRE_IFI.md`. Toda mejora de este archivo afecta únicamente a la defensa.
+- **Tiempo objetivo: 19 minutos, con un minuto de reserva.** Portada 0,25; relevancia 1; problema/objeto/campo 1,5; objetivos 1; hipótesis 1; metodología 1; diagnóstico 1,5; marco 1; modelo gráfico 2; relaciones 1,5; propuesta 2; demostración 1,5; validación 1,5; aporte 1,25; conclusiones 0,5; recomendaciones/cierre 0,5. Es una planificación, no un ensayo acreditado; comprobar con cronómetro.
+- **Figuras:** `figura_1.png` (modelo, diapositiva 9) y `figura_4.png` (importe, diapositiva 12) están referenciadas con sintaxis de imagen. `figura_2.png` (secuencia) y `figura_3.png` (arquitectura) quedan como respaldo. Verificar inserción y legibilidad en el resultado generado; número/título arriba y nota debajo.
 - **Sin términos de Design Science:** ya traducidos (artefacto → propuesta; principios de diseño → relaciones del modelo; evaluación formativa → validación para el rediseño).
-- **Fidelidad al IFI:** portada, título, objetivo, hipótesis y conclusiones tomados literalmente de `entrega_alsie/IFI_ALSIE.md` (§1.2–1.7, §4, §5.4, §6, §7).
+- **Fidelidad al IFI:** título, objetivos específicos, hipótesis y recomendación seleccionada conservan el texto fuente. El objetivo general, el problema/campo y las conclusiones están sintetizados para exposición; no presentarlos como citas literales. El IFI se consulta en `../entrega_alsie/IFI_ALSIE.md`, sin editarlo.
+- **Discrepancia editorial conocida:** la tabla 5 enumera ocho antecedentes y la conclusión segunda dice siete. La síntesis oral evita repetir el recuento. Si preguntan, reconocer la discrepancia de recuento; no inventar una exclusión deliberada de la base metodológica.
+- **Composición de diapositivas:** fondo claro, contraste alto, títulos aproximadamente 38–40 pt y cuerpo 24–28 pt conforme a la sección C de la guía. No reducir la letra para hacer caber tablas o párrafos; resolver la distribución visual y registrar si requiere otra diapositiva y otro ajuste de tiempo. No convertir estas notas, los comentarios HTML o las referencias de respaldo en parte del recorrido principal.
 - **Demostración con respaldo:** preparar captura o video por si no hay ejecución en vivo.
 - **Honestidad como argumento:** no afirmar éxito sin dato; si una pregunta excede la evidencia, responder con el límite declarado y no inventar un resultado.
 
